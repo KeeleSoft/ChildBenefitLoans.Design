@@ -1,0 +1,29 @@
+/// Media Queries
+
+// Small devices
+@mixin media-sm {
+    @media screen and (min-width: (map-get($breakpoints, small))) {
+        @content;
+    }
+  }
+  
+  // Medium devices
+  @mixin media-md {
+    @media screen and (min-width: (map-get($breakpoints, medium))) {
+        @content;
+    }
+  }
+  
+  // Large devices
+  @mixin media-lg {
+    @media screen and (min-width: (map-get($breakpoints, large))) {
+        @content;
+    }
+  }
+  
+  // Extra large devices
+  @mixin media-xl {
+    @media screen and (min-width: (map-get($breakpoints, x-large))) {
+        @content;
+    }
+  }

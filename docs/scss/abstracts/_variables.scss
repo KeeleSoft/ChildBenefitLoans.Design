@@ -1,0 +1,54 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$primary-font-stack: 'Montserrat','Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 992px,
+  'x-large': 1240px,
+) !default;
+
+
+
+/// ---------------- Spacing variables
+$mb-form-group: 3rem;
+$mb-form-label: 0.2rem;
+$mt-form-conditional: 1rem;
+
+
+/// ---------------- Font settings
+$fs-small:              1.6rem;
+$fs-primary:            1.8rem;
+$fs-medium:             2rem;
+$fs-large:              2.4rem;
+$fs-xlarge:             3rem;
+$fs-xxlarge:            4rem;
+$fs-display:            5.5rem;
+
+
+
+
+/// Brand colour variables 
+$brand-colours: (
+  brandPrimary:        #191847,
+  brandPurple:         #533bc9,
+  brandBeige:          #edeae6
+) !default;
+
+
+$primary-border-width: 2px;
+$focus-box-shadow: 0 0 0 3px map-get($brand-colours, brandYellow);

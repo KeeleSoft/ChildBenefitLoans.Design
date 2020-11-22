@@ -1,0 +1,31 @@
+/**
+ * Basic typography style for copy text
+ */
+ body {
+    color: map-get($brand-colours,brandPrimary);
+    font-family: $primary-font-stack;
+    font-size: $fs-primary;
+    -webkit-font-smoothing: antialiased;
+}
+  
+ 
+  
+.title-medium {
+    font-size: $fs-medium;
+}
+
+.title-large {
+    font-size: $fs-large;
+}
+
+.title-xlarge{
+    font-size: $fs-xlarge;
+}
+
+.title-xxlarge{
+    font-size: $fs-xxlarge;
+}
+
+
+  
+  
