@@ -1,0 +1,22 @@
+.pg-footer{
+    background-color: map-get($brand-colours, brandBeige);
+    padding: 5rem 0;
+}
+
+.footer-link-block{
+    margin-right: 4rem;
+    &__title{
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+    &__list{
+        margin-top: 1.5rem;
+        li{
+            line-height: 1.6;
+        }
+    }
+    &__link{
+        font-size: 1.6rem;
+    }
+}

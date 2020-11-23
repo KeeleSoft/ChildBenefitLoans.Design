@@ -31,14 +31,32 @@ html {
  * Basic styles for links
  */
 a {
-  color: map-get($brand-colours, brandBlue);
-  text-decoration: underline;
+  color: map-get($brand-colours, brandPrimary);
+  text-decoration: none;
   @include on-event {
-    color: $text-color;
-    text-decoration: underline;
+    color: map-get($brand-colours, brandPurple);
+    text-decoration: none;
   }
   &:focus{
     @include focus-links;
   }
+  &:hover{
+      transition: color 0.2s ease-in, background-color 0.2s ease-in;
+  }
 }
 
+//Sticky footer
+
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.content-wrapper {
+    flex: 1 0 auto;
+}
+.footer {
+    flex-shrink: 0;
+}

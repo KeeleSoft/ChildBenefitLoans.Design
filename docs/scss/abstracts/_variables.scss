@@ -22,7 +22,8 @@ $breakpoints: (
   'x-large': 1240px,
 ) !default;
 
-
+/// image directory
+$img-path: "../images";
 
 /// ---------------- Spacing variables
 $mb-form-group: 3rem;
@@ -46,9 +47,11 @@ $fs-display:            5.5rem;
 $brand-colours: (
   brandPrimary:        #191847,
   brandPurple:         #533bc9,
-  brandBeige:          #edeae6
+  brandBeige:          #edeae6,
+  white:               #ffffff
 ) !default;
 
 
+$btn-border-radius: 20px;
 $primary-border-width: 2px;
 $focus-box-shadow: 0 0 0 3px map-get($brand-colours, brandYellow);
