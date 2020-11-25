@@ -4,7 +4,6 @@
 }
 
 .footer-link-block{
-    margin-right: 4rem;
     &__title{
         text-transform: uppercase;
         font-size: 1.4rem;
@@ -19,4 +18,39 @@
     &__link{
         font-size: 1.6rem;
     }
+}
+
+.footer-brand{
+    &__logo{
+        width: 80%;
+    }
+}
+
+.footer-social{
+    display: flex;
+    &__link{
+        width: 2.4rem;
+        height: 2.4rem;
+        display: block;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: 24px 24px;
+        background-color: transparent;
+        margin-left: 1rem;
+
+        &--facebook{
+            @include bg-img(ft-icon-facebook,svg)
+        }
+    
+        &--twitter{
+            @include bg-img(ft-icon-twitter,svg)
+        }
+    
+        &--instagram{
+            @include bg-img(ft-icon-instagram,svg)
+        }
+    }    
 }

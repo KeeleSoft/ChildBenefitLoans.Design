@@ -346,24 +346,41 @@ body {
 body {
   color: #191847;
   font-family: "Montserrat", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.3;
 }
 
-.title-medium {
+.txt-xsmall {
+  font-size: 1.2rem;
+}
+
+.txt-small {
+  font-size: 1.4rem;
+}
+
+.txt-primary {
+  font-size: 1.6rem;
+}
+
+.txt-medium {
   font-size: 2rem;
 }
 
-.title-large {
+.txt-large {
   font-size: 2.4rem;
 }
 
-.title-xlarge {
-  font-size: 3rem;
+.txt-xlarge {
+  font-size: 2.8rem;
 }
 
-.title-xxlarge {
-  font-size: 4rem;
+.txt-xlarge {
+  font-size: 4.4rem;
+}
+
+.txt-xlarge {
+  font-size: 5.2rem;
 }
 
 .header {
@@ -384,7 +401,7 @@ body {
   background-image: url("../images/logo-child-benefit-loans.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  height: 6rem;
+  height: 8.4rem;
   text-indent: -9999em;
   overflow: hidden;
   transition: all 0.4s ease-out;
@@ -427,9 +444,6 @@ body {
   padding: 5rem 0;
 }
 
-.footer-link-block {
-  margin-right: 4rem;
-}
 .footer-link-block__title {
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -443,4 +457,34 @@ body {
 }
 .footer-link-block__link {
   font-size: 1.6rem;
+}
+
+.footer-brand__logo {
+  width: 80%;
+}
+
+.footer-social {
+  display: flex;
+}
+.footer-social__link {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: block;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 24px 24px;
+  background-color: transparent;
+  margin-left: 1rem;
+}
+.footer-social__link--facebook {
+  background-image: url("../images/ft-icon-facebook.svg");
+}
+.footer-social__link--twitter {
+  background-image: url("../images/ft-icon-twitter.svg");
+}
+.footer-social__link--instagram {
+  background-image: url("../images/ft-icon-instagram.svg");
 }
