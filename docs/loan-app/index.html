@@ -9,29 +9,339 @@
     <title>Child Benefit Loans</title>
 </head>
 <body>
+    <div class="header">
+        <header class="header__container container" id="header">
+            <a href="#" class="header__logo">
+                <h1>Child Benefit Loans</h1>
+            </a>            
+            <nav class="header__nav">
+                <ul class="header__links">
+                    <li><a class="header__link" href="#">Why us?</a></li>
+                    <li><a class="header__link" href="#">FAQs</a></li>
+                    <li><a class="header__link" href="#">Contact</a></li>
+                    <li><a class="header__link header__link--btn" href="#">Apply now</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
     <div class="content-wrapper">
-        <div class="header">
-            <header class="header__container container" id="header">
-                <a href="#" class="header__logo">
-                    <h1>Child Benefit Loans</h1>
-                </a>            
-                <nav class="header__nav">
-                    <ul class="header__links">
-                        <li><a class="header__link" href="#">Why us?</a></li>
-                        <li><a class="header__link" href="#">FAQs</a></li>
-                        <li><a class="header__link" href="#">Contact</a></li>
-                        <li><a class="header__link header__link--btn" href="#">Apply now</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
         <div class="container">
-            <div class="col-md-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nam ea, quibusdam provident est, deserunt placeat velit rerum iste repellat ad? Officia exercitationem harum repellendus vero incidunt dolorem blanditiis suscipit?
-                Natus deserunt quos hic maxime, debitis voluptas ullam, aut sequi harum odio eum explicabo quisquam et eos illum temporibus facilis sed quis nobis iste voluptates laboriosam numquam nesciunt fugiat. Praesentium?
-                Distinctio ipsam in rerum quae, eum quas modi dolor? Laudantium voluptatibus ut veniam ullam magni soluta obcaecati, repellat itaque aliquam excepturi. Eius molestiae corporis praesentium dolorem, neque cumque eligendi saepe.
-                Quod deleniti rerum at velit culpa aspernatur ut, natus ex dignissimos facilis, nam perferendis ullam, quasi accusantium aliquam! Voluptatum quisquam architecto fugiat doloremque provident ab laudantium, a accusantium vel id!
-            </div>
+            <main>
+                <h2 class="pg-heading">Apply for a loan</h2>
+                <div class="row justify-content-between">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-8 m-b-5">
+                        <form action="#">
+                            <div class="row m-t-3">
+                               <div class="col-12 col-md-8">
+                                    <p class="inset-txt txt-bold txt-medium m-b-2">
+                                        You are applying for a Child Benefit loan of £600 at 42.68% APR over 12 months.  Your total monthly repayment will be £71
+                                    </p>
+                                    <div class="form-group">
+                                        <fieldset>
+                                            <legend class="txt-medium txt-bold">To apply for a loan, you must:</legend>
+                                            <div class="form-check m-t-1">
+                                                <input type="checkbox" name="checkOver18" class="form-check-input" id="checkOver18">
+                                                <label class="form-check-label" for="checkOver18">Be over 18</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="checkUkAddress" class="form-check-input" id="checkUkAddress">
+                                                <label class="form-check-label" for="checkUkAddress">Have a UK address</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="checkNINumb" class="form-check-input" id="checkNINumb">
+                                                <label class="form-check-label" for="checkNINumb">Have a National Insurance (NI) number</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="checkChildBenefit" class="form-check-input" id="checkChildBenefit">
+                                                <label class="form-check-label" for="checkChildBenefit">Be in receipt of Child Benefit and agree 
+                                                    to your Child Benefit being paid directly 
+                                                    from HMRC to credit union account
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="checkNotBankrupt" class="form-check-input" id="checkNotBankrupt">
+                                                <label class="form-check-label" for="checkNotBankrupt">Not be bankrupt or involved in an Individual Voluntary 
+                                                    Arrangement or Debt Relief Order
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="checkSaving" class="form-check-input" id="checkSaving">
+                                                <label class="form-check-label" for="checkSaving">Agree to save £2.50 a week (or £10 a month), which 
+                                                    can be withdrawn once your loan is repaid
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="checkCreditCheck" class="form-check-input" id="checkCreditCheck">
+                                                <label class="form-check-label" for="checkCreditCheck">Agree to a credit check being performed as part 
+                                                    of your application
+                                                </label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="form-group">
+                                        <fieldset role="group" aria-describedby="your-name-help">
+                                            <legend>What is your name?</legend>
+                                            <span class="form-hint" id="your-name-help">This must be your full legal name, and be the same as on your payslip and bank statements</span>
+                                            <div class="form-group">
+                                                <label for="title">Title</label>
+                                                <select class="form-control js-form-control--mand" name="title" id="title" autocomplete="honorific-prefix" data-msg-required="Select the title you are known by">
+                                                    <option></option>
+                                                    <option value="0">Mr</option>
+                                                    <option value="1">Mrs</option>
+                                                    <option value="2">Ms</option>
+                                                    <option value="3">Miss</option>
+                                                    <option value="4">Dr</option>
+                                                    <option value="5">Professor</option>
+                                                    <option value="6">Sir</option>
+                                                    <option value="7">Rev</option>
+                                                    <option value="8">Master</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group m-b-1">
+                                                <label for="first-name">First name</label>
+                                                <input type="text" class="form-control js-form-control--mand" name="first-name" id="first-name" autocomplete="given-name" data-msg-required="Enter your first name">
+                                            </div>
+                                            <div class="form-group m-b-1">
+                                                <label for="middle-name">Middle name(s)</label>
+                                                <input type="text" class="form-control" name="middle-name" id="middle-name" autocomplete="additional-name">
+                                            </div>                    
+                                            <div class="form-group m-b-0">
+                                                <label for="last-name">Last name</label>
+                                                <input type="text" class="form-control js-form-control--mand" name="last-name" id="last-name" autocomplete="family-name" data-msg-required="Enter your last name">
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="form-group">
+                                        <fieldset role="group" aria-describedby="dob-format-help">
+                                            <legend>What is your date of birth?</legend>
+                                            <span class="form-hint" id="dob-format-help">Enter the day, month and year. For example, 27 4 1991</span>                 
+                                            <div class="form-row align-items-center">
+                                                <div class="col">
+                                                    <label class="form-hint" id="dob-date-hint" for="dob-date">Day</label>
+                                                    <input type="text" class="form-control js-form-control--dob-date" id="dob-date" name="dob-date" maxlength="2" aria-describedby="dob-date-hint" autocomplete="bday-day" inputmode="numeric" data-msg-required="Enter the day you were born">
+                                                </div>
+                                                <div class="col">
+                                                    <label class="form-hint" id="dob-month-hint" for="dob-month">Month</label>
+                                                    <input type="text" class="form-control js-form-control--dob-month" id="dob-month" name="dob-month" maxlength="2" aria-describedby="dob-month-hint" autocomplete="bday-month" inputmode="numeric" data-msg-required="Enter the month you were born" data-msg-max="Enter the number of the month. e.g. March would be '3'">
+                                                </div>
+                                                <div class="col">
+                                                    <label class="form-hint" id="dob-year-hint" for="dob-year">Year</label>
+                                                    <input type="text" class="form-control js-form-control--dob-year" id="dob-year" name="dob-year" maxlength="4" aria-describedby="dob-year-hint" autocomplete="bday-year" inputmode="numeric" data-msg-required="Enter the year you were born" data-msg-minlength="Year should be in YYYY format">
+                                                </div>
+                                                <input type="hidden" class="js-user-dob-hidden">
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="form-group m-b-0">
+                                        <fieldset>
+                                            <legend class="bold-txt sp-section-heading">Contact information</legend>
+                                            <div class="form-group">
+                                                <label for="email">What is your email address?</label>
+                                                <input type="email" class="form-control js-form-control--email" name="email" id="email" data-msg-required="Enter an email address we can contact you on" autocomplete="email" inputmode="email" data-msg-email="Enter email address in a valid format">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="mobile-num">What is your mobile phone number?</label>
+                                                <span class="form-hint" id="mobile-num-help">Mobile number format 07XXX XXXXXX</span>
+                                                <input type="text" class="form-control js-form-control--mobile js-phone-group" name="mobile-num" id="mobile-num" aria-describedby="mobile-num-help" autocomplete="mobile tel" inputmode="tel" data-msg-require_from_group="Enter your mobile phone number"> 
+                                            </div>            
+                                            <div class="form-group">
+                                                <label for="home-tel-num">What is your home (landline) number?</label>
+                                                <span class="form-hint" id="home-tel-num-help">We will use this if your mobile number is unreachable.</span>
+                                                <input type="text" class="form-control js-form-control--phone js-phone-group" name="home-tel-num" id="home-tel-num" aria-describedby="home-tel-num-help" autocomplete="home tel" inputmode="tel" data-msg-require_from_group="Enter your landline number">
+                                            </div>      
+                                        </fieldset>    
+                                    </div>    
+                                   <!-- Data attribute to change JS validation for number of months to ask previous address. Currently set at 72 (6 years)-->
+                                    <div class="js-address" data-address-years="72"> 
+                                        <div class="form-group js-address__block">
+                                            <fieldset>
+                                                <legend class="js-address__details-legend" aria-describedby="home-address-help">What is your current home address?</legend>
+                                                <span class="form-hint js-form-hint js-address__details-help" id="home-address-help">We will use this address to check your identity and for all correspondence with you.</span>
+                                                <div class="form-group m-b-1">
+                                                    <label for="current-postcode">Postcode</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control js-form-control--postcode js-to-uppercase" id="current-postcode" name="current-postcode" autocomplete="postal-code" data-msg-required="Enter a UK postcode">
+                                                        <div class="input-group-button">
+                                                            <button type="button" class="btn btn-secondary">Find address</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-b-1">
+                                                    <label for="current-address-line1">Address line 1</label>
+                                                    <input type="text" name="current-address-line1" class="form-control" id="current-address-line1" autocomplete="address-line1">
+                                                </div>
+                                                <div class="form-group m-b-1">
+                                                    <label for="current-city">Town or city</label>
+                                                    <input type="text" name="current-city" class="form-control" id="current-city" autocomplete="address-level1">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="current-county">County</label>
+                                                    <input type="text" name="current-county" class="form-control" id="current-county">
+                                                </div>
+                                                <div class="form-group m-b-0 js-address__move-date">
+                                                    <fieldset>
+                                                        <legend class="js-address__move-date-legend" aria-describedby="current-home-move-help">When did you start living at this address?</legend>
+                                                        <span class="form-hint js-form-hint" id="current-home-move-help">For example, 11 2012</span>
+                                                        <div class="form-row align-items-center">
+                                                            <div class="col">
+                                                                <label class="form-hint" for="current-home-move-month">Month</label>
+                                                                <input type="text" class="form-control js-form-control--mand js-form-control--month js-home-move-month" name="current-home-move-month" id="current-home-move-month" maxlength="2" inputmode="numeric" data-msg-required="Enter the month you started living at this address" data-msg-min="Invalid month" data-msg-max="Enter the number of the month. e.g. March would be '3'">
+                                                            </div>
+                                                            <div class="col">
+                                                                <label class="form-hint" for="current-home-move-year">Year</label>
+                                                                <input type="text" class="form-control js-form-control--mand js-form-control--year js-home-move-year" name="current-home-move-year" id="current-home-move-year" maxlength="4" inputmode="numeric" data-msg-required="Enter the year you started living at this address" data-msg-max="Enter a year that is the past">
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div> 
+                                   <!-- Additional address block if MOD application -->
+                                   <div class="form-group">
+                                        <fieldset>
+                                            <legend>Are you currently living somewhere other than your home address?</legend>
+                                            <div class="form-check form-check--radio">
+                                                <input class="form-check-input" type="radio" name="mod-address-query" id="mod-address-query-yes" value="option1" data-msg-required="Select 'Yes' or 'No'">
+                                                <label class="form-check-label" for="mod-address-query-yes">Yes</label>
+                                                <div class="form-group form-group--conditional">
+                                                    <fieldset>
+                                                        <legend class="js-address__details-legend" aria-describedby="mod-address-help">What is your current address?</legend>
+                                                        <span class="form-hint js-form-hint js-address__details-help" id="mod-address-help">If you are currently overseas or at an address other than your normal home address, list it here.</span>                                                   
+                                                        <div class="form-group m-b-1">
+                                                            <label for="mod-postcode">Postcode</label>
+                                                            <span class="form-hint" id="mod-postcode-help">Enter a UK or BFPO Postcode</span>
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control js-form-control--postcode js-to-uppercase" id="mod-postcode" name="mod-postcode" autocomplete="postal-code" aria-describedby="mod-postcode-help" data-msg-required="Enter a UK or BFPO Postcode">
+                                                                <div class="input-group-button">
+                                                                    <button type="button" class="btn btn-secondary">Find address</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group m-b-1">
+                                                            <label for="mod-address-line1">Address line 1</label>
+                                                            <input type="text" name="mod-address-line1" class="form-control" id="mod-address-line1" autocomplete="address-line1">
+                                                        </div>
+                                                        <div class="form-group m-b-1">
+                                                            <label for="mod-address-city">Town or city</label>
+                                                            <input type="text" name="mod-address-city" class="form-control" id="mod-address-city" autocomplete="address-level1">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="mod-address-county">County</label>
+                                                            <input type="text" name="mod-address-county" class="form-control" id="mod-address-county">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="mod-address-country">Country</label>
+                                                            <input type="text" class="form-control js-autocomplete-countries js-form-control--mand" name="mod-address-country" data-lookup-arr="countryList" id="mod-address-country" data-msg-required="Country name is required">
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-check form-check--radio">
+                                                <input class="form-check-input" type="radio" name="mod-address-query" id="mod-address-query-no" value="option2">
+                                                <label class="form-check-label" for="mod-address-query-no">No</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <!-- END Additional address block if MOD application-->
+                                    <div class="form-group m-b-0">
+                                        <fieldset>
+                                            <legend class="bold-txt sp-section-heading">Family and living arrangements</legend>
+                                            <div class="form-group">
+                                                <label for="marital-status">What is your marital status?</label>
+                                                <select class="form-control js-form-control--mand" id="marital-status" name="marital-status" data-msg-required="Select your current marital status">
+                                                    <option></option>
+                                                    <option value="0">Single</option>
+                                                    <option value="1">Married</option>
+                                                    <option value="2">Living with partner</option>
+                                                    <option value="3">Civil partnership</option>
+                                                    <option value="4">Divorced</option>
+                                                    <option value="5">Widowed</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <label for="no-of-dependents">How many dependants do you have?</label>
+                                                    <span class="form-hint" id="no-of-dependents-help">This includes any children under the age of 18</span>
+                                                    <select class="form-control js-form-control--dependant-num js-form-control--mand" id="no-of-dependents" name="no-of-dependents" aria-describedby="no-of-dependents-help" data-msg-required="Select how many dependants you have, or choose 'None'">
+                                                        <option></option>
+                                                        <option value="0">None</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">5 or more</option>
+                                                    </select>
+                                                </div>
+                                                <div class="js-dependant-info-box form-group--conditional">
+                                                    <div class="form-group">
+                                                        <fieldset>
+                                                            <legend>How old are each of your dependants?</legend>
+                                                            <div class="js-dependant-info-box__age"></div>
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="residency">What type of housing do you live in?</label>
+                                                <select class="form-control js-form-control--mand" id="residency" name="residency" data-msg-required="Select a type of housing or choose 'Other'">
+                                                    <option></option>
+                                                    <option value="1">Tenant</option>
+                                                    <option value="2">Lodger</option>
+                                                    <option value="3">Living with parent</option>
+                                                    <option value="4">Home owner - with mortgage</option>
+                                                    <option value="5">Home owner - no mortgage</option>
+                                                    <option value="6">Shared ownership - with mortgage</option>
+                                                    <option value="7">Shared ownership - no mortgage</option>
+                                                    <option disabled>──────────</option>
+                                                    <option value="0">Other (not listed here)</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <fieldset>
+                                                    <legend>Do you pay tax outside of the UK?</legend>
+                                                    <div class="form-check form-check--radio">
+                                                        <input class="form-check-input" type="radio" name="tax-outside-uk-query" id="tax-outside-uk-query-yes" value="option1" data-msg-required="Select 'Yes' or 'No'">
+                                                        <label class="form-check-label" for="tax-outside-uk-query-yes">
+                                                            Yes
+                                                        </label>
+                                                        <div class="form-group--conditional js-tax-country">
+                                                            <fieldset class="js-tax-country__set">
+                                                                <legend class="bold-txt">What country are you resident in for tax purposes?</legend>
+                                                                <div class="form-group">
+                                                                    <label for="tax-pay-county">Country name</label>
+                                                                    <input type="text" class="form-control js-autocomplete-countries js-form-control--mand" name="tax-pay-county" data-lookup-arr="countryList" id="tax-pay-county" data-msg-required="Country name is required">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="tin-number">Tax information number (TIN)</label>
+                                                                    <input type="text" class="form-control js-form-control--mand" name="tin-number" id="tin-number" inputmode="numeric" data-msg-required="Enter the tax identification number issued to you by this country">
+                                                                </div>
+                                                            </fieldset>
+                                                            <button type="button" class="btn btn-secondary js-tax-country__btn">Add another country</button>   
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-check form-check--radio">
+                                                        <input class="form-check-input" type="radio" name="tax-outside-uk-query" id="tax-outside-uk-query-no" value="option2">
+                                                        <label class="form-check-label" for="tax-outside-uk-query-no">
+                                                            No
+                                                        </label>
+                                                    </div>                                        
+                                                </fieldset>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <button type="button" class="btn btn-secondary">Previous</button>
+                                    <button type="submit" class="btn btn-primary">Save &amp; continue</button>
+                                    <div class="disp-block">
+                                        <a href="exit-complete-later.html" class="disp-in-block m-t-2">Exit and complete later</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
         </div>
     </div>
     <footer class="pg-footer">

@@ -1,0 +1,22 @@
+.inset-txt{
+    box-shadow: inset 8px 0 0 map-get($brand-colours,brandPurple);
+    padding: 1rem 0 1rem 3rem;
+}
+
+.txt-bold{
+    font-weight: 600;
+}
+
+/* --- SPACING ----------------- */
+$space-size: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9); // REM values for spacing
+$sides: (top, bottom, left, right); // Margin/padding side
+@each $space in $space-size {
+    @each $side in $sides {
+        .m-#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: #{$space}rem !important;
+        }
+        .p-#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: #{$space}rem !important;
+        }
+    }
+}

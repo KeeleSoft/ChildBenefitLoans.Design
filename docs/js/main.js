@@ -7,7 +7,7 @@ var cblApp = {
     scrollDetection:function(){
         //scroll detection and header status change
         $(window).scroll(function(){
-            if ($(window).scrollTop() >= 10) {
+            if ($(window).scrollTop() >= 50) {
                 $('.header').addClass('header--fixed');
             }
             else {
