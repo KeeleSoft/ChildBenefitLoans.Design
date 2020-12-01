@@ -391,6 +391,10 @@ body {
   font-weight: 600;
 }
 
+.js-hidden {
+  display: none;
+}
+
 /* --- SPACING ----------------- */
 .m-t-0 {
   margin-top: 0rem !important;
@@ -714,7 +718,7 @@ body {
 
 .header {
   padding: 3rem 0;
-  transition: all 0.8s ease;
+  transition: all 0.3s ease;
 }
 .header__container {
   display: flex;
@@ -825,7 +829,7 @@ body {
 }
 .form-control {
   font-size: 1.6rem;
-  border-radius: 3px;
+  border-radius: 3 3px;
   border: 2px solid #191847;
   height: calc(1.5em + 1.4rem + 2px);
 }
@@ -871,11 +875,12 @@ body {
   height: 3rem;
   border: 2px solid currentColor;
   background: transparent;
+  border-radius: 3px;
 }
 .form-check-label::after {
   content: "";
   position: absolute;
-  top: 8px;
+  top: 9px;
   left: 7px;
   width: 16px;
   height: 9px;
@@ -1050,6 +1055,11 @@ legend {
   border-color: currentColor;
 }
 
+.input-group-button .btn {
+  border-radius: 3px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
 .input-group-button .btn-secondary {
   margin-left: -2px;
 }
@@ -1073,4 +1083,12 @@ option:first-child {
 }
 .svr-side-error-summary__list a:focus {
   color: #191847;
+}
+
+.provider-card {
+  margin-bottom: 3rem;
+}
+.provider-card__title {
+  font-size: 2rem;
+  line-height: 1.6;
 }
