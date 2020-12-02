@@ -1,6 +1,9 @@
 .inset-txt{
     box-shadow: inset 8px 0 0 map-get($brand-colours,brandPurple);
     padding: 1rem 0 1rem 3rem;
+    &--warning{
+        box-shadow: inset 8px 0 0 map-get($brand-colours,warning)
+    }
 }
 
 .txt-bold{
@@ -10,6 +13,14 @@
 .js-hidden{
     display: none;
 }
+
+.js-loader-icon {
+    display: none!important;
+    &--show {
+        display: flex!important;
+    }
+}
+
 
 /* --- SPACING ----------------- */
 $space-size: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9); // REM values for spacing

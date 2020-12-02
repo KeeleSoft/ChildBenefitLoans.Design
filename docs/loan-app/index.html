@@ -29,7 +29,7 @@
             <main>
                 <h2 class="pg-heading">Apply for a loan</h2>
                 <div class="row justify-content-between">
-                    <div class="col-12 col-md-10 col-lg-8 col-xl-8 m-b-5">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-8">
                         <p class="inset-txt txt-bold txt-medium m-b-2 m-t-3">
                             You are applying for a Child Benefit loan of £600 at 42.68% APR over 12 months.  Your total monthly repayment will be £71
                         </p>
@@ -78,29 +78,94 @@
                                             </div>
                                         </fieldset>
                                     </div>
-                                    <div class="form-group js-postcode-display js-hidden">
-                                        <label for="homePostcode">Please enter your home postcode</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control js-to-uppercase" id="homePostcode" name="homePostcode" autocomplete="postal-code" data-msg-required="Enter a UK postcode">
-                                            <div class="input-group-button">
-                                                <button type="button" class="btn btn-secondary">Check</button>
+                                    <div class="js-postcode-display js-hidden">
+                                        <div class="form-group">
+                                            <label for="homePostcode">Please enter your home postcode</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control js-to-uppercase" id="homePostcode" name="homePostcode" autocomplete="postal-code" data-msg-required="Enter a UK postcode">
+                                                <div class="input-group-button">
+                                                    <button type="button" class="btn btn-secondary js-loader-activate">Check</button>
+                                                </div>
+                                            </div>
+                                            <!-- loader icon -->
+                                            <div class="d-flex justify-content-center m-t-2 m-b-2 js-loader-icon">
+                                                <div class="spinner-border text-secondary" role="status">
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                          
+                            <!-- Work postcode entry -->
+                            <div class="inset-txt inset-txt--warning">
+                                <h3 class="txt-medium">Your home postcode is not covered by one of our partner credit unions.</h3>
+                                <div class="row m-t-2">
+                                    <div class="col-12 col-md-8">
+                                        <div class="form-group">
+                                            <label for="workPostcode">Please enter your work postcode</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control js-to-uppercase" id="workPostcode" name="workPostcode" autocomplete="postal-code" data-msg-required="Enter a UK postcode">
+                                                <div class="input-group-button">
+                                                    <button type="button" class="btn btn-secondary js-loader-activate">Check</button>
+                                                </div>
+                                            </div>
+                                            <!-- loader icon -->
+                                            <div class="d-flex justify-content-center m-t-2 js-loader-icon">
+                                                <div class="spinner-border text-secondary" role="status">
+                                                <span class="sr-only">Loading...</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Check if existing member of a CU -->
+                            <div class="inset-txt inset-txt--warning m-t-2">
+                                <h3 class="txt-medium">Your work postcode is not covered by one of our partner credit unions.</h3>
+                                <div class="row m-t-2">
+                                    <div class="col-12 col-md-8">
+                                        <div class="form-group">
+                                            <label for="existingCUList">Are you an existing member of these credit unions?</label>
+                                            <select class="form-control" name="existingCUList" id="existingCUList" data-msg-required="Select a Credit Union">
+                                                <option></option>
+                                                <option>London Mutual</option>
+                                                <option>Another credit union</option>
+                                                <option>That credit union</option>
+                                                <option>The other credit union</option>
+                                                <option>Not a member of any of these credit unions</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Not eligible display -->
+                            <div class="alert alert-danger m-t-2" role="alert">
+                                <h4 class="txt-medium">Sorry, but unfortunately you are not eligible to apply for a Child Benefit Loan.</h4>
+                                <p class="m-t-1">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad <a href="#">minim veniam</a>, quis nostrud exercin.
+                                </p>
+                            </div>
+
+                            <!-- Successful provider found -->
                             <section class="provider-card">
-                                <div class="row">
+                                <div class="row provider-card__content-wrap">
                                     <div class="provider-card__logo col-md-3">
                                         <img src="../images/loan-provider-logos/logo-lmcu.svg" alt="LMCU Logo" />
                                     </div>
-                                    <div class="col-md-9 p-l-3">
+                                    <div class="col provider-card__desc">
                                         <h3 class="provider-card__title">You are eligible to apply for a Child Benefit Loan with <strong>London Mutual Credit Union</strong>.</h3>
-                                        <button type="button" class="btn btn-primary m-t-2">Proceed</button>
+                                        <p class="txt-xsmall">London Mutual Credit Union Limited is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the 
+                                            Prudential Regulation Authority (FRN 213248)</p>
                                     </div>
-                                </div>                                       
+                                </div>    
+                                <button type="button" class="btn btn-primary m-t-2">Proceed</button>                                   
                             </section>
-                            <button type="submit" class="btn btn-primary">Save &amp; continue</button>
+
                         </form>
                     </div>
                 </div>
