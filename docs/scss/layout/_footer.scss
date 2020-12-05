@@ -1,16 +1,17 @@
 .pg-footer{
     background-color: map-get($brand-colours, brandBeige);
-    padding: 5rem 0;
+    padding: 2rem 0 5rem;
 }
 
 .footer-link-block{
+    margin-top: $ft-brand-padding;
     &__title{
         text-transform: uppercase;
         font-size: 1.4rem;
         font-weight: 600;
     }
     &__list{
-        margin-top: 1.5rem;
+        margin-top: 1rem;
         li{
             line-height: 1.6;
         }
@@ -24,10 +25,18 @@
     &__logo{
         width: 80%;
     }
+    &-wrap{
+        margin-top: $ft-brand-padding;
+    }
 }
 
 .footer-social{
     display: flex;
+    li:last-child{
+        a{
+            margin-right: 0;
+        }
+    }
     &__link{
         width: 2.4rem;
         height: 2.4rem;
@@ -39,7 +48,7 @@
         background-position: 50%;
         background-size: 24px 24px;
         background-color: transparent;
-        margin-left: 1rem;
+        margin-right: 1rem;
 
         &--facebook{
             @include bg-img(ft-icon-facebook,svg)

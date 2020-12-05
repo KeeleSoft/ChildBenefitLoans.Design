@@ -1,10 +1,10 @@
 
-
 var cblApp = {    
     init: function(){
         this.scrollDetection();
         this.loanEligibilityCheck();
         this.loadSpinner();
+        this.responsiveMenu();
     },
     //--------- scroll detection and header status change
     scrollDetection:function(){    
@@ -37,6 +37,27 @@ var cblApp = {
                 spinnerEl.removeClass('js-loader-icon--show');
             }, 2000);
         });
+    },
+    responsiveMenu:function(){
+        var menu = new MmenuLight(
+            document.querySelector('.js-main-nav'),
+            '(max-width: 767px)'
+        );
+        var navigator = menu.navigation({
+            // selectedClass: 'Selected',
+            // slidingSubmenus: true,
+            // theme: 'dark',
+            // title: 'Menu'
+        });
+        var drawer = menu.offcanvas({
+            position: 'right'
+        });
+        //	Open the menu.
+        document.querySelector('.js-nav-trigger')
+            .addEventListener('click', evnt => {
+                evnt.preventDefault();
+                drawer.open();
+            });
     }
 };
 

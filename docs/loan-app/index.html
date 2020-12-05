@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/mobile-menu.css" />
     <link rel="stylesheet" href="../css/main.css">
     <title>Child Benefit Loans</title>
 </head>
 <body>
     <div class="header">
-        <header class="header__container container" id="header">
+        <header class="header__container container">
             <a href="#" class="header__logo">
                 <h1>Child Benefit Loans</h1>
-            </a>            
-            <nav class="header__nav">
+            </a>       
+            <a href="#" class="header__burger js-nav-trigger"><span></span></a>
+            <nav class="header__nav js-main-nav">
                 <ul class="header__links">
                     <li><a class="header__link" href="#">Why us?</a></li>
                     <li><a class="header__link" href="#">FAQs</a></li>
@@ -165,17 +167,17 @@
                                 </div>    
                                 <button type="button" class="btn btn-primary m-t-2">Proceed</button>                                   
                             </section>
-
                         </form>
                     </div>
                 </div>
             </main>
         </div>
     </div>
+    <!-- footer content starts-->
     <footer class="pg-footer">
         <div class="container">
             <div class="row justify-content-between pb-5">
-                <div class="col-md-7 d-flex justify-content-between">
+                <div class="col-md-7 d-flex justify-content-between flex-wrap">
                     <section class="footer-link-block">
                         <h5 class="footer-link-block__title">Key Links</h5>
                         <nav>
@@ -207,7 +209,7 @@
                         </nav>
                     </section>
                 </div>
-                <div class="col-md-4 d-flex align-items-start justify-content-between">
+                <div class="footer-brand-wrap col-md-4 d-flex align-items-start justify-content-between flex-wrap">
                     <div class="d-flex flex-column align-items-start">
                         <div class="footer-brand">
                             <img src="../images/logo-child-benefit-loans.svg" alt="Child Benefit Loans logo" class="footer-brand__logo mb-4" />
@@ -247,7 +249,9 @@
             </div>
         </div>
     </footer>
+    <!-- footer content ends -->
     <script src="../js/jquery.js"></script>
+    <script src="../js/mobile-menu.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

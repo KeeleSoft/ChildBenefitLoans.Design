@@ -1,7 +1,7 @@
 .header{
     $self: &;
     padding: 3rem 0;
-    transition: all 0.3s ease;    
+    transition: all 0.3s ease; 
     
     &__container{
         display: flex;
@@ -24,9 +24,8 @@
         //transition: all 0.4s linear;
     }
 
-    &__links{
+    &__links{      
         display: flex;
-
         li{
             padding: 0 0 0 2rem;
         }
@@ -62,4 +61,30 @@
             align-items: center;
         }
     }
+
+    &__burger{
+        display: block;
+        width: 4rem;
+        padding: 1rem;
+
+        @include media-md{
+            display: none;
+        }
+        &:before,&:after{
+            content: '';
+            display: block;
+            background: #000;
+            height: 2px;
+        }
+        span{
+            background: #000;
+            display: block;
+            height: 2px;
+            margin: 6px 0;
+        }
+    }
 }
+
+
+
+
