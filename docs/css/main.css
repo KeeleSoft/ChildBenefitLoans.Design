@@ -1165,3 +1165,35 @@ option:first-child {
   color: #fff;
   text-decoration: underline;
 }
+
+.progress-tracker {
+  list-style-type: none;
+}
+.progress-tracker__step {
+  text-align: left;
+  position: relative;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .progress-tracker__step {
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body {
+    display: block;
+  }
+
+  select.form-control {
+    background: none;
+  }
+
+  .header__logo {
+    display: inline-block;
+    background-size: contain;
+    background-position: bottom left;
+  }
+}

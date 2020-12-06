@@ -1,0 +1,21 @@
+.progress-tracker{
+    list-style-type: none;
+    &__step{
+        text-align: left;
+        position: relative;
+        width: 100%;
+        
+        @include media-md{
+            display: flex;   
+            flex: 1 1 0;
+            align-items: center; 
+            flex-direction: column;
+        }
+    }
+
+    &__title{
+        &:before{
+            
+        }
+    }
+}
