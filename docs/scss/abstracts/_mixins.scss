@@ -44,6 +44,8 @@
 @mixin bg-img($img-name, $img-ext){
     background-image: url('#{$img-path}/#{$img-name}.#{$img-ext}');
 }
+
+
 /// Media Queries
 
 // Small devices
