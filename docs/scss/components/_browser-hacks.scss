@@ -1,15 +1,13 @@
-
-
 @media all and (-ms-high-contrast: none),(-ms-high-contrast: active){
     body{
-      display: block;
+        display: block;
     }
     select.form-control{
-      background:none;
+        background:none;
     }
     .header__logo{
-      display: inline-block;
-      background-size: contain;
-      background-position: bottom left;
+        display: inline-block;
+        background-size: contain;
+        background-position: bottom left;
     }
   }

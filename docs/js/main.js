@@ -11,9 +11,11 @@ var cblApp = {
         $(window).scroll(function(){
             if ($(window).scrollTop() >= 50) {
                 $('.header').addClass('header--fixed');
+                $('.js-header-placeholder').removeClass('d-none');
             }
             else {
                 $('.header').removeClass('header--fixed');
+                $('.js-header-placeholder').addClass('d-none');
             }
         });
     },

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/mobile-menu.css" />
+    <link rel="stylesheet" href="https://grantm.github.io/jquery-datetextentry/jquery.datetextentry.css">
     <link rel="stylesheet" href="../css/main.css">
     <title>Child Benefit Loans | About you</title>
 </head>
@@ -26,14 +27,15 @@
             </nav>
         </header>
     </div>
+    <div class="header-placeholder js-header-placeholder d-none"></div>
     <div class="content-wrapper">
         <div class="container">
             <div role="group" aria-label="progress">
                 <ol class="progress-tracker">
-                    <li class="progress-tracker__step progress-tracker__step--complete" aria-current="step">
+                    <li class="progress-tracker__step progress-tracker__step--current" aria-current="step">
                         <h3 class="progress-tracker__title" data-progress-step="1 of 4">About you</h3>
                     </li>
-                    <li class="progress-tracker__step progress-tracker__step--current">
+                    <li class="progress-tracker__step">
                         <h3 class="progress-tracker__title" data-progress-step="2 of 4">Benefit details</h3>
                     </li>
                     <li class="progress-tracker__step">
@@ -45,19 +47,100 @@
                 </ol>
             </div>
             <main>
-                <h2 class="pg-heading">Apply for a loan</h2>
+                <h2 class="pg-heading">About you</h2>
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-10 col-lg-8 col-xl-8">
-                        <form action="">
+                        <form action="benefit-details.html">
                             <div class="row m-t-3">
                                <div class="col-12 col-md-8">
-                                    <div class="form-group">
+                                    <div class="form-group m-b-0">
                                         <fieldset>
-                                            <legend class="txt-medium txt-bold">To apply for a loan, you must:</legend>
-
+                                            <legend class="txt-medium txt-bold">Let’s start your application with some basic information.</legend>
+                                            <div class="form-group m-t-1">
+                                                <label for="title">Title</label>
+                                                <select class="form-control" name="title" id="title" autocomplete="honorific-prefix" data-msg-required="">
+                                                    <option></option>
+                                                    <option value="0">Mr</option>
+                                                    <option value="1">Mrs</option>
+                                                    <option value="2">Ms</option>
+                                                    <option value="3">Miss</option>
+                                                    <option value="4">Dr</option>
+                                                    <option value="5">Professor</option>
+                                                    <option value="6">Sir</option>
+                                                    <option value="7">Rev</option>
+                                                    <option value="8">Master</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="firstName">First name</label>
+                                                <input type="text" class="form-control" name="firstName" id="firstName" autocomplete="given-name" data-msg-required="">
+                                            </div>               
+                                            <div class="form-group">
+                                                <label for="lastName">Last name</label>
+                                                <input type="text" class="form-control" name="lastName" id="lastName" autocomplete="family-name" data-msg-required="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="dob">Date of birth</label>
+                                                <input type="text" class="form-control datepicker" name="dob" id="dob" placeholder="dd/mm/yyyy">
+                                            </div>
                                         </fieldset>
                                     </div>
-
+                                    <div class="form-group">
+                                        <label for="niNumber">National Insurance (NI) number?</label>
+                                        <input type="text" class="form-control" name="niNumber" id="niNumber" autocomplete="off" data-msg-required="">
+                                    </div>
+                                    <div class="form-group m-b-0">
+                                        <fieldset>
+                                            <legend class="sr-only">Your current address</legend>
+                                            <div class="form-group">
+                                                <label for="currentPostcode">Postcode</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="currentPostcode" name="currentPostcode" autocomplete="postal-code" data-msg-required="">
+                                                    <div class="input-group-button">
+                                                        <button type="button" class="btn btn-secondary">Find address</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="currentAddressLine1">Address line 1</label>
+                                                <input type="text" name="currentAddressLine1" class="form-control" id="currentAddressLine1" autocomplete="address-line1">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="current-city">Town or city</label>
+                                                <input type="text" name="current-city" class="form-control" id="current-city" autocomplete="address-level1">
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="form-group">
+                                        <fieldset>
+                                            <legend>How long have you lived at this address?</legend>
+                                            <div class="form-row align-items-center">
+                                                <div class="col">
+                                                    <label class="form-hint" for="currentAddressYears">Years</label>
+                                                    <input type="text" class="form-control" name="currentAddressYears" id="currentAddressYears" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-max="">
+                                                </div>
+                                                <div class="col">
+                                                    <label class="form-hint" for="currentAddressMonths">Months</label>
+                                                    <input type="text" class="form-control" name="currentAddressMonths" id="currentAddressMonths" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-min="" data-msg-max="">
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="form-group m-b-0">
+                                        <fieldset>
+                                            <legend class="sr-only">Contact information</legend>
+                                            <div class="form-group">
+                                                <label for="email">Email address</label>
+                                                <input type="email" class="form-control" name="email" id="email" data-msg-required="" autocomplete="email" inputmode="email" data-msg-email="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="phoneNumber">Phone number</label>
+                                                <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" aria-describedby="" inputmode="tel"> 
+                                            </div>               
+                                        </fieldset>    
+                                    </div> 
+                                    <button type="button" class="btn btn-secondary">Previous</button>
+                                    <button type="submit" class="btn btn-primary">Save &amp; continue</button>
                                 </div>
                             </div> 
                         </form>
@@ -145,6 +228,10 @@
     <!-- footer content ends -->
     <script src="../js/jquery.js"></script>
     <script src="../js/mobile-menu.js"></script>
+    <script src="https://grantm.github.io/jquery-datetextentry/jquery.datetextentry.js"></script>
+    <script>
+        $('.datepicker').datetextentry();
+    </script>
     <script src="../js/main.js"></script>
 </body>
 </html>
