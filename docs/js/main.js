@@ -5,6 +5,7 @@ var cblApp = {
         this.loanEligibilityCheck();
         this.loadSpinner();
         this.responsiveMenu();
+        this.showAttachmentName();
     },
     //--------- scroll detection and header status change
     scrollDetection:function(){    
@@ -60,6 +61,17 @@ var cblApp = {
                 evnt.preventDefault();
                 drawer.open();
             });
+    },
+    showAttachmentName: function(){    
+        $('.custom-file-input').on('change',function(){
+            if($(this).val()){
+                var fileName = $(this).val().split('\\').pop();
+                $(this).next('.custom-file-label').addClass('selected').html(fileName);
+            }
+            else{
+                $(this).next('.custom-file-label').html('Choose file')
+            }
+        });
     }
 };
 

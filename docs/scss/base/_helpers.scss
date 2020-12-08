@@ -9,6 +9,26 @@
 .txt-bold{
     font-weight: 600;
 }
+.link-on-white{
+    color: map-get($brand-colours,brandPurple);
+    text-decoration: underline;
+}
+.icon-col{
+    width: 10%;
+    text-align: center;
+}
+.del-icon-link{
+    @include bg-img(icon-delete,svg);
+    width: 2.4rem;
+    display: block;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 24px 24px;
+    margin: 0 auto;
+}
 
 .js-hidden{
     display: none;

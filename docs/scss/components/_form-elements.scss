@@ -96,11 +96,11 @@
                 &::after{
                   content: "";
                   position: absolute;
-                  top: 0.5rem;
-                  left: 0.5rem;
+                  top: 0.6rem;
+                  left: 0.6rem;
                   width: 0;
                   height: 0;
-                  border: 10px solid currentColor;
+                  border: 9px solid currentColor;
                   border-radius: 50%;
                   opacity: 0;
                   background: currentColor;
@@ -131,8 +131,8 @@
         display: none;
         margin-top: $mt-form-conditional;
         margin-bottom: 15px;
-        margin-left: -22px;
-        padding-left: 32px!important;
+        margin-left: -18px;
+        padding-left: 30px!important;
         border-left: 4px solid rgba(map-get($brand-colours, brandPrimary),0.4);
         & + & {
             margin-top: 0;
