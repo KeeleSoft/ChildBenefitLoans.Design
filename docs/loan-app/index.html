@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/mobile-menu.css" />
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Child Benefit Loans | Eligibility check</title>
+</head>
+<body>
+    <div class="header">
+        <header class="header__container container">
+            <a href="#" class="header__logo">
+                <h1>Child Benefit Loans</h1>
+            </a>       
+            <a href="#" class="header__burger js-nav-trigger"><span></span></a>
+            <nav class="header__nav js-main-nav">
+                <ul class="header__links">
+                    <li><a class="header__link" href="#">Why us?</a></li>
+                    <li><a class="header__link" href="#">FAQs</a></li>
+                    <li><a class="header__link" href="#">Contact</a></li>
+                    <li><a class="header__link header__link--btn" href="#">Apply now</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="header-placeholder js-header-placeholder d-none"></div>
+    <div class="content-wrapper">
+        <div class="container">
+            <main>
+                <h2 class="pg-heading">Apply for a loan</h2>
+                <div class="row justify-content-between">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-8">
+                        <p class="inset-txt txt-bold txt-medium m-b-2 m-t-3">
+                            You are applying for a Child Benefit loan of £600 at 42.68% APR over 12 months.  Your total monthly repayment will be £71
+                        </p>
+                        <form action="about-you.html">
+                            <div class="row m-t-3">
+                               <div class="col-12 col-md-8">
+                                    <div class="form-group">
+                                        <fieldset>
+                                            <legend class="txt-medium txt-bold">To apply for a loan, you must:</legend>
+                                            <div class="form-check m-t-1">
+                                                <input type="checkbox" name="checkOver18" class="form-check-input js-eligibility-check" id="checkOver18">
+                                                <label class="form-check-label" for="checkOver18">Be over 18</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="checkUkAddress" class="form-check-input js-eligibility-check" id="checkUkAddress">
+                                                <label class="form-check-label" for="checkUkAddress">Have a UK address</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="checkNINumb" class="form-check-input js-eligibility-check" id="checkNINumb">
+                                                <label class="form-check-label" for="checkNINumb">Have a National Insurance (NI) number</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="checkChildBenefit" class="form-check-input js-eligibility-check" id="checkChildBenefit">
+                                                <label class="form-check-label" for="checkChildBenefit">Be in receipt of Child Benefit and agree 
+                                                    to your Child Benefit being paid directly 
+                                                    from HMRC to credit union account
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="checkNotBankrupt" class="form-check-input js-eligibility-check" id="checkNotBankrupt">
+                                                <label class="form-check-label" for="checkNotBankrupt">Not be bankrupt or involved in an Individual Voluntary 
+                                                    Arrangement or Debt Relief Order
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="checkSaving" class="form-check-input js-eligibility-check" id="checkSaving">
+                                                <label class="form-check-label" for="checkSaving">Agree to save £2.50 a week (or £10 a month), which 
+                                                    can be withdrawn once your loan is repaid
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="checkCreditCheck" class="form-check-input js-eligibility-check" id="checkCreditCheck">
+                                                <label class="form-check-label" for="checkCreditCheck">Agree to a credit check being performed as part 
+                                                    of your application
+                                                </label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="js-postcode-display js-hidden">
+                                        <div class="form-group">
+                                            <label for="homePostcode">Please enter your home postcode</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control js-to-uppercase" id="homePostcode" name="homePostcode" autocomplete="postal-code" data-msg-required="Enter a UK postcode">
+                                                <div class="input-group-button">
+                                                    <button type="button" class="btn btn-secondary js-loader-activate">Check</button>
+                                                </div>
+                                            </div>
+                                            <!-- loader icon -->
+                                            <div class="d-flex justify-content-center m-t-2 m-b-2 js-loader-icon">
+                                                <div class="spinner-border text-secondary" role="status">
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                            <!-- Work postcode entry -->
+                            <div class="inset-txt inset-txt--warning">
+                                <h3 class="txt-medium">Your home postcode is not covered by one of our partner credit unions.</h3>
+                                <div class="row m-t-2">
+                                    <div class="col-12 col-md-8">
+                                        <div class="form-group">
+                                            <label for="workPostcode">Please enter your work postcode</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control js-to-uppercase" id="workPostcode" name="workPostcode" autocomplete="postal-code" data-msg-required="Enter a UK postcode">
+                                                <div class="input-group-button">
+                                                    <button type="button" class="btn btn-secondary js-loader-activate">Check</button>
+                                                </div>
+                                            </div>
+                                            <!-- loader icon -->
+                                            <div class="d-flex justify-content-center m-t-2 js-loader-icon">
+                                                <div class="spinner-border text-secondary" role="status">
+                                                <span class="sr-only">Loading...</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Check if existing member of a CU -->
+                            <div class="inset-txt inset-txt--warning m-t-2">
+                                <h3 class="txt-medium">Your work postcode is not covered by one of our partner credit unions.</h3>
+                                <div class="row m-t-2">
+                                    <div class="col-12 col-md-8">
+                                        <div class="form-group">
+                                            <label for="existingCUList">Are you an existing member of these credit unions?</label>
+                                            <select class="form-control" name="existingCUList" id="existingCUList" data-msg-required="Select a Credit Union">
+                                                <option></option>
+                                                <option>London Mutual</option>
+                                                <option>Another credit union</option>
+                                                <option>That credit union</option>
+                                                <option>The other credit union</option>
+                                                <option>Not a member of any of these credit unions</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Not eligible display -->
+                            <div class="alert alert-danger m-t-2" role="alert">
+                                <h4 class="txt-medium">Sorry, but unfortunately you are not eligible to apply for a Child Benefit Loan.</h4>
+                                <p class="m-t-1">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad <a href="#">minim veniam</a>, quis nostrud exercin.
+                                </p>
+                            </div>
+
+                            <!-- Successful provider found -->
+                            <section class="provider-card">
+                                <div class="row provider-card__content-wrap">
+                                    <div class="provider-card__logo col-md-3">
+                                        <img src="../images/loan-provider-logos/logo-lmcu.svg" alt="LMCU Logo" />
+                                    </div>
+                                    <div class="col provider-card__desc">
+                                        <h3 class="provider-card__title">You are eligible to apply for a Child Benefit Loan with <strong>London Mutual Credit Union</strong>.</h3>
+                                        <p class="txt-xsmall">London Mutual Credit Union Limited is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the 
+                                            Prudential Regulation Authority (FRN 213248)</p>
+                                    </div>
+                                </div>    
+                                <button type="submit" class="btn btn-primary m-t-2">Proceed</button>                                   
+                            </section>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- footer content starts-->
+    <footer class="pg-footer">
+        <div class="container">
+            <div class="row justify-content-between pb-5">
+                <div class="col-md-7 d-flex justify-content-between flex-wrap">
+                    <section class="footer-link-block">
+                        <h5 class="footer-link-block__title">Key Links</h5>
+                        <nav>
+                            <ul class="footer-link-block__list">
+                                <li><a href="#" class="footer-link-block__link">Apply</a></li>
+                                <li><a href="#" class="footer-link-block__link">Why us?</a></li>
+                                <li><a href="#" class="footer-link-block__link">Contact</a></li>
+                                <li><a href="#" class="footer-link-block__link">Make a payment</a></li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <section class="footer-link-block">
+                        <h5 class="footer-link-block__title">Information</h5>
+                        <nav>
+                            <ul class="footer-link-block__list">
+                                <li><a href="#" class="footer-link-block__link">Advice and support</a></li>
+                                <li><a href="#" class="footer-link-block__link">FAQs</a></li>
+                                <li><a href="#" class="footer-link-block__link">Blog</a></li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <section class="footer-link-block">
+                        <h5 class="footer-link-block__title">Legal</h5>
+                        <nav>
+                            <ul class="footer-link-block__list">
+                                <li><a href="#" class="footer-link-block__link">Website terms and conditions</a></li>
+                                <li><a href="#" class="footer-link-block__link">Privacy</a></li>
+                            </ul>
+                        </nav>
+                    </section>
+                </div>
+                <div class="footer-brand-wrap col-md-4 d-flex align-items-start justify-content-between flex-wrap">
+                    <div class="d-flex flex-column align-items-start">
+                        <div class="footer-brand">
+                            <img src="../images/logo-child-benefit-loans.svg" alt="Child Benefit Loans logo" class="footer-brand__logo mb-4" />
+                            <span class="txt-small">
+                                &copy; 2020 Child Benefit Loans <br />
+                                all rights reserved
+                            </span>
+                        </div>
+                    </div>
+                    <section>
+                        <h6 class="sr-only">Child benefit loans social media links</h6>
+                        <ul class="footer-social">
+                            <li><a href="#" class="footer-social__link footer-social__link--facebook">Facebook page</a></li>
+                            <li><a href="#" class="footer-social__link footer-social__link--twitter">Twitter page</a></li>
+                            <li><a href="#" class="footer-social__link footer-social__link--instagram">Instagram page</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            <div class="row justify-content-between align-items-end mt-5">
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <span class="txt-xsmall">Recognised ethical loan product by:</span>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="../images/logo-fairlife.svg" alt="Fair Life logo" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <span class="txt-small">
+                        London Mutual Credit Union is authorised by the Prudential Regulation Authority and regulated by the 
+                        Financial Conduct Authority and the Prudential Regulation Authority (FRN 213248)  
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer content ends -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

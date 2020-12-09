@@ -1,0 +1,90 @@
+.header{
+    $self: &;
+    padding: 3rem 0;
+    transition: all 0.3s ease; 
+    
+    &__container{
+        display: flex;
+        flex-wrap:wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    &__logo{
+        flex: 0 0 25%;
+        min-width: 18rem;
+        max-width: 25rem;
+        margin-right: 2rem;
+        @include bg-img(logo-child-benefit-loans,svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 8.4rem;
+        text-indent: -9999em;
+        overflow: hidden;
+        //transition: all 0.4s linear;
+    }
+
+    &__links{      
+        display: flex;
+        li{
+            padding: 0 0 0 2rem;
+        }
+    }
+    &__link{
+        &--btn{
+            background-color: map-get($brand-colours, brandPurple);
+            color: map-get($brand-colours, white);
+            border-radius: $btn-border-radius;
+            padding: 1.05rem 1.8rem;
+
+            &:hover{
+                color: map-get($brand-colours, white);
+                background-color: map-get($brand-colours, brandPrimary);
+            }
+        }
+    }
+
+    &--fixed{
+        position: fixed; 
+        top: 0;
+        left: 0;;
+        width: 100%; 
+        background-color: map-get($brand-colours, white);
+        z-index: 2;
+        box-shadow: 0 0 40px rgba(83, 59, 201, 0.08);
+
+        #{$self}__logo{
+            @include bg-img(logo-child-benefit-loans-horizontal,svg);
+            height: 2.1rem;
+        }
+        #{$self}__container{
+            align-items: center;
+        }
+    }
+
+    &__burger{
+        display: block;
+        width: 4rem;
+        padding: 1rem;
+
+        @include media-md{
+            display: none;
+        }
+        &:before,&:after{
+            content: '';
+            display: block;
+            background: #000;
+            height: 2px;
+        }
+        span{
+            background: #000;
+            display: block;
+            height: 2px;
+            margin: 6px 0;
+        }
+    }
+}
+
+
+
+

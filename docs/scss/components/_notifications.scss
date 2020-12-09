@@ -1,0 +1,12 @@
+.alert{
+    padding: 2rem;
+    &-danger{
+        background: #ff0046;
+        border-color: #ff0046;
+        color: #fff;
+        a{
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+}

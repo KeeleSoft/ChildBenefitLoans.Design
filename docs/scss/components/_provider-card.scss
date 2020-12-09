@@ -1,0 +1,25 @@
+.provider-card{
+    margin-bottom: 3rem;
+    &__content-wrap{
+        background: #daffed;
+        padding: 3rem;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: $form-control-border-radius;
+    }
+    &__logo{
+        padding-left: 0;
+        padding-right: 3rem;
+        img{
+            max-width: 15rem;
+        }
+    }
+    &__title{
+        font-size: $fs-medium;
+        line-height: 1.5;
+    }
+    &__desc{
+        padding-right: 0;
+        padding-left: 0;
+    }
+}

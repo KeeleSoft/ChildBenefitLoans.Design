@@ -1,0 +1,65 @@
+.pg-footer{
+    background-color: map-get($brand-colours, brandBeige);
+    padding: 2rem 0 5rem;
+}
+
+.footer-link-block{
+    margin-top: $ft-brand-padding;
+    &__title{
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+    &__list{
+        margin-top: 1rem;
+        li{
+            line-height: 1.6;
+        }
+    }
+    &__link{
+        font-size: 1.6rem;
+    }
+}
+
+.footer-brand{
+    &__logo{
+        width: 80%;
+    }
+    &-wrap{
+        margin-top: $ft-brand-padding;
+    }
+}
+
+.footer-social{
+    display: flex;
+    li:last-child{
+        a{
+            margin-right: 0;
+        }
+    }
+    &__link{
+        width: 2.4rem;
+        height: 2.4rem;
+        display: block;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: 24px 24px;
+        background-color: transparent;
+        margin-right: 1rem;
+
+        &--facebook{
+            @include bg-img(ft-icon-facebook,svg)
+        }
+    
+        &--twitter{
+            @include bg-img(ft-icon-twitter,svg)
+        }
+    
+        &--instagram{
+            @include bg-img(ft-icon-instagram,svg)
+        }
+    }    
+}

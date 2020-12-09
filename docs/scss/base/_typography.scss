@@ -1,0 +1,52 @@
+/**
+ * Basic typography style for copy text
+ */
+ body {
+    color: map-get($brand-colours,brandPrimary);
+    font-family: $primary-font-stack;
+    font-size: $fs-primary;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+}
+  
+p{
+    margin-bottom: 2rem;
+}
+
+.txt-xsmall{
+    font-size: $fs-xsmall;
+}
+
+.txt-small{
+    font-size: $fs-small;
+}
+
+.txt-primary{
+    font-size: $fs-primary;
+}
+
+.txt-medium{
+    font-size: $fs-medium;
+    line-height: 1.5;
+}
+
+.txt-large{
+    font-size: $fs-large;
+}
+
+.txt-xlarge{
+    font-size: $fs-xlarge;
+}
+
+.txt-xlarge{
+    font-size: $fs-xxlarge;
+}
+
+.txt-xlarge{
+    font-size: $fs-xxxlarge;
+}
+
+.pg-heading{
+    font-size: $fs-xxlarge;
+    font-weight: 600;
+}

@@ -1,0 +1,325 @@
+/// This file contains styles for form elements(text inputs, radios, checkboxes etc.) Also include their different statuses and error message styles.
+
+.form {
+    &-group{
+      margin-bottom: $mb-form-group;
+
+      label{
+        margin-bottom: $mb-form-label;
+      }
+    }
+
+    &-control {
+        font-size:$fs-primary;
+        border-radius: 3$form-control-border-radius;
+        border: $primary-border-width solid map-get($brand-colours, brandPrimary);
+        height: calc(1.5em + 1.4rem + 2px);
+
+        &:focus {
+            outline: 3px solid map-get($brand-colours, yellow);
+            outline-offset: 0;
+            box-shadow: inset 0 0 0 2px;
+            border-color: currentColor;
+        }
+
+        &--error{
+            border-color: map-get($brand-colours, brandRed);
+        }
+    }
+
+    &-check {
+        position: relative;
+        padding-left: 3rem;
+        min-height: 3rem;
+        margin-bottom: 0.5rem;
+
+        &-input {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 3rem;
+            height: 3rem;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+
+            &:checked+.form-check-label::after {
+                opacity: 1;
+            }
+
+            &:focus+.form-check-label::before {
+                border-width: 4px;
+                box-shadow: $focus-box-shadow;
+            }
+        }
+
+        &-label {
+            padding: 5px 15px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 3rem;
+                height: 3rem;
+                border: $primary-border-width solid currentColor;
+                background: transparent;
+                border-radius: $form-control-border-radius;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 9px;
+                left: 7px;
+                width: 16px;
+                height: 9px;
+                transform: rotate(-45deg);
+                border: solid;
+                border-width: 0 0 4px 4px;
+                border-top-color: transparent;
+                opacity: 0;
+                background: transparent;
+            }
+        }
+        /// Radio buttons and checkboxes use a lot of common style hence the use of same classname.
+        /// Below are the radio button specific styles.
+        /// These styles are added with the use of modifier '--radio'
+        $self: &; // form-check
+        &--radio{
+            #{$self}-label{
+                &::before{
+                    border-radius: 50%;
+                }
+
+                &::after{
+                  content: "";
+                  position: absolute;
+                  top: 0.6rem;
+                  left: 0.6rem;
+                  width: 0;
+                  height: 0;
+                  border: 9px solid currentColor;
+                  border-radius: 50%;
+                  opacity: 0;
+                  background: currentColor;
+                }
+            }
+        }
+
+        &-input:checked ~ .form-group--conditional{
+            display: block;
+        }
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    &-hint{
+        display: block;
+        color: rgba(map-get($brand-colours,brandPrimary),0.6);
+        margin-bottom: 0.7rem;
+    }
+
+    &-check__hint{
+        padding-left: 15px;
+    }
+
+    &-group--conditional{
+        display: none;
+        margin-top: $mt-form-conditional;
+        margin-bottom: 15px;
+        margin-left: -18px;
+        padding-left: 30px!important;
+        border-left: 4px solid rgba(map-get($brand-colours, brandPrimary),0.4);
+        & + & {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-bottom: 15px;
+        }
+        &-aligned{
+            display: block;
+            margin-left: 0;
+            padding-left: 20px!important;
+        }
+        
+    }
+
+    &-group--error{
+        padding-left: 15px;
+        border-left: 4px solid map-get($brand-colours,brandRed);
+    }
+
+    &-error-msg{
+        display: block;
+        font-weight: bold;
+        margin: 0 0 1rem;
+        color: map-get($brand-colours,brandRed);
+    }
+}
+span.form-control--error{
+    color: map-get($brand-colours, brandRed); 
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.form-check-label + .form-control--error{
+    margin-left: 1.5rem;
+}
+
+.btn{
+    font-size:$fs-primary;
+    padding: 0.7rem 2rem 0.5rem;
+    border-radius: $btn-border-radius;
+    border-width: 2px;
+
+    &-primary{
+       background-color: map-get($brand-colours,brandPurple);
+       border-color: map-get($brand-colours,brandPurple);
+       
+       &:hover,&:not(:disabled):not(.disabled):active,&:not(:disabled):not(.disabled).active,&:focus, &.focus{
+            background-color: map-get($brand-colours, brandPrimary);
+            border-color: map-get($brand-colours, brandPrimary);
+       }
+       &:focus, &.focus{
+            outline: 3px solid map-get($brand-colours, brandYellow);
+            outline-offset: 0;
+       }
+    }
+
+    &-secondary{
+        background-color: transparent;
+        color: map-get($brand-colours,brandPrimary);
+        border-color: map-get($brand-colours,brandPrimary);
+        &:focus, &.focus{
+            outline: 3px solid map-get($brand-colours, brandYellow);
+            outline-offset: 0;
+       }
+    }
+    &-start{
+        display: flex;
+        align-items: center;
+        padding: 0.9rem 2.3rem 1.1rem 2.5rem;
+        font-size: $fs-large;
+
+        &::after{
+            display: block;
+            content: '';
+            background-image: url(../images/icon-next.svg);
+            background-size: 26px 26px;
+            height: 2.6rem;
+            width: 2.6rem;
+            margin-left: 6px;
+            margin-top: 4px;
+        }
+    }
+    & + .btn{
+        margin-left: 15px;
+    }
+}
+
+a.btn{
+    text-decoration: none;  
+}
+
+select.form-control{
+    padding: 0.375rem 1rem;
+    //replacing select down arrow with svg
+    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 99% 50%;
+    appearance: none;
+}
+
+textarea.form-control{
+    padding: 0.5rem 0.95rem;
+}
+
+legend{
+    margin-bottom: 0.3rem;
+}
+
+.js-form-group--conditional{
+    display: block;
+}
+
+.custom-file{
+    $self: &;
+    &-label{
+        height: auto;
+        padding: 0.6rem 1rem;
+        border-radius: 0;
+        border: $primary-border-width solid map-get($brand-colours, brandPrimary);
+
+        &::after{
+            height: auto;
+            padding: 0.4em 1.5rem;
+        }
+        &:focus{
+            outline: 3px solid map-get($brand-colours, brandYellow);
+            outline-offset: 0;
+            box-shadow: inset 0 0 0 2px;
+            border-color: currentColor;            
+        }
+    }
+    &-input{
+        height: auto;
+        &:focus ~ #{$self}-label{
+            outline: 3px solid map-get($brand-colours, brandYellow);
+            outline-offset: 0;
+            box-shadow: inset 0 0 0 2px;
+            border-color: currentColor;       
+        }
+    }
+}
+
+.input-group-button{
+    .btn{
+        border-radius: $form-control-border-radius;
+        border-top-left-radius: 0;
+        border-bottom-left-radius:0;
+    }
+    .btn-secondary{
+        margin-left: -2px;
+    }
+}
+
+option:first-child{ 
+    display: none; 
+}
+
+.js-form-group--payroll-deduct{
+    display: none;
+}
+
+span.jq-dte{
+    font-size:$fs-primary;
+    border-radius: 3$form-control-border-radius;
+    border: $primary-border-width solid map-get($brand-colours, brandPrimary);
+    height: calc(1.5em + 1.4rem + 2px);
+    width: 100%;
+}
+span.jq-dte input{
+    width: 32%!important;
+    line-height: 2.1;
+}
+
+//server side error list
+.svr-side-error-summary{
+    border: 4px solid map-get($brand-colours,brandRed);
+    padding: 2rem;
+    display: block;
+
+    &__title{
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    &__list a{
+        color: map-get($brand-colours,brandRed);
+        &:focus{
+            color: map-get($brand-colours,brandPrimary);
+        }
+    }
+}

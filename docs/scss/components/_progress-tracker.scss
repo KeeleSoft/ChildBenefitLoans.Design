@@ -1,0 +1,85 @@
+.progress-tracker{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 6rem;
+
+    $self:&;
+    &__step{
+        text-align: left;
+        position: relative;
+        width: 100%;        
+        
+        @include media-md{
+            border-bottom: 1px solid transparentize(map-get($brand-colours,brandPrimary),0.9);
+            display: flex;   
+            flex: 1 1 0;
+            align-items: center; 
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &--current{
+            border-bottom: 0;
+            content: '';
+            width: 100%;
+            box-shadow: inset 0 -3px 0 0 map-get($brand-colours,brandPurple);
+
+            & #{$self}__title{
+                display: flex;
+                color: map-get($brand-colours,brandPurple);
+                padding: 1.5rem;
+                @include media-md{
+                    padding: 0;
+                }
+
+                &:before{                    
+                    @include media-md{                        
+                        background-color: transparentize(map-get($brand-colours,brandPurple),0.7);   
+                        border-color: map-get($brand-colours,brandPurple);  
+                    }        
+                }
+            }
+        }
+
+        &--complete{           
+            @include media-md{
+                border-bottom: 1px solid map-get($brand-colours,brandPurple);
+            }
+            & #{$self}__title{
+                color: map-get($brand-colours,brandPrimary);
+                &:before{
+                    background-color: map-get($brand-colours,brandPurple);   
+                    border-color: map-get($brand-colours,brandPurple);          
+                }
+            }
+        }
+    }   
+
+    &__title{
+        display: none;
+        
+        @include media-md{
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            color: transparentize(map-get($brand-colours,brandPrimary),0.5);
+        }
+
+        &:before{
+            content: attr(data-progress-step);
+            margin-right: 0.6rem;
+
+            @include media-md{
+                content: '';
+                display: inline-block;
+                flex-shrink: 0;
+                width: 1.8rem;
+                height: 1.8rem;
+                border-radius: 50%;
+                background-color: transparentize(map-get($brand-colours,brandBeige),0.7);
+                border: 2px solid map-get($brand-colours,brandBeige);
+            }
+        }
+    }
+}
