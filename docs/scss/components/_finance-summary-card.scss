@@ -1,0 +1,21 @@
+.fincance-summary-card{
+    margin-top: 5rem;
+    &__node{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__key{
+        margin-bottom: 1rem;
+    }
+    &__val{
+        font-size: $fs-large;
+        font-weight: 600;
+        &--income{
+            color: #26c13f;
+        }
+        &--outgoing{
+            color: #f22215;
+        }
+    }
+}
