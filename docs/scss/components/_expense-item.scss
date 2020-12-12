@@ -1,0 +1,64 @@
+.expense-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+
+    &__form{
+        margin-bottom: 0;
+        align-items: center;
+        margin-left: 5rem;
+        width: 100%;
+    }
+    &:before{
+        position: absolute;
+        content: '';
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 3px;
+        background-size: 30px 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 2rem;
+    }
+    &--salary:before{
+        @include bg-img(icon-income-salary,svg);            
+        background-color: rgba(#1fb881, 0.2);
+    }
+    &--benefits:before{
+        @include bg-img(icon-income-benefits,svg);            
+        background-color: rgba(#227efe, 0.2);
+    }
+    &--other:before{
+        @include bg-img(icon-income-other,svg);            
+        background-color: rgba(#9170ff, 0.2);
+    }
+    &--rent:before{
+        @include bg-img(icon-outgoing-rent,svg);            
+        background-color: rgba(#ec777a, 0.2);
+    }
+    &--credit:before{
+        @include bg-img(icon-outgoing-credit,svg);            
+        background-color: rgba(#e9bc73, 0.2);
+    }
+    &--utils:before{
+        @include bg-img(icon-outgoing-utils,svg);            
+        background-color: rgba(#273c75, 0.2);
+    }
+    &--transport:before{
+        @include bg-img(icon-outgoing-transport,svg);            
+        background-color: rgba(#636e72, 0.2);
+    }
+    &--food:before{
+        @include bg-img(icon-outgoing-food,svg);            
+        background-color: rgba(#fd8e67, 0.2);
+    }
+    &--other-outgoings:before{
+        @include bg-img(icon-outgoing-other,svg);            
+        background-color: rgba(#74b9ff, 0.2);
+    }
+}

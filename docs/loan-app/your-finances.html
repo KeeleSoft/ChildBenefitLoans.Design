@@ -156,106 +156,88 @@
                                                 <fieldset>
                                                     <legend class="txt-bold txt-medium">Complete income and expenditure table</legend>
                                                     <!-- Income table -->
-                                                    <div class="form-group">
+                                                    <div class="form-group m-t-1">
                                                         <fieldset>
-                                                            <legend>Monthly income</legend>
-                                                            <div class="form-group m-b-2">
-                                                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="monthlySalary">Monthly salary/wage</label>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
+                                                            <legend class="m-b-2 txt-bold">Monthly income</legend>                                                            
+                                                            <div class="expense-item expense-item--salary">
+                                                                <div class="expense-item__form form-group row">
+                                                                    <label for="monthlySalary" class="col-sm-7">Monthly salary/wage</label>
+                                                                    <div class="col-sm-5">
                                                                         <input type="text" name="monthlySalary" id="monthlySalary" class="form-control" placeholder="£" data-msg-required=""  autocomplete="off" inputmode="decimal">
                                                                     </div>
                                                                 </div>
-                                                            </div>  
-                                                            <div class="form-group m-b-2">
-                                                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="benefitIncome">Benefits</label>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
+                                                            </div>
+                                                            <div class="expense-item expense-item--benefits">
+                                                                <div class="expense-item__form form-group row">
+                                                                    <label for="benefitIncome" class="col-sm-7">Benefits</label>
+                                                                    <div class="col-sm-5">
                                                                         <input type="text" name="benefitIncome" id="benefitIncome" placeholder="£" class="form-control" data-msg-required="" autocomplete="off" inputmode="decimal">
                                                                     </div>
                                                                 </div>
-                                                            </div>  
-                                                            <div class="form-group m-b-2">
-                                                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="otherIncome">Other income</label>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
+                                                            </div>
+                                                            <div class="expense-item expense-item--other">
+                                                                <div class="expense-item__form form-group row">
+                                                                    <label for="otherIncome" class="col-sm-7">Other income</label>
+                                                                    <div class="col-sm-5">
                                                                         <input type="text" name="otherIncome" id="otherIncome" placeholder="£" class="form-control" data-msg-required="" autocomplete="off" inputmode="decimal">
                                                                     </div>
                                                                 </div>
-                                                            </div> 
+                                                            </div>
                                                         </fieldset>
                                                     </div>
                                                     <!-- /Income table -->                                                   
                                                     <!-- Expenses table -->
-                                                    <div class="form-group">
+                                                    <div class="form-group m-t-4 m-b-0">
                                                         <fieldset>
-                                                            <legend>Monthly expenditure</legend>
-                                                            <div class="form-group">
-                                                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="mortgageRentExpenses">Mortgage/rent</label>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
+                                                            <legend class="m-b-2 txt-bold">Monthly expenditure</legend>
+                                                            <div class="expense-item expense-item--rent">
+                                                                <div class="expense-item__form form-group row">
+                                                                    <label for="mortgageRentExpenses" class="col-sm-7">Mortgage/rent</label>
+                                                                    <div class="col-sm-5">
                                                                         <input type="text" name="mortgageRentExpenses" id="mortgageRentExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
                                                                     </div>
                                                                 </div>
-                                                            </div>  
-                                                            <div class="form-group">
-                                                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="creditCommitmentExpenses">Credit commitments</label>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
+                                                            </div>
+                                                            <div class="expense-item expense-item--credit">
+                                                                <div class="expense-item__form form-group row">
+                                                                    <label for="creditCommitmentExpenses" class="col-sm-7">Credit commitments</label>
+                                                                    <div class="col-sm-5">
                                                                         <input type="text" name="creditCommitmentExpenses" id="creditCommitmentExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
                                                                     </div>
                                                                 </div>
-                                                            </div>         
-                                                            <div class="form-group">
-                                                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="utilitiesBillsExpenses">Utilities/bills</label>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
+                                                            </div>
+                                                            <div class="expense-item expense-item--utils">
+                                                                <div class="expense-item__form form-group row">
+                                                                    <label for="utilitiesBillsExpenses" class="col-sm-7">Utilities/bills</label>
+                                                                    <div class="col-sm-5">
                                                                         <input type="text" name="utilitiesBillsExpenses" id="utilitiesBillsExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
                                                                     </div>
                                                                 </div>
-                                                            </div>               
-                                                            <div class="form-group">
-                                                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="transportExpenses">Transport</label>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
+                                                            </div>
+                                                            <div class="expense-item expense-item--transport">
+                                                                <div class="expense-item__form form-group row">
+                                                                    <label for="transportExpenses" class="col-sm-7">Transport</label>
+                                                                    <div class="col-sm-5">
                                                                         <input type="text" name="transportExpenses" id="transportExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
                                                                     </div>
                                                                 </div>
-                                                            </div>  
-                                                            <div class="form-group">
-                                                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="foodExpenses">Food</label>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
+                                                            </div>
+                                                            <div class="expense-item expense-item--food">
+                                                                <div class="expense-item__form form-group row">
+                                                                    <label for="foodExpenses" class="col-sm-7">Food</label>
+                                                                    <div class="col-sm-5">
                                                                         <input type="text" name="foodExpenses" id="foodExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
                                                                     </div>
                                                                 </div>
-                                                            </div>  
-                                                            <div class="form-group">
-                                                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="otherExpenses">Other regular outgoings</label>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
+                                                            </div>                   
+                                                            <div class="expense-item expense-item--other-outgoings">
+                                                                <div class="expense-item__form form-group row">
+                                                                    <label for="otherExpenses" class="col-sm-7">Other regular outgoings</label>
+                                                                    <div class="col-sm-5">
                                                                         <input type="text" name="otherExpenses" id="otherExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
                                                                     </div>
                                                                 </div>
-                                                            </div> 
+                                                            </div>  
                                                         </fieldset>   
                                                     </div>
                                                     <!-- /Expenses table -->

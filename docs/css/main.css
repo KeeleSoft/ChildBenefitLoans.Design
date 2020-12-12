@@ -1294,6 +1294,69 @@ span.jq-dte input {
   }
 }
 
+.expense-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+.expense-item:last-child {
+  margin-bottom: 0;
+}
+.expense-item__form {
+  margin-bottom: 0;
+  align-items: center;
+  margin-left: 5rem;
+  width: 100%;
+}
+.expense-item:before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 3px;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 2rem;
+}
+.expense-item--salary:before {
+  background-image: url("../images/icon-income-salary.svg");
+  background-color: rgba(31, 184, 129, 0.2);
+}
+.expense-item--benefits:before {
+  background-image: url("../images/icon-income-benefits.svg");
+  background-color: rgba(34, 126, 254, 0.2);
+}
+.expense-item--other:before {
+  background-image: url("../images/icon-income-other.svg");
+  background-color: rgba(145, 112, 255, 0.2);
+}
+.expense-item--rent:before {
+  background-image: url("../images/icon-outgoing-rent.svg");
+  background-color: rgba(236, 119, 122, 0.2);
+}
+.expense-item--credit:before {
+  background-image: url("../images/icon-outgoing-credit.svg");
+  background-color: rgba(233, 188, 115, 0.2);
+}
+.expense-item--utils:before {
+  background-image: url("../images/icon-outgoing-utils.svg");
+  background-color: rgba(39, 60, 117, 0.2);
+}
+.expense-item--transport:before {
+  background-image: url("../images/icon-outgoing-transport.svg");
+  background-color: rgba(99, 110, 114, 0.2);
+}
+.expense-item--food:before {
+  background-image: url("../images/icon-outgoing-food.svg");
+  background-color: rgba(253, 142, 103, 0.2);
+}
+.expense-item--other-outgoings:before {
+  background-image: url("../images/icon-outgoing-other.svg");
+  background-color: rgba(116, 185, 255, 0.2);
+}
+
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   body {
     display: block;
