@@ -83,6 +83,11 @@
                 background: transparent;
             }
         }
+
+        &__tnc-links{
+            margin-left: 1.7rem;
+        }
+
         /// Radio buttons and checkboxes use a lot of common style hence the use of same classname.
         /// Below are the radio button specific styles.
         /// These styles are added with the use of modifier '--radio'

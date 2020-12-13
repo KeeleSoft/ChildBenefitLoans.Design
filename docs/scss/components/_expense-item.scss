@@ -32,10 +32,10 @@
         }
     }
     &--income:before{
-        background-color: rgba(#26c13f, 0.2);
+        background-color:map-get($brand-colours, green);
     }
     &--outgoing:before{
-        background-color: rgba(#f22215, 0.2);
+        background-color:map-get($brand-colours, warning);
     }
     &--salary:before{
         @include bg-img(icon-income-salary,svg);            

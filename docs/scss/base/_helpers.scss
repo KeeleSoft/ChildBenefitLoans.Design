@@ -40,6 +40,35 @@
         display: flex!important;
     }
 }
+.list-style-disc {
+    list-style: disc outside;
+    margin-left: 2rem;
+    li{
+        margin: 1rem 0;
+        line-height: 1.6;
+    }
+}
+
+.info-box{
+    background-color: rgba(map-get($brand-colours,brandPurple),0.1);
+    padding: 2rem 2.5rem;
+    box-shadow: inset 8px 0 0 map-get($brand-colours,brandPurple);
+
+    &__data-row{
+        border-bottom: 1px solid rgba(map-get($brand-colours,brandPurple),0.1);
+        padding: 1rem 0;
+        &:last-child{
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        &:first-child{
+            padding-top: 0;
+        }
+    }
+    &__val{
+        font-weight: 600;
+    }
+}
 
 
 /* --- SPACING ----------------- */

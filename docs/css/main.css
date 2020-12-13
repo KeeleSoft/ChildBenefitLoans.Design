@@ -438,6 +438,35 @@ p {
   display: flex !important;
 }
 
+.list-style-disc {
+  list-style: disc outside;
+  margin-left: 2rem;
+}
+.list-style-disc li {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.info-box {
+  background-color: rgba(83, 59, 201, 0.1);
+  padding: 2rem 2.5rem;
+  box-shadow: inset 8px 0 0 #533bc9;
+}
+.info-box__data-row {
+  border-bottom: 1px solid rgba(83, 59, 201, 0.1);
+  padding: 1rem 0;
+}
+.info-box__data-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.info-box__data-row:first-child {
+  padding-top: 0;
+}
+.info-box__val {
+  font-weight: 600;
+}
+
 /* --- SPACING ----------------- */
 .m-t-0 {
   margin-top: 0rem !important;
@@ -965,6 +994,9 @@ p {
   opacity: 0;
   background: transparent;
 }
+.form-check__tnc-links {
+  margin-left: 1.7rem;
+}
 .form-check--radio .form-check-label::before {
   border-radius: 50%;
 }
@@ -1330,10 +1362,10 @@ span.jq-dte input {
   }
 }
 .expense-item--income:before {
-  background-color: rgba(38, 193, 63, 0.2);
+  background-color: #44bd32;
 }
 .expense-item--outgoing:before {
-  background-color: rgba(242, 34, 21, 0.2);
+  background-color: #ffb637;
 }
 .expense-item--salary:before {
   background-image: url("../images/icon-income-salary.svg");
@@ -1394,8 +1426,8 @@ span.jq-dte input {
   font-weight: 600;
 }
 .fincance-summary-card__val--income {
-  color: #26c13f;
+  color: #44bd32;
 }
 .fincance-summary-card__val--outgoing {
-  color: #f22215;
+  color: #ffb637;
 }

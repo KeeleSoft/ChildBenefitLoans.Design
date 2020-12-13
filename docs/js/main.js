@@ -1,4 +1,3 @@
-
 var cblApp = {    
     init: function(){
         this.scrollDetection();

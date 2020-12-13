@@ -12,10 +12,10 @@
         font-size: $fs-large;
         font-weight: 600;
         &--income{
-            color: #26c13f;
+            color: map-get($brand-colours, green);
         }
         &--outgoing{
-            color: #f22215;
+            color: map-get($brand-colours, warning);
         }
     }
 }
