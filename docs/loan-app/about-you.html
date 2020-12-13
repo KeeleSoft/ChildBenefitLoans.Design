@@ -50,7 +50,7 @@
                 <h2 class="pg-heading">About you</h2>
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-10 col-lg-8 col-xl-8">
-                        <form action="benefit-details.html">
+                        <form action="benefit-details.html" class="js-cbl-form">
                             <div class="row m-t-3">
                                <div class="col-12 col-md-10">
                                     <div class="form-group m-b-0">
@@ -58,7 +58,7 @@
                                             <legend class="txt-medium txt-bold">Let’s start your application with some basic information.</legend>
                                             <div class="form-group m-t-1">
                                                 <label for="title">Title</label>
-                                                <select class="form-control" name="title" id="title" autocomplete="honorific-prefix" data-msg-required="">
+                                                <select class="form-control js-input-mandatory" name="title" id="title" autocomplete="honorific-prefix" data-msg-required="">
                                                     <option></option>
                                                     <option value="0">Mr</option>
                                                     <option value="1">Mrs</option>
@@ -73,15 +73,15 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="firstName">First name</label>
-                                                <input type="text" class="form-control" name="firstName" id="firstName" autocomplete="given-name" data-msg-required="">
+                                                <input type="text" class="form-control js-input-mandatory" name="firstName" id="firstName" autocomplete="given-name" data-msg-required="">
                                             </div>               
                                             <div class="form-group">
                                                 <label for="lastName">Last name</label>
-                                                <input type="text" class="form-control" name="lastName" id="lastName" autocomplete="family-name" data-msg-required="">
+                                                <input type="text" class="form-control js-input-mandatory" name="lastName" id="lastName" autocomplete="family-name" data-msg-required="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="dob">Date of birth</label>
-                                                <input type="text" class="form-control datepicker" name="dob" id="dob" placeholder="dd/mm/yyyy">
+                                                <input type="text" class="form-control datepicker js-adult-dob" name="dob" id="dob" placeholder="dd/mm/yyyy">
                                             </div>
                                         </fieldset>
                                     </div>
@@ -229,9 +229,8 @@
     <script src="../js/jquery.js"></script>
     <script src="../js/mobile-menu.js"></script>
     <script src="https://grantm.github.io/jquery-datetextentry/jquery.datetextentry.js"></script>
-    <script>
-        $('.datepicker').datetextentry();
-    </script>
+    <script src="../js/jquery.validate.js"></script>
+    <script src="../js/validation.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

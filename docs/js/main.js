@@ -5,6 +5,7 @@ var cblApp = {
         this.loadSpinner();
         this.responsiveMenu();
         this.showAttachmentName();
+        //this.pluginInitialise();
     },
     //--------- scroll detection and header status change
     scrollDetection:function(){    
@@ -70,6 +71,11 @@ var cblApp = {
             else{
                 $(this).next('.custom-file-label').html('Choose file')
             }
+        });
+    },
+    pluginInitialise: function(){
+        $('.datepicker').datetextentry({
+            is_required: true
         });
     }
 };

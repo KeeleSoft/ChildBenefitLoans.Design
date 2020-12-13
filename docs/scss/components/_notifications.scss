@@ -1,8 +1,8 @@
 .alert{
     padding: 2rem;
     &-danger{
-        background: #ff0046;
-        border-color: #ff0046;
+        background: map-get($brand-colours, danger);
+        border-color: map-get($brand-colours, danger);
         color: #fff;
         a{
             color: #fff;
