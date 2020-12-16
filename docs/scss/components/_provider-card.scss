@@ -1,7 +1,8 @@
 .provider-card{
     margin-bottom: 3rem;
     &__content-wrap{
-        background: #daffed;
+        background: rgba(map-get($brand-colours, brandPurple),0.1);
+        border: 5px solid map-get($brand-colours, brandPurple);
         padding: 3rem;
         margin-left: 0;
         margin-right: 0;

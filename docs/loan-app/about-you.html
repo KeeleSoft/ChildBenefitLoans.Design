@@ -80,13 +80,14 @@
                                                 <input type="text" class="form-control js-input-mandatory" name="lastName" id="lastName" autocomplete="family-name" data-msg-required="">
                                             </div>
                                             <div class="form-group">
-                                                <label for="dob">Date of birth</label>
-                                                <input type="text" class="form-control datepicker js-adult-dob" name="dob" id="dob" placeholder="dd/mm/yyyy">
+                                                <label for="dobApplicant">Date of birth</label>
+                                                <input type="text" class="form-control datepicker js-dob" name="dobApplicant" id="dobApplicant" placeholder="dd/mm/yyyy">
                                             </div>
                                         </fieldset>
                                     </div>
                                     <div class="form-group">
-                                        <label for="niNumber">National Insurance (NI) number?</label>
+                                        <label for="niNumber" aria-describedby="niNumberHint">National Insurance (NI) number?</label>
+                                        <span class="form-hint" id="niNumberHint">For example, ‘QQ 12 34 56 C’</span>
                                         <input type="text" class="form-control" name="niNumber" id="niNumber" autocomplete="off" data-msg-required="">
                                     </div>
                                     <div class="form-group m-b-0">
@@ -161,7 +162,6 @@
                                 <li><a href="#" class="footer-link-block__link">Apply</a></li>
                                 <li><a href="#" class="footer-link-block__link">Why us?</a></li>
                                 <li><a href="#" class="footer-link-block__link">Contact</a></li>
-                                <li><a href="#" class="footer-link-block__link">Make a payment</a></li>
                             </ul>
                         </nav>
                     </section>
@@ -179,7 +179,7 @@
                         <h5 class="footer-link-block__title">Legal</h5>
                         <nav>
                             <ul class="footer-link-block__list">
-                                <li><a href="#" class="footer-link-block__link">Website terms and conditions</a></li>
+                                <li><a href="#" class="footer-link-block__link">Terms and conditions</a></li>
                                 <li><a href="#" class="footer-link-block__link">Privacy</a></li>
                             </ul>
                         </nav>

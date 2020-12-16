@@ -50,7 +50,7 @@
                 <h2 class="pg-heading">Child Benefit details</h2>
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-10 col-lg-8 col-xl-8">
-                        <form action="your-finances.html">
+                        <form action="your-finances.html" class="js-cbl-form">
                             <div class="row m-t-3">
                                <div class="col-12 col-md-10">
                                     <div class="form-group m-b-0">
@@ -75,41 +75,21 @@
                                                     <option value="9">9</option>
                                                 </select>
                                             </div>
-                                            <div class="form-group">
-                                                <fieldset>
-                                                    <legend>How old are your children?</legend>
-                                                    <div class="form-row align-items-center m-b-2">
-                                                        <div class="col">
-                                                            <label class="form-hint" for="childYears1">Years</label>
-                                                            <input type="text" class="form-control" name="childYears1" id="childYears1" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-max="">
-                                                        </div>
-                                                        <div class="col">
-                                                            <label class="form-hint" for="childMonths1">Months</label>
-                                                            <input type="text" class="form-control" name="childMonths1" id="childMonths1" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-min="" data-msg-max="">
-                                                        </div>
+
+                                                    <div class="form-group">
+                                                        <label for="dobChild1">Date of birth</label>
+                                                        <input type="text" class="form-control datepicker js-dob" name="dobChild1" id="dobChild1" placeholder="dd/mm/yyyy">
                                                     </div>
-                                                    <div class="form-row align-items-center m-b-2">
-                                                        <div class="col">
-                                                            <label class="form-hint" for="childYears2">Years</label>
-                                                            <input type="text" class="form-control" name="childYears2" id="childYears2" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-max="">
-                                                        </div>
-                                                        <div class="col">
-                                                            <label class="form-hint" for="childMonths2">Months</label>
-                                                            <input type="text" class="form-control" name="childMonths2" id="childMonths2" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-min="" data-msg-max="">
-                                                        </div>
+                                                    
+                                                    <div class="form-group">
+                                                        <label for="dobChild2">Date of birth</label>
+                                                        <input type="text" class="form-control datepicker js-dob" name="dobChild2" id="dobChild2" placeholder="dd/mm/yyyy">
                                                     </div>
-                                                    <div class="form-row align-items-center">
-                                                        <div class="col">
-                                                            <label class="form-hint" for="childYears3">Years</label>
-                                                            <input type="text" class="form-control" name="childYears3" id="childYears3" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-max="">
-                                                        </div>
-                                                        <div class="col">
-                                                            <label class="form-hint" for="childMonths3">Months</label>
-                                                            <input type="text" class="form-control" name="childMonths3" id="childMonths3" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-min="" data-msg-max="">
-                                                        </div>
-                                                    </div>
-                                                </fieldset>
-                                            </div>
+                                                     <div class="form-group">
+                                                        <label for="dobChild3">Date of birth</label>
+                                                        <input type="text" class="form-control datepicker js-dob" name="dobChild3" id="dobChild3" placeholder="dd/mm/yyyy">
+                                                    </div> 
+
                                             <div class="form-group m-b-2">
                                                 <fieldset>
                                                     <legend>How often do you receive your child benefit?</legend>
@@ -136,7 +116,7 @@
                                     <div class="form-group">
                                         <fieldset>
                                             <legend aria-describedby="bankDetailsHelp">Please enter the bank account details that you currently receive your child benefit payment into</legend>
-                                            <span class="form-hint" id="bankDetailsHelp">
+                                            <p class="txt-bold m-b-1" id="bankDetailsHelp">
                                                 IMPORTANT – this will also be the bank account that we will send your loan (if approved).
                                             </span>
                                             <div class="form-group">
@@ -192,7 +172,6 @@
                                 <li><a href="#" class="footer-link-block__link">Apply</a></li>
                                 <li><a href="#" class="footer-link-block__link">Why us?</a></li>
                                 <li><a href="#" class="footer-link-block__link">Contact</a></li>
-                                <li><a href="#" class="footer-link-block__link">Make a payment</a></li>
                             </ul>
                         </nav>
                     </section>
@@ -210,7 +189,7 @@
                         <h5 class="footer-link-block__title">Legal</h5>
                         <nav>
                             <ul class="footer-link-block__list">
-                                <li><a href="#" class="footer-link-block__link">Website terms and conditions</a></li>
+                                <li><a href="#" class="footer-link-block__link">Terms and conditions</a></li>
                                 <li><a href="#" class="footer-link-block__link">Privacy</a></li>
                             </ul>
                         </nav>
@@ -260,6 +239,8 @@
     <script src="../js/jquery.js"></script>
     <script src="../js/mobile-menu.js"></script>
     <script src="https://grantm.github.io/jquery-datetextentry/jquery.datetextentry.js"></script>
+    <script src="../js/jquery.validate.js"></script>
+    <script src="../js/validation.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

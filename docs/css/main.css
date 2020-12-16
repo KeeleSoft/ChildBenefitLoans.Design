@@ -1192,11 +1192,11 @@ span.jq-dte input {
   line-height: 2.1;
 }
 
-.jq-dte-errorbox.form-control--error {
+.jq-dte-errorbox.form-control--error:not([style*="display: none"]) {
   position: unset !important;
   display: block;
 }
-.jq-dte-errorbox.form-control--error + .jq-dte {
+.jq-dte-errorbox.form-control--error:not([style*="display: none"]) + .jq-dte {
   border-color: #ff0046;
   background-color: rgba(255, 0, 70, 0.1);
 }
@@ -1213,7 +1213,8 @@ span.jq-dte-inner, span.jq-dte input {
   margin-bottom: 3rem;
 }
 .provider-card__content-wrap {
-  background: #daffed;
+  background: rgba(83, 59, 201, 0.1);
+  border: 5px solid #533bc9;
   padding: 3rem;
   margin-left: 0;
   margin-right: 0;
@@ -1367,10 +1368,10 @@ span.jq-dte-inner, span.jq-dte input {
   }
 }
 .expense-item--income:before {
-  background-color: #44bd32;
+  background-color: rgba(83, 59, 201, 0.3);
 }
 .expense-item--outgoing:before {
-  background-color: #ffb637;
+  background-color: rgba(83, 59, 201, 0.3);
 }
 .expense-item--salary:before {
   background-image: url("../images/icon-income-salary.svg");

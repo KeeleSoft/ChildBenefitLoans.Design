@@ -74,9 +74,12 @@
                                             <legend>Do you agree to the use of Open Banking?</legend>
                                             <div class="form-check form-check--radio">
                                                 <input class="form-check-input" type="radio" name="openBankingYesNo" id="openBankingYes" value="option1" data-msg-required="">
-                                                <label class="form-check-label" for="openBankingYes">
+                                                <label class="form-check-label" for="openBankingYes" aria-describedby="openBankingYesHelp">
                                                     Yes, I agree
                                                 </label>
+                                                <div class="form-group form-group--conditional m-b-0">
+                                                    <p id="openBankingYesHelp">Once submitted you will be redirected to enable open banking.</p>
+                                                </div>                                                
                                             </div>
                                             <div class="form-check form-check--radio">
                                                 <input class="form-check-input" type="radio" name="openBankingYesNo" id="openBankingNo" value="option2">
@@ -84,181 +87,122 @@
                                                     No, I do not agree
                                                 </label>
                                                 <div class="form-group form-group--conditional m-b-0">
-                                                    <span class="form-hint" id="openBankingNoHelp">
+                                                    <p id="openBankingNoHelp">
                                                         Please note – your application will need to be reviewed and considered by a Loan Officer 
-                                                        and you will not receive an immediate decision.
+                                                        and you will not receive an immediate decision. Once submitted you will be asked to upload a complete bank statement 
+                                                        from the last 30 days. This must show your name, address, bank account details and include your Child Benefit payment.
                                                     </span>
-                                                    <div class="form-group m-b-0">
-                                                        <label for="verifyBankDetails">Verify bank details</label>
-                                                        <input type="text" class="form-control" name="verifyBankDetails" id="verifyBankDetails" data-msg-required="">
-                                                    </div>
                                                 </div>
                                             </div>                                        
                                         </fieldset>
                                     </div>
-                                    <div class="form-group">   
+                                    <div class="form-group">
                                         <fieldset>
-                                            <legend class="m-b-2">
-                                                Please use the following options to provide the necessary information for the credit union to help understand your 
-                                                <strong>income and expenditure</strong> as well as confirm your receipt of child benefit.
-                                            </legend>
-                                            <!-- File upload block -->    
-                                            <div class="form-group">                           
-                                                <fieldset aria-describedby="docUploadHelp">
-                                                    <legend class="txt-bold txt-medium">Upload your document(s)</legend>   
-                                                    <p class="form-hint" id="docUploadHelp">
-                                                        Please upload a complete bank statement <strong>from the last 30 days</strong>.  
-                                                        <strong>This must show your name, address, bank account details and include your Child Benefit payment</strong>. 
-                                                        Please note that we <strong>cannot accept screenshots</strong>.
-                                                    </p>                                                 
-                                                    <div class="custom-file">
-                                                        <input type="file" class="custom-file-input form-control" name="supportingDocUpload" id="supportingDocUpload" accept=".png,.jpg,.jpeg,.pdf" data-msg-required="">
-                                                        <label class="custom-file-label" for="supportingDocUpload">Choose file</label>
-                                                    </div>
-                                                    <button type="button" class="btn btn-secondary m-t-2">Upload</button>
-                                                </fieldset>
-                                            </div>
-                                            <!-- /File upload block -->
-
-                                            <!-- Attachment display grid -->
-                                            <table class="table table-striped m-t-3">
-                                                <thead>
-                                                    <tr>
-                                                        <th>File name</th>
-                                                        <th class="icon-col">Delete</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>This is the file.pdf</td>
-                                                        <td class="icon-col">
-                                                            <a href="#" class="del-icon-link">Delete attachment</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>This is another file.jpg</td>
-                                                        <td class="icon-col">
-                                                            <a href="#" class="del-icon-link">Delete attachment</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>This is a test file.doc</td>
-                                                        <td class="icon-col">
-                                                            <a href="#" class="del-icon-link">Delete attachment</a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <!-- /Attachment display grid --> 
-                                            <div class="form-group m-t-4">
+                                            <legend class="txt-bold txt-medium">Complete income and expenditure table</legend>
+                                            <!-- Income table -->
+                                            <div class="form-group m-t-1">
                                                 <fieldset>
-                                                    <legend class="txt-bold txt-medium">Complete income and expenditure table</legend>
-                                                    <!-- Income table -->
-                                                    <div class="form-group m-t-1">
-                                                        <fieldset>
-                                                            <legend class="m-b-2 txt-bold">Monthly income</legend>                                                            
-                                                            <div class="expense-item expense-item--income expense-item--salary">
-                                                                <div class="expense-item__form form-group row">
-                                                                    <label for="monthlySalary" class="col-sm-7">Monthly salary/wage</label>
-                                                                    <div class="col-sm-5">
-                                                                        <input type="text" name="monthlySalary" id="monthlySalary" class="form-control" placeholder="£" data-msg-required=""  autocomplete="off" inputmode="decimal">
-                                                                    </div>
-                                                                </div>
+                                                    <legend class="m-b-2 txt-bold">Monthly income</legend>                                                            
+                                                    <div class="expense-item expense-item--income expense-item--salary">
+                                                        <div class="expense-item__form form-group row">
+                                                            <label for="monthlySalary" class="col-sm-7">Monthly salary/wage</label>
+                                                            <div class="col-sm-5">
+                                                                <input type="text" name="monthlySalary" id="monthlySalary" class="form-control" placeholder="£" data-msg-required=""  autocomplete="off" inputmode="decimal">
                                                             </div>
-                                                            <div class="expense-item expense-item--income expense-item--benefits">
-                                                                <div class="expense-item__form form-group row">
-                                                                    <label for="benefitIncome" class="col-sm-7">Benefits</label>
-                                                                    <div class="col-sm-5">
-                                                                        <input type="text" name="benefitIncome" id="benefitIncome" placeholder="£" class="form-control" data-msg-required="" autocomplete="off" inputmode="decimal">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="expense-item expense-item--income expense-item--other">
-                                                                <div class="expense-item__form form-group row">
-                                                                    <label for="otherIncome" class="col-sm-7">Other income</label>
-                                                                    <div class="col-sm-5">
-                                                                        <input type="text" name="otherIncome" id="otherIncome" placeholder="£" class="form-control" data-msg-required="" autocomplete="off" inputmode="decimal">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </fieldset>
+                                                        </div>
                                                     </div>
-                                                    <!-- /Income table -->                                                   
-                                                    <!-- Expenses table -->
-                                                    <div class="form-group m-t-4 m-b-0">
-                                                        <fieldset>
-                                                            <legend class="m-b-2 txt-bold">Monthly expenditure</legend>
-                                                            <div class="expense-item expense-item--outgoing expense-item--rent">
-                                                                <div class="expense-item__form form-group row">
-                                                                    <label for="mortgageRentExpenses" class="col-sm-7">Mortgage/rent</label>
-                                                                    <div class="col-sm-5">
-                                                                        <input type="text" name="mortgageRentExpenses" id="mortgageRentExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
-                                                                    </div>
-                                                                </div>
+                                                    <div class="expense-item expense-item--income expense-item--benefits">
+                                                        <div class="expense-item__form form-group row">
+                                                            <label for="benefitIncome" class="col-sm-7">Benefits</label>
+                                                            <div class="col-sm-5">
+                                                                <input type="text" name="benefitIncome" id="benefitIncome" placeholder="£" class="form-control" data-msg-required="" autocomplete="off" inputmode="decimal">
                                                             </div>
-                                                            <div class="expense-item expense-item--outgoing expense-item--credit">
-                                                                <div class="expense-item__form form-group row">
-                                                                    <label for="creditCommitmentExpenses" class="col-sm-7">Credit commitments</label>
-                                                                    <div class="col-sm-5">
-                                                                        <input type="text" name="creditCommitmentExpenses" id="creditCommitmentExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="expense-item expense-item--outgoing expense-item--utils">
-                                                                <div class="expense-item__form form-group row">
-                                                                    <label for="utilitiesBillsExpenses" class="col-sm-7">Utilities/bills</label>
-                                                                    <div class="col-sm-5">
-                                                                        <input type="text" name="utilitiesBillsExpenses" id="utilitiesBillsExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="expense-item expense-item--outgoing expense-item--transport">
-                                                                <div class="expense-item__form form-group row">
-                                                                    <label for="transportExpenses" class="col-sm-7">Transport</label>
-                                                                    <div class="col-sm-5">
-                                                                        <input type="text" name="transportExpenses" id="transportExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="expense-item expense-item--outgoing expense-item--food">
-                                                                <div class="expense-item__form form-group row">
-                                                                    <label for="foodExpenses" class="col-sm-7">Food</label>
-                                                                    <div class="col-sm-5">
-                                                                        <input type="text" name="foodExpenses" id="foodExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>                   
-                                                            <div class="expense-item expense-item--outgoing expense-item--other-outgoings">
-                                                                <div class="expense-item__form form-group row">
-                                                                    <label for="otherExpenses" class="col-sm-7">Other regular outgoings</label>
-                                                                    <div class="col-sm-5">
-                                                                        <input type="text" name="otherExpenses" id="otherExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>  
-                                                        </fieldset>   
+                                                        </div>
                                                     </div>
-                                                    <!-- /Expenses table -->
-                                                    <div class="fincance-summary-card">  
-                                                        <div class="row">
-                                                            <h4 class="col fincance-summary-card__node">
-                                                                <span class="fincance-summary-card__key">Total monthly income</span>
-                                                                <span class="fincance-summary-card__val fincance-summary-card__val--income">£1000.00</span>    
-                                                            </h4>
-                                                            <h4 class="col fincance-summary-card__node align-items-end">
-                                                                <span class="fincance-summary-card__key text-right">Total monthly expenditure</span>
-                                                                <span class="fincance-summary-card__val fincance-summary-card__val--outgoing">£800.00</span>
-                                                            </h4>
-                                                        </div>      
-                                                        <hr />                                                
-                                                        <h4 class="fincance-summary-card__node">
-                                                            <span class="fincance-summary-card__key">Total monthly disposable income</span>
-                                                            <span class="fincance-summary-card__val">£200.00</span>
-                                                        </h4>
+                                                    <div class="expense-item expense-item--income expense-item--other">
+                                                        <div class="expense-item__form form-group row">
+                                                            <label for="otherIncome" class="col-sm-7">Other income</label>
+                                                            <div class="col-sm-5">
+                                                                <input type="text" name="otherIncome" id="otherIncome" placeholder="£" class="form-control" data-msg-required="" autocomplete="off" inputmode="decimal">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </fieldset>
                                             </div>
-                                        </fieldset> 
+                                            <!-- /Income table -->                                                   
+                                            <!-- Expenses table -->
+                                            <div class="form-group m-t-4 m-b-0">
+                                                <fieldset>
+                                                    <legend class="m-b-2 txt-bold">Monthly expenditure</legend>
+                                                    <div class="expense-item expense-item--outgoing expense-item--rent">
+                                                        <div class="expense-item__form form-group row">
+                                                            <label for="mortgageRentExpenses" class="col-sm-7">Mortgage/rent</label>
+                                                            <div class="col-sm-5">
+                                                                <input type="text" name="mortgageRentExpenses" id="mortgageRentExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="expense-item expense-item--outgoing expense-item--credit">
+                                                        <div class="expense-item__form form-group row">
+                                                            <label for="creditCommitmentExpenses" class="col-sm-7">Credit commitments</label>
+                                                            <div class="col-sm-5">
+                                                                <input type="text" name="creditCommitmentExpenses" id="creditCommitmentExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="expense-item expense-item--outgoing expense-item--utils">
+                                                        <div class="expense-item__form form-group row">
+                                                            <label for="utilitiesBillsExpenses" class="col-sm-7">Utilities/bills</label>
+                                                            <div class="col-sm-5">
+                                                                <input type="text" name="utilitiesBillsExpenses" id="utilitiesBillsExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="expense-item expense-item--outgoing expense-item--transport">
+                                                        <div class="expense-item__form form-group row">
+                                                            <label for="transportExpenses" class="col-sm-7">Transport</label>
+                                                            <div class="col-sm-5">
+                                                                <input type="text" name="transportExpenses" id="transportExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="expense-item expense-item--outgoing expense-item--food">
+                                                        <div class="expense-item__form form-group row">
+                                                            <label for="foodExpenses" class="col-sm-7">Food</label>
+                                                            <div class="col-sm-5">
+                                                                <input type="text" name="foodExpenses" id="foodExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                                            </div>
+                                                        </div>
+                                                    </div>                   
+                                                    <div class="expense-item expense-item--outgoing expense-item--other-outgoings">
+                                                        <div class="expense-item__form form-group row">
+                                                            <label for="otherExpenses" class="col-sm-7">Other regular outgoings</label>
+                                                            <div class="col-sm-5">
+                                                                <input type="text" name="otherExpenses" id="otherExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                                            </div>
+                                                        </div>
+                                                    </div>  
+                                                </fieldset>   
+                                            </div>
+                                            <!-- /Expenses table -->
+                                            <div class="fincance-summary-card">  
+                                                <div class="row">
+                                                    <h4 class="col fincance-summary-card__node">
+                                                        <span class="fincance-summary-card__key">Total monthly income</span>
+                                                        <span class="fincance-summary-card__val fincance-summary-card__val--income">£1000.00</span>    
+                                                    </h4>
+                                                    <h4 class="col fincance-summary-card__node align-items-end">
+                                                        <span class="fincance-summary-card__key text-right">Total monthly expenditure</span>
+                                                        <span class="fincance-summary-card__val fincance-summary-card__val--outgoing">£800.00</span>
+                                                    </h4>
+                                                </div>      
+                                                <hr />                                                
+                                                <h4 class="fincance-summary-card__node">
+                                                    <span class="fincance-summary-card__key">Total monthly disposable income</span>
+                                                    <span class="fincance-summary-card__val">£200.00</span>
+                                                </h4>
+                                            </div>
+                                        </fieldset>
                                     </div>
 
                                     <button type="button" class="btn btn-secondary">Previous</button>
@@ -283,7 +227,6 @@
                                 <li><a href="#" class="footer-link-block__link">Apply</a></li>
                                 <li><a href="#" class="footer-link-block__link">Why us?</a></li>
                                 <li><a href="#" class="footer-link-block__link">Contact</a></li>
-                                <li><a href="#" class="footer-link-block__link">Make a payment</a></li>
                             </ul>
                         </nav>
                     </section>
@@ -301,7 +244,7 @@
                         <h5 class="footer-link-block__title">Legal</h5>
                         <nav>
                             <ul class="footer-link-block__list">
-                                <li><a href="#" class="footer-link-block__link">Website terms and conditions</a></li>
+                                <li><a href="#" class="footer-link-block__link">Terms and conditions</a></li>
                                 <li><a href="#" class="footer-link-block__link">Privacy</a></li>
                             </ul>
                         </nav>

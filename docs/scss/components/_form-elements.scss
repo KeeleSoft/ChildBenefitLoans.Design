@@ -306,7 +306,7 @@ span.jq-dte input{
     width: 32%!important;
     line-height: 2.1;
 }
-.jq-dte-errorbox.form-control--error{
+.jq-dte-errorbox.form-control--error:not([style*="display: none"]){
     position: unset!important;
     display: block;
     & + .jq-dte{
