@@ -427,6 +427,17 @@ p {
   margin: 0 auto;
 }
 
+.img-link {
+  display: inline-block;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 0;
+}
+.img-link img {
+  width: 100%;
+}
+
 .js-hidden {
   display: none;
 }
@@ -869,7 +880,9 @@ p {
   background-color: #edeae6;
   padding: 2rem 0 5rem;
 }
-
+.pg-footer__link-block {
+  padding-bottom: 3rem;
+}
 .footer-link-block {
   margin-top: 3rem;
 }
@@ -1215,14 +1228,13 @@ span.jq-dte-inner, span.jq-dte input {
 .provider-card__content-wrap {
   background: rgba(83, 59, 201, 0.1);
   border: 5px solid #533bc9;
-  padding: 3rem;
+  padding: 2rem 3rem 3rem;
   margin-left: 0;
   margin-right: 0;
   border-radius: 3px;
 }
 .provider-card__logo {
-  padding-left: 0;
-  padding-right: 3rem;
+  padding: 1rem 3rem 0 0;
 }
 .provider-card__logo img {
   max-width: 15rem;
@@ -1232,8 +1244,7 @@ span.jq-dte-inner, span.jq-dte input {
   line-height: 1.5;
 }
 .provider-card__desc {
-  padding-right: 0;
-  padding-left: 0;
+  padding: 1rem 0 0 0;
 }
 
 .alert {
