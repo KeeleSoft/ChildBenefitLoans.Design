@@ -5,7 +5,8 @@ var cblApp = {
         this.loadSpinner();
         this.responsiveMenu();
         this.showAttachmentName();
-        //this.pluginInitialise();
+        this.hideCookieMsg();
+        this.checkCookieOnLoad();
     },
     //--------- scroll detection and header status change
     scrollDetection:function(){    
@@ -73,10 +74,19 @@ var cblApp = {
             }
         });
     },
-    pluginInitialise: function(){
-        $('.datepicker').datetextentry({
-            is_required: true
-        });
+    hideCookieMsg: function(){
+        $('.js-close-cookie-msg').on('click', function (e) {
+            e.preventDefault();
+            localStorage.setItem('cookieStatus', 'hidden');
+            $('.js-cookie-msg').hide();
+        });         
+    },
+    checkCookieOnLoad: function(){
+        if (localStorage.getItem('cookieStatus') === 'hidden') {
+            $('.js-cookie-msg').hide();
+        } else {
+            $('.js-cookie-msg').show();
+        }
     }
 };
 

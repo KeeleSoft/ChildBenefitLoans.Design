@@ -13,6 +13,12 @@
     color: map-get($brand-colours,brandPurple);
     text-decoration: underline;
 }
+
+.link-on-colour{
+    color: currentColor;
+    text-decoration: underline;
+}
+
 .icon-col{
     width: 10%;
     text-align: center;
@@ -82,6 +88,15 @@
     }
 }
 
+.cookie-msg{
+    padding: 2rem 0 3rem;
+    background: map-get($brand-colours,white);
+    border-top: 5px solid map-get($brand-colours,brandBeige);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 9999;
+}
 
 /* --- SPACING ----------------- */
 $space-size: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9); // REM values for spacing

@@ -409,6 +409,11 @@ p {
   text-decoration: underline;
 }
 
+.link-on-colour {
+  color: currentColor;
+  text-decoration: underline;
+}
+
 .icon-col {
   width: 10%;
   text-align: center;
@@ -476,6 +481,16 @@ p {
 }
 .info-box__val {
   font-weight: 600;
+}
+
+.cookie-msg {
+  padding: 2rem 0 3rem;
+  background: #ffffff;
+  border-top: 5px solid #edeae6;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 9999;
 }
 
 /* --- SPACING ----------------- */
