@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/mobile-menu.css" />
-    <link rel="stylesheet" href="https://grantm.github.io/jquery-datetextentry/jquery.datetextentry.css">
     <link rel="stylesheet" href="../css/main.css">
     <title>Child Benefit Loans | Confirmation</title>
 </head>
@@ -83,14 +82,14 @@
                                     detailed in this application form.  </li>
                             </ul>
                         </section>
-                        <form action="">
+                        <form action="document-upload.html" class="js-cbl-form">
                             <div class="row m-t-3">
                                <div class="col-12 col-md-10">
                                     <div class="form-group m-b-2">
                                         <fieldset>
                                             <legend class="txt-bold txt-medium">I confirm that I have read and agree to:</legend>  
                                             <div class="form-check m-t-1">
-                                                <input type="checkbox" name="confirmTAndC" class="form-check-input" id="confirmTAndC" data-msg-required="">
+                                                <input type="checkbox" name="confirmTAndC" class="form-check-input js-val-mandatory" id="confirmTAndC" data-msg-required="Check the box to confirm you agree to the Terms &amp; Conditions">
                                                 <label class="form-check-label" for="confirmTAndC">Loan Terms &amp; Conditions</label>
                                                 <div class="form-check__tnc-links">
                                                     <a href="#" class="link-on-white" target="_blank">View<span class="sr-only">Loan Terms &amp; Conditions</span></a> | 
@@ -98,7 +97,7 @@
                                                 </div>  
                                             </div>
                                             <div class="form-check m-t-2">
-                                                <input type="checkbox" name="confirmFPN" class="form-check-input" id="confirmFPN" data-msg-required="">
+                                                <input type="checkbox" name="confirmFPN" class="form-check-input js-val-mandatory" id="confirmFPN" data-msg-required="Check the box to confirm you agree to the Fair Processing Notice">
                                                 <label class="form-check-label" for="confirmFPN">Fair processing notice</label>
                                                 <div class="form-check__tnc-links">
                                                     <a href="#" class="link-on-white" target="_blank">View<span class="sr-only">Privacy Policy</span></a> | 
@@ -205,7 +204,10 @@
     <!-- footer content ends -->
     <script src="../js/jquery.js"></script>
     <script src="../js/mobile-menu.js"></script>
-    <script src="https://grantm.github.io/jquery-datetextentry/jquery.datetextentry.js"></script>
+    <script src="../js/dateTextEntry.js"></script>
+    <script src="../js/jquery.validate.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="../js/jquery.formatCurrency-1.4.0.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>
