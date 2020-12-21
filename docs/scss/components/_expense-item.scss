@@ -24,7 +24,8 @@
         }
         &.form-group--error > label{
             @include media-small-med{
-                padding-top: 1.4rem;
+                padding-top: 1.6rem;
+                margin-bottom: 0;
             }
         }
     }

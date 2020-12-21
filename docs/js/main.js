@@ -9,6 +9,7 @@ var cblApp = {
         this.checkCookieOnLoad();
         this.convertToUppercase();
         this.formatCurrencyConfig();
+        this.incomeExpenseTrigger();
     },
     //--------- scroll detection and header status change
     scrollDetection:function(){    
@@ -149,6 +150,47 @@ var cblApp = {
                 }
             }
         });
+    },
+    incomeExpenseTrigger: function(){
+        $('.js-income-inp, .js-expense-inp').on('blur',this.incomeExpenseCalc);
+    },
+    incomeExpenseCalc: function(){
+        var totalIncome = 0,
+            totalExpenses = 0;
+        $('.js-income-inp,.js-expense-inp').each(function () {
+            if($(this).hasClass('js-income-inp')){
+                var intTotalIncome = parseCurrencyVal(this);
+                if (!isNaN(intTotalIncome)) {
+                    totalIncome += intTotalIncome;
+                }
+                else {
+                    return;
+                }
+            }
+            else if($(this).hasClass('js-expense-inp')){
+                var intTotalExpenses = parseCurrencyVal(this);
+                if (!isNaN(intTotalExpenses)) {
+                    totalExpenses += intTotalExpenses;
+                }
+                else {
+                    return;
+                }
+            }
+            dispFinances();                     
+        });    
+        function parseCurrencyVal(el) {
+            return parseFloat(el.value.replace(/[^\d.-]/g, ""));
+        }
+        function dispFinances(){
+            var currencyFormat = {
+                style: 'currency',
+                currency: 'GBP'
+            };
+            var disposableIncome = totalIncome - totalExpenses;
+            $('.js-disp-total-income').text(totalIncome.toLocaleString('en-GB', currencyFormat));
+            $('.js-disp-total-expenses').text(totalExpenses.toLocaleString('en-GB', currencyFormat));
+            $('.js-disp-total-disposable').text(disposableIncome.toLocaleString('en-GB', currencyFormat));
+        }
     }
 };
 
