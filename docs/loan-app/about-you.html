@@ -58,7 +58,7 @@
                                             <legend class="txt-medium txt-bold">Let’s start your application with some basic information.</legend>
                                             <div class="form-group m-t-1">
                                                 <label for="title">Title</label>
-                                                <select class="form-control js-input-mandatory" name="title" id="title" autocomplete="honorific-prefix" data-msg-required="">
+                                                <select class="form-control js-val-mandatory" name="title" id="title" autocomplete="honorific-prefix" data-msg-required="">
                                                     <option></option>
                                                     <option value="0">Mr</option>
                                                     <option value="1">Mrs</option>
@@ -73,11 +73,11 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="firstName">First name</label>
-                                                <input type="text" class="form-control js-input-mandatory" name="firstName" id="firstName" autocomplete="given-name" data-msg-required="">
+                                                <input type="text" class="form-control js-val-mandatory" name="firstName" id="firstName" autocomplete="given-name" data-msg-required="">
                                             </div>               
                                             <div class="form-group">
                                                 <label for="lastName">Last name</label>
-                                                <input type="text" class="form-control js-input-mandatory" name="lastName" id="lastName" autocomplete="family-name" data-msg-required="">
+                                                <input type="text" class="form-control js-val-mandatory" name="lastName" id="lastName" autocomplete="family-name" data-msg-required="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="dobApplicant">Date of birth</label>
@@ -88,7 +88,7 @@
                                     <div class="form-group">
                                         <label for="niNumber" aria-describedby="niNumberHint">National Insurance (NI) number?</label>
                                         <span class="form-hint" id="niNumberHint">For example, ‘QQ 12 34 56 C’</span>
-                                        <input type="text" class="form-control" name="niNumber" id="niNumber" autocomplete="off" data-msg-required="">
+                                        <input type="text" class="form-control js-to-uppercase js-val-mandatory" name="niNumber" id="niNumber" autocomplete="off" data-msg-required="">
                                     </div>
                                     <div class="form-group m-b-0">
                                         <fieldset>
@@ -96,7 +96,7 @@
                                             <div class="form-group">
                                                 <label for="currentPostcode">Postcode</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="currentPostcode" name="currentPostcode" autocomplete="postal-code" data-msg-required="">
+                                                    <input type="text" class="form-control js-to-uppercase js-val-mandatory" id="currentPostcode" name="currentPostcode" autocomplete="postal-code" data-msg-required="">
                                                     <div class="input-group-button">
                                                         <button type="button" class="btn btn-secondary">Find address</button>
                                                     </div>
@@ -118,11 +118,11 @@
                                             <div class="form-row align-items-center">
                                                 <div class="col">
                                                     <label class="form-hint" for="currentAddressYears">Years</label>
-                                                    <input type="text" class="form-control" name="currentAddressYears" id="currentAddressYears" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-max="">
+                                                    <input type="text" class="form-control js-val-mandatory js-val-num" name="currentAddressYears" id="currentAddressYears" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-max="">
                                                 </div>
                                                 <div class="col">
                                                     <label class="form-hint" for="currentAddressMonths">Months</label>
-                                                    <input type="text" class="form-control" name="currentAddressMonths" id="currentAddressMonths" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-min="" data-msg-max="">
+                                                    <input type="text" class="form-control js-val-num" name="currentAddressMonths" id="currentAddressMonths" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-min="" data-msg-max="">
                                                 </div>
                                             </div>
                                         </fieldset>
@@ -132,11 +132,11 @@
                                             <legend class="sr-only">Contact information</legend>
                                             <div class="form-group">
                                                 <label for="email">Email address</label>
-                                                <input type="email" class="form-control" name="email" id="email" data-msg-required="" autocomplete="email" inputmode="email" data-msg-email="">
+                                                <input type="email" class="form-control js-val-email" name="email" id="email" data-msg-required="" autocomplete="email" inputmode="email" data-msg-email="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="phoneNumber">Phone number</label>
-                                                <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" aria-describedby="" inputmode="tel"> 
+                                                <input type="text" class="form-control js-val-mandatory js-val-num" name="phoneNumber" id="phoneNumber" aria-describedby="" inputmode="tel"> 
                                             </div>               
                                         </fieldset>    
                                     </div> 
@@ -239,6 +239,7 @@
     <script src="https://grantm.github.io/jquery-datetextentry/jquery.datetextentry.js"></script>
     <script src="../js/jquery.validate.js"></script>
     <script src="../js/validation.js"></script>
+    <script src="../js/jquery.formatCurrency-1.4.0.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

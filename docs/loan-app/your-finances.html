@@ -66,14 +66,14 @@
                             </p>
                             <a href="#" class="link-on-white" target="_blank">Learn more about Open Banking</a>
                         </div>
-                        <form action="confirmation.html">
+                        <form action="confirmation.html" class="js-cbl-form">
                             <div class="row m-t-3">
                                <div class="col-12 col-md-10">
                                     <div class="form-group">
                                         <fieldset>
                                             <legend>Do you agree to the use of Open Banking?</legend>
                                             <div class="form-check form-check--radio">
-                                                <input class="form-check-input" type="radio" name="openBankingYesNo" id="openBankingYes" value="option1" data-msg-required="">
+                                                <input class="form-check-input js-val-mandatory" type="radio" name="openBankingYesNo" id="openBankingYes" value="option1" data-msg-required="">
                                                 <label class="form-check-label" for="openBankingYes" aria-describedby="openBankingYesHelp">
                                                     Yes, I agree
                                                 </label>
@@ -107,7 +107,7 @@
                                                         <div class="expense-item__form form-group row">
                                                             <label for="monthlySalary" class="col-sm-7">Monthly salary/wage</label>
                                                             <div class="col-sm-5">
-                                                                <input type="text" name="monthlySalary" id="monthlySalary" class="form-control" placeholder="£" data-msg-required=""  autocomplete="off" inputmode="decimal">
+                                                                <input type="text" name="monthlySalary" id="monthlySalary" class="form-control js-disp-currency" placeholder="£" data-msg-required=""  autocomplete="off" inputmode="decimal">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -115,7 +115,7 @@
                                                         <div class="expense-item__form form-group row">
                                                             <label for="benefitIncome" class="col-sm-7">Benefits</label>
                                                             <div class="col-sm-5">
-                                                                <input type="text" name="benefitIncome" id="benefitIncome" placeholder="£" class="form-control" data-msg-required="" autocomplete="off" inputmode="decimal">
+                                                                <input type="text" name="benefitIncome" id="benefitIncome" placeholder="£" class="form-control js-disp-currency" data-msg-required="" autocomplete="off" inputmode="decimal">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -123,7 +123,7 @@
                                                         <div class="expense-item__form form-group row">
                                                             <label for="otherIncome" class="col-sm-7">Other income</label>
                                                             <div class="col-sm-5">
-                                                                <input type="text" name="otherIncome" id="otherIncome" placeholder="£" class="form-control" data-msg-required="" autocomplete="off" inputmode="decimal">
+                                                                <input type="text" name="otherIncome" id="otherIncome" placeholder="£" class="form-control js-disp-currency" data-msg-required="" autocomplete="off" inputmode="decimal">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -138,7 +138,7 @@
                                                         <div class="expense-item__form form-group row">
                                                             <label for="mortgageRentExpenses" class="col-sm-7">Mortgage/rent</label>
                                                             <div class="col-sm-5">
-                                                                <input type="text" name="mortgageRentExpenses" id="mortgageRentExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                                                <input type="text" name="mortgageRentExpenses" id="mortgageRentExpenses" placeholder="£" class="form-control js-disp-currency" inputmode="decimal" autocomplete="off" data-msg-required="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -146,7 +146,7 @@
                                                         <div class="expense-item__form form-group row">
                                                             <label for="creditCommitmentExpenses" class="col-sm-7">Credit commitments</label>
                                                             <div class="col-sm-5">
-                                                                <input type="text" name="creditCommitmentExpenses" id="creditCommitmentExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                                                <input type="text" name="creditCommitmentExpenses" id="creditCommitmentExpenses" placeholder="£" class="form-control js-disp-currency" inputmode="decimal" autocomplete="off" data-msg-required="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -154,7 +154,7 @@
                                                         <div class="expense-item__form form-group row">
                                                             <label for="utilitiesBillsExpenses" class="col-sm-7">Utilities/bills</label>
                                                             <div class="col-sm-5">
-                                                                <input type="text" name="utilitiesBillsExpenses" id="utilitiesBillsExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                                                <input type="text" name="utilitiesBillsExpenses" id="utilitiesBillsExpenses" placeholder="£" class="form-control js-disp-currency" inputmode="decimal" autocomplete="off" data-msg-required="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -162,7 +162,7 @@
                                                         <div class="expense-item__form form-group row">
                                                             <label for="transportExpenses" class="col-sm-7">Transport</label>
                                                             <div class="col-sm-5">
-                                                                <input type="text" name="transportExpenses" id="transportExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                                                <input type="text" name="transportExpenses" id="transportExpenses" placeholder="£" class="form-control js-disp-currency" inputmode="decimal" autocomplete="off" data-msg-required="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -170,7 +170,7 @@
                                                         <div class="expense-item__form form-group row">
                                                             <label for="foodExpenses" class="col-sm-7">Food</label>
                                                             <div class="col-sm-5">
-                                                                <input type="text" name="foodExpenses" id="foodExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                                                <input type="text" name="foodExpenses" id="foodExpenses" placeholder="£" class="form-control js-disp-currency" inputmode="decimal" autocomplete="off" data-msg-required="">
                                                             </div>
                                                         </div>
                                                     </div>                   
@@ -178,7 +178,7 @@
                                                         <div class="expense-item__form form-group row">
                                                             <label for="otherExpenses" class="col-sm-7">Other regular outgoings</label>
                                                             <div class="col-sm-5">
-                                                                <input type="text" name="otherExpenses" id="otherExpenses" placeholder="£" class="form-control" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                                                <input type="text" name="otherExpenses" id="otherExpenses" placeholder="£" class="form-control js-disp-currency" inputmode="decimal" autocomplete="off" data-msg-required="">
                                                             </div>
                                                         </div>
                                                     </div>  
@@ -302,6 +302,9 @@
     <script src="../js/jquery.js"></script>
     <script src="../js/mobile-menu.js"></script>
     <script src="https://grantm.github.io/jquery-datetextentry/jquery.datetextentry.js"></script>
+    <script src="../js/jquery.validate.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="../js/jquery.formatCurrency-1.4.0.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

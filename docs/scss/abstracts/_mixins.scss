@@ -50,28 +50,34 @@
 
 // Small devices
 @mixin media-sm {
-    @media screen and (min-width: (map-get($breakpoints, small))) {
-        @content;
-    }
+  @media screen and (min-width: (map-get($breakpoints, small))) {
+      @content;
   }
-  
-  // Medium devices
-  @mixin media-md {
-    @media screen and (min-width: (map-get($breakpoints, medium))) {
-        @content;
-    }
+}
+
+@mixin media-small-med {
+  @media screen and (min-width: (map-get($breakpoints, s-medium))) {
+      @content;
   }
-  
-  // Large devices
-  @mixin media-lg {
-    @media screen and (min-width: (map-get($breakpoints, large))) {
-        @content;
-    }
+}
+
+// Medium devices
+@mixin media-md {
+  @media screen and (min-width: (map-get($breakpoints, medium))) {
+      @content;
   }
-  
-  // Extra large devices
-  @mixin media-xl {
-    @media screen and (min-width: (map-get($breakpoints, x-large))) {
-        @content;
-    }
+}
+
+// Large devices
+@mixin media-lg {
+  @media screen and (min-width: (map-get($breakpoints, large))) {
+      @content;
   }
+}
+
+// Extra large devices
+@mixin media-xl {
+  @media screen and (min-width: (map-get($breakpoints, x-large))) {
+      @content;
+  }
+}

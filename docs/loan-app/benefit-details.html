@@ -58,11 +58,11 @@
                                             <legend class="sr-only">Please enter your child benefit details</legend>
                                             <div class="form-group">
                                                 <label for="cbNumber">Child Benefit number</label>
-                                                <input type="text" class="form-control" name="cbNumber" id="cbNumber" data-msg-required="">
+                                                <input type="text" class="form-control js-val-mandatory" name="cbNumber" id="cbNumber" data-msg-required="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="numberOfChildren">How many children under 15 do you receive child benefit for?</label>
-                                                <select class="form-control" name="numberOfChildren" id="numberOfChildren" data-msg-required="">
+                                                <select class="form-control js-val-mandatory" name="numberOfChildren" id="numberOfChildren" data-msg-required="">
                                                     <option></option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -75,26 +75,23 @@
                                                     <option value="9">9</option>
                                                 </select>
                                             </div>
-
-                                                    <div class="form-group">
-                                                        <label for="dobChild1">Date of birth</label>
-                                                        <input type="text" class="form-control datepicker js-dob" name="dobChild1" id="dobChild1" placeholder="dd/mm/yyyy">
-                                                    </div>
-                                                    
-                                                    <div class="form-group">
-                                                        <label for="dobChild2">Date of birth</label>
-                                                        <input type="text" class="form-control datepicker js-dob" name="dobChild2" id="dobChild2" placeholder="dd/mm/yyyy">
-                                                    </div>
-                                                     <div class="form-group">
-                                                        <label for="dobChild3">Date of birth</label>
-                                                        <input type="text" class="form-control datepicker js-dob" name="dobChild3" id="dobChild3" placeholder="dd/mm/yyyy">
-                                                    </div> 
-
+                                            <div class="form-group">
+                                                <label for="dobChild1">Date of birth</label>
+                                                <input type="text" class="form-control datepicker js-dob" name="dobChild1" id="dobChild1" placeholder="dd/mm/yyyy">
+                                            </div>                                           
+                                            <div class="form-group">
+                                                <label for="dobChild2">Date of birth</label>
+                                                <input type="text" class="form-control datepicker js-dob" name="dobChild2" id="dobChild2" placeholder="dd/mm/yyyy">
+                                            </div>
+                                                <div class="form-group">
+                                                <label for="dobChild3">Date of birth</label>
+                                                <input type="text" class="form-control datepicker js-dob" name="dobChild3" id="dobChild3" placeholder="dd/mm/yyyy">
+                                            </div> 
                                             <div class="form-group m-b-2">
                                                 <fieldset>
                                                     <legend>How often do you receive your child benefit?</legend>
                                                     <div class="form-check form-check--radio">
-                                                        <input class="form-check-input" type="radio" name="benefitFrequency" id="benefitFrequencyWeekly" value="option1" data-msg-required="">
+                                                        <input class="form-check-input js-val-mandatory" type="radio" name="benefitFrequency" id="benefitFrequencyWeekly" value="option1" data-msg-required="">
                                                         <label class="form-check-label" for="benefitFrequencyWeekly">
                                                             Weekly
                                                         </label>
@@ -111,7 +108,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="cbAmount">How much do you receive?</label>
-                                        <input type="text" name="cbAmount" placeholder="£" class="form-control" id="cbAmount" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                        <input type="text" name="cbAmount" placeholder="£" class="form-control js-val-mandatory js-disp-currency" id="cbAmount" inputmode="decimal" autocomplete="off" data-msg-required="">
                                     </div>
                                     <div class="form-group">
                                         <fieldset>
@@ -125,26 +122,26 @@
                                                     <div class="form-row align-items-center">
                                                         <div class="col">
                                                             <label class="sr-only" for="sortCodeFirst">First two digits of the sort code</label>
-                                                            <input type="text" class="form-control" id="sortCodeFirst" name="sortCodeFirst" inputmode="numeric" autocomplete="off" maxlength="2" data-msg-required="" data-msg-minlength="">
+                                                            <input type="text" class="form-control text-center js-val-num js-val-mandatory" id="sortCodeFirst" name="sortCodeFirst" inputmode="numeric" autocomplete="off" maxlength="2" data-msg-required="" data-msg-minlength="">
                                                         </div>
                                                         <div class="col">
                                                             <label class="sr-only" for="sortCodeMid">Middle two digits of the sort code</label>
-                                                            <input type="text" class="form-control" id="sortCodeMid" name="sortCodeMid" inputmode="numeric" autocomplete="off" maxlength="2" data-msg-required="" data-msg-minlength="">
+                                                            <input type="text" class="form-control text-center js-val-num js-val-mandatory" id="sortCodeMid" name="sortCodeMid" inputmode="numeric" autocomplete="off" maxlength="2" data-msg-required="" data-msg-minlength="">
                                                         </div>
                                                         <div class="col">
                                                             <label class="sr-only" for="sortCodeLast">Last two digits of the sort code</label>
-                                                            <input type="text" class="form-control" id="sortCodeLast" name="sortCodeLast" inputmode="numeric" autocomplete="off" maxlength="2" data-msg-required="" data-msg-minlength="">
+                                                            <input type="text" class="form-control text-center js-val-num js-val-mandatory" id="sortCodeLast" name="sortCodeLast" inputmode="numeric" autocomplete="off" maxlength="2" data-msg-required="" data-msg-minlength="">
                                                         </div>
                                                     </div>
                                                 </fieldset>
                                             </div>
                                             <div class="form-group">
                                                 <label for="bankAccNo">Account number</label>
-                                                <input type="text" class="form-control" name="bankAccNo" id="bankAccNo" maxlength="8" inputmode="numeric" autocomplete="off" data-msg-required="" data-msg-minlength="">
+                                                <input type="text" class="form-control js-val-num js-val-mandatory" name="bankAccNo" id="bankAccNo" maxlength="8" inputmode="numeric" autocomplete="off" data-msg-required="" data-msg-minlength="">
                                             </div>  
                                             <div class="form-group">
                                                 <label for="bankAccName">Account name</label>
-                                                <input type="text" class="form-control" name="bankAccName" id="bankAccName" data-msg-required="">
+                                                <input type="text" class="form-control js-val-mandatory" name="bankAccName" id="bankAccName" data-msg-required="">
                                             </div>
                                         </fieldset>
                                     </div>
@@ -249,6 +246,7 @@
     <script src="https://grantm.github.io/jquery-datetextentry/jquery.datetextentry.js"></script>
     <script src="../js/jquery.validate.js"></script>
     <script src="../js/validation.js"></script>
+    <script src="../js/jquery.formatCurrency-1.4.0.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

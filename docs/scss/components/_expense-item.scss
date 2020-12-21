@@ -8,11 +8,24 @@
     }
 
     &__form{
+        position: relative;
         margin-bottom: 0;
         align-items: center;
         width: calc(100% + 3rem);
         @include media-md{
             margin-left: 5rem;
+        }
+        span.form-control--error{
+            margin-left: 1.5rem;
+            @include media-small-med{
+                position: absolute;
+                top: -0.7rem;
+            }
+        }
+        &.form-group--error > label{
+            @include media-small-med{
+                padding-top: 1.4rem;
+            }
         }
     }
 
@@ -65,3 +78,4 @@
         @include bg-img(icon-outgoing-other,svg);
     }
 }
+

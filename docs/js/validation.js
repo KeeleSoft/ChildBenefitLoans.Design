@@ -22,12 +22,25 @@ $('.js-cbl-form').validate({
         if ($(element).closest('.form-group').find('input.form-control--error').length === 0) {
             $(element).closest('.form-group').removeClass(this.settings.errorGroupClass);
         }
+    },
+    groups: {
+        sortcode: "sortCodeFirst sortCodeMid sortCodeLast"
     }
 });
 
 $.validator.addClassRules({
-    "js-input-mandatory": {
+    "js-val-mandatory": {
         required: true
+    },
+    "js-val-email": {
+        required: true,
+        email: true
+    },
+    "js-val-num":{
+        number: true
+    },
+    "js-disp-currency":{
+        currency: ['£', false]
     }    
 });
 
@@ -46,6 +59,7 @@ $('.js-dob').datetextentry({
     }
 });
 
+//DOB Validation on submit
 $('.js-cbl-form').submit(function(e) {        
     var allValidDob = true;
     $('.js-dob').each(function(){
@@ -58,3 +72,16 @@ $('.js-cbl-form').submit(function(e) {
         e.preventDefault();
     }
 });
+
+//JQ Validation additional methods
+$.validator.addMethod("currency", function (value, element, param) {
+    var isParamString = typeof param === "string"
+        , symbol = isParamString ? param : param[0]
+        , soft = isParamString ? true : param[1]
+        , regex;
+    symbol = symbol.replace(/,/g, "");
+    symbol = soft ? symbol + "]" : symbol + "]?";
+    regex = "^[" + symbol + "([1-9]{1}[0-9]{0,2}(\\,[0-9]{3})*(\\.[0-9]{0,2})?|[1-9]{1}[0-9]{0,}(\\.[0-9]{0,2})?|0(\\.[0-9]{0,2})?|(\\.[0-9]{1,2})?)$";
+    regex = new RegExp(regex);
+    return this.optional(element) || regex.test(value);
+}, "Enter a valid amount");

@@ -1367,6 +1367,7 @@ span.jq-dte-inner, span.jq-dte input {
   margin-bottom: 0;
 }
 .expense-item__form {
+  position: relative;
   margin-bottom: 0;
   align-items: center;
   width: calc(100% + 3rem);
@@ -1374,6 +1375,20 @@ span.jq-dte-inner, span.jq-dte input {
 @media screen and (min-width: 768px) {
   .expense-item__form {
     margin-left: 5rem;
+  }
+}
+.expense-item__form span.form-control--error {
+  margin-left: 1.5rem;
+}
+@media screen and (min-width: 576px) {
+  .expense-item__form span.form-control--error {
+    position: absolute;
+    top: -0.7rem;
+  }
+}
+@media screen and (min-width: 576px) {
+  .expense-item__form.form-group--error > label {
+    padding-top: 1.4rem;
   }
 }
 .expense-item:before {
