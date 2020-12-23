@@ -17,6 +17,7 @@ $max-width: 1180px !default;
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
   'small': 320px,
+  's-medium': 576px,
   'medium': 768px,
   'large': 992px,
   'x-large': 1240px,
@@ -31,7 +32,7 @@ $mb-form-label: 0.2rem;
 $mt-form-conditional: 1rem;
 
 
-/// ---------------- Font settings
+/// ---------------- Font sizes
 $fs-xsmall:             1.2rem;
 $fs-small:              1.4rem;
 $fs-primary:            1.6rem;
@@ -55,6 +56,9 @@ $brand-colours: (
   white:               #ffffff,
   yellow:              #e9ca04,
   warning:             #ffb637,
+  danger:              #ff0046,
+  green:               #44bd32
+
 ) !default;
 
 

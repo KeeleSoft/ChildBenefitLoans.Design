@@ -1,6 +1,11 @@
 .pg-footer{
     background-color: map-get($brand-colours, brandBeige);
     padding: 2rem 0 5rem;
+
+    &__link-block{
+        padding-bottom: 3rem;
+    }
+    &__partner-block{}
 }
 
 .footer-link-block{

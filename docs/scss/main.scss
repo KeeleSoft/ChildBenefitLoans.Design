@@ -22,10 +22,15 @@
 
 // 4. Components
 @import
-  //'components/pg-template',
+  'components/date-entry',
   'components/form-elements',
   'components/provider-card',
   'components/notifications',
   'components/progress-tracker',
-  'components/browser-hacks'
+  'components/expense-item',
+  'components/browser-hacks',
+  'components/finance-summary-card'
   ;
+
+
+  

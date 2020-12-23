@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/mobile-menu.css" />
-    <link rel="stylesheet" href="https://grantm.github.io/jquery-datetextentry/jquery.datetextentry.css">
     <link rel="stylesheet" href="../css/main.css">
     <title>Child Benefit Loans | Benefit details</title>
 </head>
@@ -50,19 +49,19 @@
                 <h2 class="pg-heading">Child Benefit details</h2>
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-10 col-lg-8 col-xl-8">
-                        <form action="your-finances.html">
+                        <form action="your-finances.html" class="js-cbl-form">
                             <div class="row m-t-3">
-                               <div class="col-12 col-md-8">
+                               <div class="col-12 col-md-10">
                                     <div class="form-group m-b-0">
                                         <fieldset>
                                             <legend class="sr-only">Please enter your child benefit details</legend>
                                             <div class="form-group">
                                                 <label for="cbNumber">Child Benefit number</label>
-                                                <input type="text" class="form-control" name="cbNumber" id="cbNumber" data-msg-required="">
+                                                <input type="text" class="form-control js-val-mandatory" name="cbNumber" id="cbNumber" data-msg-required="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="numberOfChildren">How many children under 15 do you receive child benefit for?</label>
-                                                <select class="form-control" name="numberOfChildren" id="numberOfChildren" data-msg-required="">
+                                                <select class="form-control js-val-mandatory" name="numberOfChildren" id="numberOfChildren" data-msg-required="">
                                                     <option></option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -76,45 +75,22 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <fieldset>
-                                                    <legend>How old are your children?</legend>
-                                                    <div class="form-row align-items-center m-b-2">
-                                                        <div class="col">
-                                                            <label class="form-hint" for="childYears1">Years</label>
-                                                            <input type="text" class="form-control" name="childYears1" id="childYears1" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-max="">
-                                                        </div>
-                                                        <div class="col">
-                                                            <label class="form-hint" for="childMonths1">Months</label>
-                                                            <input type="text" class="form-control" name="childMonths1" id="childMonths1" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-min="" data-msg-max="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row align-items-center m-b-2">
-                                                        <div class="col">
-                                                            <label class="form-hint" for="childYears2">Years</label>
-                                                            <input type="text" class="form-control" name="childYears2" id="childYears2" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-max="">
-                                                        </div>
-                                                        <div class="col">
-                                                            <label class="form-hint" for="childMonths2">Months</label>
-                                                            <input type="text" class="form-control" name="childMonths2" id="childMonths2" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-min="" data-msg-max="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row align-items-center">
-                                                        <div class="col">
-                                                            <label class="form-hint" for="childYears3">Years</label>
-                                                            <input type="text" class="form-control" name="childYears3" id="childYears3" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-max="">
-                                                        </div>
-                                                        <div class="col">
-                                                            <label class="form-hint" for="childMonths3">Months</label>
-                                                            <input type="text" class="form-control" name="childMonths3" id="childMonths3" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-min="" data-msg-max="">
-                                                        </div>
-                                                    </div>
-                                                </fieldset>
+                                                <label for="dobChild1">Date of birth</label>
+                                                <input type="text" class="form-control datepicker js-dob" name="dobChild1" id="dobChild1" placeholder="dd/mm/yyyy">
+                                            </div>                                           
+                                            <div class="form-group">
+                                                <label for="dobChild2">Date of birth</label>
+                                                <input type="text" class="form-control datepicker js-dob" name="dobChild2" id="dobChild2" placeholder="dd/mm/yyyy">
                                             </div>
+                                                <div class="form-group">
+                                                <label for="dobChild3">Date of birth</label>
+                                                <input type="text" class="form-control datepicker js-dob" name="dobChild3" id="dobChild3" placeholder="dd/mm/yyyy">
+                                            </div> 
                                             <div class="form-group m-b-2">
                                                 <fieldset>
                                                     <legend>How often do you receive your child benefit?</legend>
                                                     <div class="form-check form-check--radio">
-                                                        <input class="form-check-input" type="radio" name="benefitFrequency" id="benefitFrequencyWeekly" value="option1" data-msg-required="">
+                                                        <input class="form-check-input js-val-mandatory" type="radio" name="benefitFrequency" id="benefitFrequencyWeekly" value="option1" data-msg-required="">
                                                         <label class="form-check-label" for="benefitFrequencyWeekly">
                                                             Weekly
                                                         </label>
@@ -131,12 +107,12 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="cbAmount">How much do you receive?</label>
-                                        <input type="text" name="cbAmount" placeholder="£" class="form-control" id="cbAmount" inputmode="decimal" autocomplete="off" data-msg-required="">
+                                        <input type="text" name="cbAmount" placeholder="£" class="form-control js-val-mandatory js-disp-currency" id="cbAmount" inputmode="decimal" autocomplete="off" data-msg-required="">
                                     </div>
                                     <div class="form-group">
                                         <fieldset>
                                             <legend aria-describedby="bankDetailsHelp">Please enter the bank account details that you currently receive your child benefit payment into</legend>
-                                            <span class="form-hint" id="bankDetailsHelp">
+                                            <p class="txt-bold m-b-1" id="bankDetailsHelp">
                                                 IMPORTANT – this will also be the bank account that we will send your loan (if approved).
                                             </span>
                                             <div class="form-group">
@@ -145,26 +121,26 @@
                                                     <div class="form-row align-items-center">
                                                         <div class="col">
                                                             <label class="sr-only" for="sortCodeFirst">First two digits of the sort code</label>
-                                                            <input type="text" class="form-control" id="sortCodeFirst" name="sortCodeFirst" inputmode="numeric" autocomplete="off" maxlength="2" data-msg-required="" data-msg-minlength="">
+                                                            <input type="text" class="form-control text-center js-val-num js-val-mandatory" id="sortCodeFirst" name="sortCodeFirst" inputmode="numeric" autocomplete="off" maxlength="2" data-msg-required="" data-msg-minlength="">
                                                         </div>
                                                         <div class="col">
                                                             <label class="sr-only" for="sortCodeMid">Middle two digits of the sort code</label>
-                                                            <input type="text" class="form-control" id="sortCodeMid" name="sortCodeMid" inputmode="numeric" autocomplete="off" maxlength="2" data-msg-required="" data-msg-minlength="">
+                                                            <input type="text" class="form-control text-center js-val-num js-val-mandatory" id="sortCodeMid" name="sortCodeMid" inputmode="numeric" autocomplete="off" maxlength="2" data-msg-required="" data-msg-minlength="">
                                                         </div>
                                                         <div class="col">
                                                             <label class="sr-only" for="sortCodeLast">Last two digits of the sort code</label>
-                                                            <input type="text" class="form-control" id="sortCodeLast" name="sortCodeLast" inputmode="numeric" autocomplete="off" maxlength="2" data-msg-required="" data-msg-minlength="">
+                                                            <input type="text" class="form-control text-center js-val-num js-val-mandatory" id="sortCodeLast" name="sortCodeLast" inputmode="numeric" autocomplete="off" maxlength="2" data-msg-required="" data-msg-minlength="">
                                                         </div>
                                                     </div>
                                                 </fieldset>
                                             </div>
                                             <div class="form-group">
                                                 <label for="bankAccNo">Account number</label>
-                                                <input type="text" class="form-control" name="bankAccNo" id="bankAccNo" maxlength="8" inputmode="numeric" autocomplete="off" data-msg-required="" data-msg-minlength="">
+                                                <input type="text" class="form-control js-val-num js-val-mandatory" name="bankAccNo" id="bankAccNo" maxlength="8" inputmode="numeric" autocomplete="off" data-msg-required="" data-msg-minlength="">
                                             </div>  
                                             <div class="form-group">
                                                 <label for="bankAccName">Account name</label>
-                                                <input type="text" class="form-control" name="bankAccName" id="bankAccName" data-msg-required="">
+                                                <input type="text" class="form-control js-val-mandatory" name="bankAccName" id="bankAccName" data-msg-required="">
                                             </div>
                                         </fieldset>
                                     </div>
@@ -183,7 +159,7 @@
     <!-- footer content starts-->
     <footer class="pg-footer">
         <div class="container">
-            <div class="row justify-content-between pb-5">
+            <div class="row justify-content-between pg-footer__link-block">
                 <div class="col-md-7 d-flex justify-content-between flex-wrap">
                     <section class="footer-link-block">
                         <h5 class="footer-link-block__title">Key Links</h5>
@@ -192,7 +168,6 @@
                                 <li><a href="#" class="footer-link-block__link">Apply</a></li>
                                 <li><a href="#" class="footer-link-block__link">Why us?</a></li>
                                 <li><a href="#" class="footer-link-block__link">Contact</a></li>
-                                <li><a href="#" class="footer-link-block__link">Make a payment</a></li>
                             </ul>
                         </nav>
                     </section>
@@ -210,7 +185,7 @@
                         <h5 class="footer-link-block__title">Legal</h5>
                         <nav>
                             <ul class="footer-link-block__list">
-                                <li><a href="#" class="footer-link-block__link">Website terms and conditions</a></li>
+                                <li><a href="#" class="footer-link-block__link">Terms and conditions</a></li>
                                 <li><a href="#" class="footer-link-block__link">Privacy</a></li>
                             </ul>
                         </nav>
@@ -218,9 +193,9 @@
                 </div>
                 <div class="footer-brand-wrap col-md-4 d-flex align-items-start justify-content-between flex-wrap">
                     <div class="d-flex flex-column align-items-start">
-                        <div class="footer-brand">
+                        <div class="footer-brand">                            
                             <img src="../images/logo-child-benefit-loans.svg" alt="Child Benefit Loans logo" class="footer-brand__logo mb-4" />
-                            <span class="txt-small">
+                            <span class="txt-small m-b-2 d-block">
                                 &copy; 2020 Child Benefit Loans <br />
                                 all rights reserved
                             </span>
@@ -236,19 +211,27 @@
                     </section>
                 </div>
             </div>
-            <div class="row justify-content-between align-items-end mt-5">
-                <div class="col-md-3">
+            <div class="row justify-content-between align-items-start">
+                <div class="col-md-7">
                     <div class="row">
-                        <div class="col-md-5">
-                            <span class="txt-xsmall">Recognised ethical loan product by:</span>
+                        <div class="col-md-4 m-b-2">
+                            <span class="txt-xsmall d-block m-b-1">Recognised ethical loan product by:</span>
+                            <a href="https://www.fairlife.org.uk/" class="img-link" target="_blank">
+                                Fair Life
+                                <img src="../images/logo-fairlife.svg" alt="Fair Life logo" />
+                            </a>                         
                         </div>
-                        <div class="col-md-4">
-                            <img src="../images/logo-fairlife.svg" alt="Fair Life logo" />
+                        <div class="col-6 col-md-6 m-b-2">
+                            <span class="txt-xsmall d-block m-b-1">Supported by:</span>
+                            <a href="https://www.stoploansharks.co.uk/" class="img-link" target="_blank">
+                                Stop Loan Sharks
+                                <img src="../images/logo-stop-loan-sharks.svg" alt="Stop Loan Sharks logo" />
+                            </a>                            
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <span class="txt-small">
+                    <span class="txt-small txt-bold">
                         London Mutual Credit Union is authorised by the Prudential Regulation Authority and regulated by the 
                         Financial Conduct Authority and the Prudential Regulation Authority (FRN 213248)  
                     </span>
@@ -259,10 +242,10 @@
     <!-- footer content ends -->
     <script src="../js/jquery.js"></script>
     <script src="../js/mobile-menu.js"></script>
-    <script src="https://grantm.github.io/jquery-datetextentry/jquery.datetextentry.js"></script>
-    <script>
-        $('.datepicker').datetextentry();
-    </script>
+    <script src="../js/dateTextEntry.js"></script>
+    <script src="../js/jquery.validate.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="../js/jquery.formatCurrency-1.4.0.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

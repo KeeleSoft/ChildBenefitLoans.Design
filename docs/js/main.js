@@ -1,4 +1,3 @@
-
 var cblApp = {    
     init: function(){
         this.scrollDetection();
@@ -6,6 +5,11 @@ var cblApp = {
         this.loadSpinner();
         this.responsiveMenu();
         this.showAttachmentName();
+        this.hideCookieMsg();
+        this.checkCookieOnLoad();
+        this.convertToUppercase();
+        this.formatCurrencyConfig();
+        this.incomeExpenseTrigger();
     },
     //--------- scroll detection and header status change
     scrollDetection:function(){    
@@ -72,6 +76,121 @@ var cblApp = {
                 $(this).next('.custom-file-label').html('Choose file')
             }
         });
+    },
+    hideCookieMsg: function(){
+        $('.js-close-cookie-msg').on('click', function (e) {
+            e.preventDefault();
+            localStorage.setItem('cookieStatus', 'hidden');
+            $('.js-cookie-msg').hide();
+        });         
+    },
+    checkCookieOnLoad: function(){
+        if (localStorage.getItem('cookieStatus') === 'hidden') {
+            $('.js-cookie-msg').hide();
+        } else {
+            $('.js-cookie-msg').show();
+        }
+    },
+    convertToUppercase: function(){
+        $('.js-to-uppercase').on('blur', function (e) {
+            var input = $(this);
+            var start = input[0].selectionStart;
+            $(this).val(function (_, val) {
+                return val.toUpperCase();
+            });
+            input[0].selectionStart = input[0].selectionEnd = start;
+        });
+    },
+    formatCurrencyConfig: function(){
+        $(document).on('blur', '.js-disp-currency', function () {
+            $(this).formatCurrency({
+                colorize: true
+                , negativeFormat: '-%s%n'
+                , roundToDecimalPlace: 2
+            });
+        }).keyup(function (e) {
+            var e = window.event || e;
+            var keyUnicode = e.charCode || e.keyCode;
+            if (e !== undefined) {
+                switch (keyUnicode) {
+                case 16:
+                    break; // Shift
+                case 17:
+                    break; // Ctrl
+                case 18:
+                    break; // Alt
+                case 27:
+                    this.value = '';
+                    break; // Esc: clear entry
+                case 35:
+                    break; // End
+                case 36:
+                    break; // Home
+                case 37:
+                    break; // cursor left
+                case 38:
+                    break; // cursor up
+                case 39:
+                    break; // cursor right
+                case 40:
+                    break; // cursor down
+                case 78:
+                    break; // N (Opera 9.63+ maps the "." from the number key section to the "N" key too!) (See: http://unixpapa.com/js/key.html search for ". Del")
+                case 110:
+                    break; // . number block (Opera 9.63+ maps the "." from the number block to the "N" key (78) !!!)
+                case 190:
+                    break; // .
+                default:
+                    $('.js-disp-currency').formatCurrency({
+                        colorize: true
+                        , negativeFormat: '-%s%n'
+                        , roundToDecimalPlace: -1
+                        , eventOnDecimalsEntered: true
+                    });
+                }
+            }
+        });
+    },
+    incomeExpenseTrigger: function(){
+        $('.js-income-inp, .js-expense-inp').on('blur',this.incomeExpenseCalc);
+    },
+    incomeExpenseCalc: function(){
+        var totalIncome = 0,
+            totalExpenses = 0;
+        $('.js-income-inp,.js-expense-inp').each(function () {
+            if($(this).hasClass('js-income-inp')){
+                var intTotalIncome = parseCurrencyVal(this);
+                if (!isNaN(intTotalIncome)) {
+                    totalIncome += intTotalIncome;
+                }
+                else {
+                    return;
+                }
+            }
+            else if($(this).hasClass('js-expense-inp')){
+                var intTotalExpenses = parseCurrencyVal(this);
+                if (!isNaN(intTotalExpenses)) {
+                    totalExpenses += intTotalExpenses;
+                }
+                else {
+                    return;
+                }
+            }
+            dispFinances();                     
+        });    
+        function parseCurrencyVal(el) {
+            return parseFloat(el.value.replace(/[^\d.-]/g, ""));
+        }
+        function dispFinances(){
+            var currencyFormat = {
+                style: 'currency',
+                currency: 'GBP'
+            };
+            var disposableIncome = totalIncome - totalExpenses;
+            $('.js-disp-total-income').text(totalIncome.toLocaleString('en-GB', currencyFormat));
+            $('.js-disp-total-expenses').text(totalExpenses.toLocaleString('en-GB', currencyFormat));
+            $('.js-disp-total-disposable').text(disposableIncome.toLocaleString('en-GB', currencyFormat));
+        }
     }
 };
 

@@ -10,6 +10,17 @@
     <title>Child Benefit Loans | Eligibility check</title>
 </head>
 <body>
+    <div class="cookie-msg js-cookie-msg" role="region" aria-label="Cookie banner">
+        <div class="container">
+            <h2 class="txt-medium txt-bold m-b-1">Our site uses cookies.</h2>
+            <p>We use cookies to improve your experience on our site. Lorem ipsum 
+                dolor sit <a href="#" class="link-on-colour">privacy policy</a> , 
+                consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#" role="button" class="btn btn-primary js-close-cookie-msg" />Accept cookies</a>
+            <a href="#" role="button" class="btn btn-secondary js-close-cookie-msg" />Decline cookies</a>
+        </div>
+    </div>
     <div class="header">
         <header class="header__container container">
             <a href="#" class="header__logo">
@@ -38,7 +49,7 @@
                         </p>
                         <form action="about-you.html">
                             <div class="row m-t-3">
-                               <div class="col-12 col-md-8">
+                               <div class="col-12 col-md-10">
                                     <div class="form-group">
                                         <fieldset>
                                             <legend class="txt-medium txt-bold">To apply for a loan, you must:</legend>
@@ -69,8 +80,8 @@
                                             </div>
                                             <div class="form-check">
                                                 <input type="checkbox" name="checkSaving" class="form-check-input js-eligibility-check" id="checkSaving">
-                                                <label class="form-check-label" for="checkSaving">Agree to save £2.50 a week (or £10 a month), which 
-                                                    can be withdrawn once your loan is repaid
+                                                <label class="form-check-label" for="checkSaving">Agree to save at least £2.50 a week (or £10 a month), which can 
+                                                    be withdrawn once your loan is repaid  
                                                 </label>
                                             </div>
                                             <div class="form-check">
@@ -105,7 +116,7 @@
                             <div class="inset-txt inset-txt--warning">
                                 <h3 class="txt-medium">Your home postcode is not covered by one of our partner credit unions.</h3>
                                 <div class="row m-t-2">
-                                    <div class="col-12 col-md-8">
+                                    <div class="col-12 col-md-10">
                                         <div class="form-group">
                                             <label for="workPostcode">Please enter your work postcode</label>
                                             <div class="input-group">
@@ -129,7 +140,7 @@
                             <div class="inset-txt inset-txt--warning m-t-2">
                                 <h3 class="txt-medium">Your work postcode is not covered by one of our partner credit unions.</h3>
                                 <div class="row m-t-2">
-                                    <div class="col-12 col-md-8">
+                                    <div class="col-12 col-md-10">
                                         <div class="form-group">
                                             <label for="existingCUList">Are you an existing member of these credit unions?</label>
                                             <select class="form-control" name="existingCUList" id="existingCUList" data-msg-required="Select a Credit Union">
@@ -177,7 +188,7 @@
     <!-- footer content starts-->
     <footer class="pg-footer">
         <div class="container">
-            <div class="row justify-content-between pb-5">
+            <div class="row justify-content-between pg-footer__link-block">
                 <div class="col-md-7 d-flex justify-content-between flex-wrap">
                     <section class="footer-link-block">
                         <h5 class="footer-link-block__title">Key Links</h5>
@@ -186,7 +197,6 @@
                                 <li><a href="#" class="footer-link-block__link">Apply</a></li>
                                 <li><a href="#" class="footer-link-block__link">Why us?</a></li>
                                 <li><a href="#" class="footer-link-block__link">Contact</a></li>
-                                <li><a href="#" class="footer-link-block__link">Make a payment</a></li>
                             </ul>
                         </nav>
                     </section>
@@ -204,7 +214,7 @@
                         <h5 class="footer-link-block__title">Legal</h5>
                         <nav>
                             <ul class="footer-link-block__list">
-                                <li><a href="#" class="footer-link-block__link">Website terms and conditions</a></li>
+                                <li><a href="#" class="footer-link-block__link">Terms and conditions</a></li>
                                 <li><a href="#" class="footer-link-block__link">Privacy</a></li>
                             </ul>
                         </nav>
@@ -212,9 +222,9 @@
                 </div>
                 <div class="footer-brand-wrap col-md-4 d-flex align-items-start justify-content-between flex-wrap">
                     <div class="d-flex flex-column align-items-start">
-                        <div class="footer-brand">
+                        <div class="footer-brand">                            
                             <img src="../images/logo-child-benefit-loans.svg" alt="Child Benefit Loans logo" class="footer-brand__logo mb-4" />
-                            <span class="txt-small">
+                            <span class="txt-small m-b-2 d-block">
                                 &copy; 2020 Child Benefit Loans <br />
                                 all rights reserved
                             </span>
@@ -230,19 +240,27 @@
                     </section>
                 </div>
             </div>
-            <div class="row justify-content-between align-items-end mt-5">
-                <div class="col-md-3">
+            <div class="row justify-content-between align-items-start">
+                <div class="col-md-7">
                     <div class="row">
-                        <div class="col-md-5">
-                            <span class="txt-xsmall">Recognised ethical loan product by:</span>
+                        <div class="col-md-4 m-b-2">
+                            <span class="txt-xsmall d-block m-b-1">Recognised ethical loan product by:</span>
+                            <a href="https://www.fairlife.org.uk/" class="img-link" target="_blank">
+                                Fair Life
+                                <img src="../images/logo-fairlife.svg" alt="Fair Life logo" />
+                            </a>                         
                         </div>
-                        <div class="col-md-4">
-                            <img src="../images/logo-fairlife.svg" alt="Fair Life logo" />
+                        <div class="col-6 col-md-6 m-b-2">
+                            <span class="txt-xsmall d-block m-b-1">Supported by:</span>
+                            <a href="https://www.stoploansharks.co.uk/" class="img-link" target="_blank">
+                                Stop Loan Sharks
+                                <img src="../images/logo-stop-loan-sharks.svg" alt="Stop Loan Sharks logo" />
+                            </a>                            
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <span class="txt-small">
+                    <span class="txt-small txt-bold">
                         London Mutual Credit Union is authorised by the Prudential Regulation Authority and regulated by the 
                         Financial Conduct Authority and the Prudential Regulation Authority (FRN 213248)  
                     </span>
@@ -253,6 +271,10 @@
     <!-- footer content ends -->
     <script src="../js/jquery.js"></script>
     <script src="../js/mobile-menu.js"></script>
+    <script src="../js/dateTextEntry.js"></script>
+    <script src="../js/jquery.validate.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="../js/jquery.formatCurrency-1.4.0.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/mobile-menu.css" />
-    <link rel="stylesheet" href="https://grantm.github.io/jquery-datetextentry/jquery.datetextentry.css">
     <link rel="stylesheet" href="../css/main.css">
     <title>Child Benefit Loans | About you</title>
 </head>
@@ -50,15 +49,15 @@
                 <h2 class="pg-heading">About you</h2>
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-10 col-lg-8 col-xl-8">
-                        <form action="benefit-details.html">
+                        <form action="benefit-details.html" class="js-cbl-form">
                             <div class="row m-t-3">
-                               <div class="col-12 col-md-8">
+                               <div class="col-12 col-md-10">
                                     <div class="form-group m-b-0">
                                         <fieldset>
                                             <legend class="txt-medium txt-bold">Let’s start your application with some basic information.</legend>
                                             <div class="form-group m-t-1">
                                                 <label for="title">Title</label>
-                                                <select class="form-control" name="title" id="title" autocomplete="honorific-prefix" data-msg-required="">
+                                                <select class="form-control js-val-mandatory" name="title" id="title" autocomplete="honorific-prefix" data-msg-required="">
                                                     <option></option>
                                                     <option value="0">Mr</option>
                                                     <option value="1">Mrs</option>
@@ -73,21 +72,22 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="firstName">First name</label>
-                                                <input type="text" class="form-control" name="firstName" id="firstName" autocomplete="given-name" data-msg-required="">
+                                                <input type="text" class="form-control js-val-mandatory" name="firstName" id="firstName" autocomplete="given-name" data-msg-required="">
                                             </div>               
                                             <div class="form-group">
                                                 <label for="lastName">Last name</label>
-                                                <input type="text" class="form-control" name="lastName" id="lastName" autocomplete="family-name" data-msg-required="">
+                                                <input type="text" class="form-control js-val-mandatory" name="lastName" id="lastName" autocomplete="family-name" data-msg-required="">
                                             </div>
                                             <div class="form-group">
-                                                <label for="dob">Date of birth</label>
-                                                <input type="text" class="form-control datepicker" name="dob" id="dob" placeholder="dd/mm/yyyy">
+                                                <label for="dobApplicant">Date of birth</label>
+                                                <input type="text" class="form-control datepicker js-dob" name="dobApplicant" id="dobApplicant" placeholder="dd/mm/yyyy">
                                             </div>
                                         </fieldset>
                                     </div>
                                     <div class="form-group">
-                                        <label for="niNumber">National Insurance (NI) number?</label>
-                                        <input type="text" class="form-control" name="niNumber" id="niNumber" autocomplete="off" data-msg-required="">
+                                        <label for="niNumber" aria-describedby="niNumberHint">National Insurance (NI) number?</label>
+                                        <span class="form-hint" id="niNumberHint">For example, ‘QQ 12 34 56 C’</span>
+                                        <input type="text" class="form-control js-to-uppercase js-val-mandatory" name="niNumber" id="niNumber" autocomplete="off" data-msg-required="">
                                     </div>
                                     <div class="form-group m-b-0">
                                         <fieldset>
@@ -95,7 +95,7 @@
                                             <div class="form-group">
                                                 <label for="currentPostcode">Postcode</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="currentPostcode" name="currentPostcode" autocomplete="postal-code" data-msg-required="">
+                                                    <input type="text" class="form-control js-to-uppercase js-val-mandatory" id="currentPostcode" name="currentPostcode" autocomplete="postal-code" data-msg-required="">
                                                     <div class="input-group-button">
                                                         <button type="button" class="btn btn-secondary">Find address</button>
                                                     </div>
@@ -117,11 +117,11 @@
                                             <div class="form-row align-items-center">
                                                 <div class="col">
                                                     <label class="form-hint" for="currentAddressYears">Years</label>
-                                                    <input type="text" class="form-control" name="currentAddressYears" id="currentAddressYears" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-max="">
+                                                    <input type="text" class="form-control js-val-num" name="currentAddressYears" id="currentAddressYears" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-max="">
                                                 </div>
                                                 <div class="col">
                                                     <label class="form-hint" for="currentAddressMonths">Months</label>
-                                                    <input type="text" class="form-control" name="currentAddressMonths" id="currentAddressMonths" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-min="" data-msg-max="">
+                                                    <input type="text" class="form-control js-val-num" name="currentAddressMonths" id="currentAddressMonths" maxlength="2" inputmode="numeric" data-msg-required="" data-msg-min="" data-msg-max="">
                                                 </div>
                                             </div>
                                         </fieldset>
@@ -131,11 +131,11 @@
                                             <legend class="sr-only">Contact information</legend>
                                             <div class="form-group">
                                                 <label for="email">Email address</label>
-                                                <input type="email" class="form-control" name="email" id="email" data-msg-required="" autocomplete="email" inputmode="email" data-msg-email="">
+                                                <input type="email" class="form-control js-val-email" name="email" id="email" data-msg-required="" autocomplete="email" inputmode="email" data-msg-email="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="phoneNumber">Phone number</label>
-                                                <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" aria-describedby="" inputmode="tel"> 
+                                                <input type="text" class="form-control js-val-mandatory js-val-num" name="phoneNumber" id="phoneNumber" aria-describedby="" inputmode="tel"> 
                                             </div>               
                                         </fieldset>    
                                     </div> 
@@ -152,7 +152,7 @@
     <!-- footer content starts-->
     <footer class="pg-footer">
         <div class="container">
-            <div class="row justify-content-between pb-5">
+            <div class="row justify-content-between pg-footer__link-block">
                 <div class="col-md-7 d-flex justify-content-between flex-wrap">
                     <section class="footer-link-block">
                         <h5 class="footer-link-block__title">Key Links</h5>
@@ -161,7 +161,6 @@
                                 <li><a href="#" class="footer-link-block__link">Apply</a></li>
                                 <li><a href="#" class="footer-link-block__link">Why us?</a></li>
                                 <li><a href="#" class="footer-link-block__link">Contact</a></li>
-                                <li><a href="#" class="footer-link-block__link">Make a payment</a></li>
                             </ul>
                         </nav>
                     </section>
@@ -179,7 +178,7 @@
                         <h5 class="footer-link-block__title">Legal</h5>
                         <nav>
                             <ul class="footer-link-block__list">
-                                <li><a href="#" class="footer-link-block__link">Website terms and conditions</a></li>
+                                <li><a href="#" class="footer-link-block__link">Terms and conditions</a></li>
                                 <li><a href="#" class="footer-link-block__link">Privacy</a></li>
                             </ul>
                         </nav>
@@ -187,9 +186,9 @@
                 </div>
                 <div class="footer-brand-wrap col-md-4 d-flex align-items-start justify-content-between flex-wrap">
                     <div class="d-flex flex-column align-items-start">
-                        <div class="footer-brand">
+                        <div class="footer-brand">                            
                             <img src="../images/logo-child-benefit-loans.svg" alt="Child Benefit Loans logo" class="footer-brand__logo mb-4" />
-                            <span class="txt-small">
+                            <span class="txt-small m-b-2 d-block">
                                 &copy; 2020 Child Benefit Loans <br />
                                 all rights reserved
                             </span>
@@ -205,19 +204,27 @@
                     </section>
                 </div>
             </div>
-            <div class="row justify-content-between align-items-end mt-5">
-                <div class="col-md-3">
+            <div class="row justify-content-between align-items-start">
+                <div class="col-md-7">
                     <div class="row">
-                        <div class="col-md-5">
-                            <span class="txt-xsmall">Recognised ethical loan product by:</span>
+                        <div class="col-md-4 m-b-2">
+                            <span class="txt-xsmall d-block m-b-1">Recognised ethical loan product by:</span>
+                            <a href="https://www.fairlife.org.uk/" class="img-link" target="_blank">
+                                Fair Life
+                                <img src="../images/logo-fairlife.svg" alt="Fair Life logo" />
+                            </a>                         
                         </div>
-                        <div class="col-md-4">
-                            <img src="../images/logo-fairlife.svg" alt="Fair Life logo" />
+                        <div class="col-6 col-md-6 m-b-2">
+                            <span class="txt-xsmall d-block m-b-1">Supported by:</span>
+                            <a href="https://www.stoploansharks.co.uk/" class="img-link" target="_blank">
+                                Stop Loan Sharks
+                                <img src="../images/logo-stop-loan-sharks.svg" alt="Stop Loan Sharks logo" />
+                            </a>                            
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <span class="txt-small">
+                    <span class="txt-small txt-bold">
                         London Mutual Credit Union is authorised by the Prudential Regulation Authority and regulated by the 
                         Financial Conduct Authority and the Prudential Regulation Authority (FRN 213248)  
                     </span>
@@ -228,10 +235,10 @@
     <!-- footer content ends -->
     <script src="../js/jquery.js"></script>
     <script src="../js/mobile-menu.js"></script>
-    <script src="https://grantm.github.io/jquery-datetextentry/jquery.datetextentry.js"></script>
-    <script>
-        $('.datepicker').datetextentry();
-    </script>
+    <script src="../js/dateTextEntry.js"></script>
+    <script src="../js/jquery.validate.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="../js/jquery.formatCurrency-1.4.0.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

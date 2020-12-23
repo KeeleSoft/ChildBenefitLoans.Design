@@ -1,0 +1,82 @@
+.expense-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+
+    &__form{
+        position: relative;
+        margin-bottom: 0;
+        align-items: center;
+        width: calc(100% + 3rem);
+        @include media-md{
+            margin-left: 5rem;
+        }
+        span.form-control--error{
+            margin-left: 1.5rem;
+            @include media-small-med{
+                position: absolute;
+                top: -0.7rem;
+            }
+        }
+        &.form-group--error > label{
+            @include media-small-med{
+                padding-top: 1.6rem;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &:before{
+        display: none;
+        @include media-md{
+            position: absolute;
+            content: '';
+            display: block;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 3px;
+            background-size: 30px 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: 2rem;
+        }
+    }
+    &--income:before{
+        background-color:rgba(map-get($brand-colours, brandPurple),0.3);
+    }
+    &--outgoing:before{
+        background-color:rgba(map-get($brand-colours, brandPurple),0.3);
+    }
+    &--salary:before{
+        @include bg-img(icon-income-salary,svg);            
+    }
+    &--benefits:before{
+        @include bg-img(icon-income-benefits,svg);            
+    }
+    &--other:before{
+        @include bg-img(icon-income-other,svg);            
+    }
+    &--rent:before{
+        @include bg-img(icon-outgoing-rent,svg);            
+    }
+    &--credit:before{
+        @include bg-img(icon-outgoing-credit,svg);            
+    }
+    &--utils:before{
+        @include bg-img(icon-outgoing-utils,svg);            
+    }
+    &--transport:before{
+        @include bg-img(icon-outgoing-transport,svg);            
+    }
+    &--food:before{
+        @include bg-img(icon-outgoing-food,svg);            
+    }
+    &--other-outgoings:before{
+        @include bg-img(icon-outgoing-other,svg);
+    }
+}
+

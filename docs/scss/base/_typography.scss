@@ -14,36 +14,36 @@ p{
 }
 
 .txt-xsmall{
-    font-size: $fs-xsmall;
+    font-size: $fs-xsmall!important;
 }
 
 .txt-small{
-    font-size: $fs-small;
+    font-size: $fs-small!important;
 }
 
 .txt-primary{
-    font-size: $fs-primary;
+    font-size: $fs-primary!important;
 }
 
 .txt-medium{
-    font-size: $fs-medium;
+    font-size: $fs-medium!important;
     line-height: 1.5;
 }
 
 .txt-large{
-    font-size: $fs-large;
+    font-size: $fs-large!important;
 }
 
 .txt-xlarge{
-    font-size: $fs-xlarge;
+    font-size: $fs-xlarge!important;
 }
 
-.txt-xlarge{
-    font-size: $fs-xxlarge;
+.txt-xxlarge{
+    font-size: $fs-xxlarge!important;
 }
 
-.txt-xlarge{
-    font-size: $fs-xxxlarge;
+.txt-xxxlarge{
+    font-size: $fs-xxxlarge!important;
 }
 
 .pg-heading{

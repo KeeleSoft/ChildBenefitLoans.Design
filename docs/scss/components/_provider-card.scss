@@ -1,15 +1,15 @@
 .provider-card{
     margin-bottom: 3rem;
     &__content-wrap{
-        background: #daffed;
-        padding: 3rem;
+        background: rgba(map-get($brand-colours, brandPurple),0.1);
+        border: 5px solid map-get($brand-colours, brandPurple);
+        padding: 2rem 3rem 3rem;
         margin-left: 0;
         margin-right: 0;
         border-radius: $form-control-border-radius;
     }
     &__logo{
-        padding-left: 0;
-        padding-right: 3rem;
+        padding: 1rem 3rem 0 0;
         img{
             max-width: 15rem;
         }
@@ -19,7 +19,6 @@
         line-height: 1.5;
     }
     &__desc{
-        padding-right: 0;
-        padding-left: 0;
+        padding: 1rem 0 0 0;
     }
 }
