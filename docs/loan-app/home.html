@@ -84,16 +84,22 @@
                 <div class="calc-block__inner">
                     <div class="container">
                         <div class="loan-calc">
-                            <section class="loan-calc__cb-info">
+                            <section class="cb-info-block">
                                 <fieldset class="row">
                                     <legend class="sr-only">Your child benefit</legend>
-                                    <h4 class="txt-xlarge col-md-2" aria-hidden="true">Your child benefit</h4>
-                                    <div class="col-md-3">
+                                    <div class="col-lg-2 d-flex flex-column">
+                                        <h4 class="txt-xlarge" aria-hidden="true">Your child benefit</h4>
+                                    </div>                                    
+                                    <div class="cb-info-block__num-child col-md-6 col-lg-3">
                                         <label for="numberOfChildrenU15">Number of children under 15 years old</label>
-                                        <input type="text" name="numberOfChildrenU15" id="numberOfChildrenU15">
+                                        <div class="num-child-block">
+                                            <a href="#" class="num-child-block__ctrl num-child-block__ctrl--minus">Minus</a>
+                                            <input type="text" name="numberOfChildrenU15" id="numberOfChildrenU15" class="num-child-block__input" readonly>
+                                            <a href="#" class="num-child-block__ctrl num-child-block__ctrl--plus">Plus</a>
+                                        </div>
                                     </div>
-                                    <fieldset class="col-md-4 d-flex">
-                                        <legend>How often are your child benefit payments?</legend>
+                                    <fieldset class="cb-info-block__cb-frequency col-md-6 col-lg-4">
+                                        <legend class="m-b-1">How often are your child benefit payments?</legend>
                                         <div class="form-check form-check--radio">
                                             <input class="form-check-input js-val-mandatory" type="radio" name="benefitFrequency" id="benefitFrequencyWeekly" value="option1" data-msg-required="">
                                             <label class="form-check-label" for="benefitFrequencyWeekly">
@@ -107,8 +113,8 @@
                                             </label>
                                         </div>                                        
                                     </fieldset>
-                                    <div class="col-md-2" aria-live="polite">
-                                        <h4 class="txt-large txt-bold">£20 Weekly</h4>
+                                    <div class="cb-info-block__cb-amount col-lg-3" aria-live="polite">
+                                        <h4 class="txt-large txt-bold mb-2">£20 Weekly</h4>
                                         <h5>Child benefit payment</h5>
                                     </div>
                                 </fieldset>
