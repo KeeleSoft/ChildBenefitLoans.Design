@@ -1,0 +1,58 @@
+.hero-slider{
+    &__slide{
+        height: 66.5rem;
+        display: flex!important;
+        align-items: flex-start;
+    }
+    &__text{
+        background: linear-gradient(90deg, map-get($brand-colours, brandBeige) 50%, transparent 50%);
+        width: 100%;
+        padding: 7rem 3rem 8rem 0;
+    }
+    &__usp-text{
+        font-size:$fs-xxxlarge;
+        font-weight: 600;
+        margin-bottom: 3rem;
+       
+    }
+    &__loan-text{
+        font-size: $fs-medium;
+        margin-bottom: 3rem;
+    }
+
+    &__image{
+        width: 70%;
+        height: 66.5rem;
+        position: absolute;
+        right: 0;
+        display: block;
+        z-index: -1;
+
+        &::after{
+            content: ' ';
+            background-repeat: no-repeat;
+            background-size: cover;           
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        &--1::after{
+            @include bg-img(img-hero-1,jpg);
+        }
+        &--2::after{
+            @include bg-img(img-hero-2,jpg);
+        }
+        &--3::after{
+            @include bg-img(img-hero-3,jpg);
+        }
+    }
+}
+
+.btn-hero{
+    font-size: $fs-large;
+    padding: 1rem 3rem 1.2rem;
+    border-radius: 4rem;
+}
+
+

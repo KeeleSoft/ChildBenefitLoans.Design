@@ -1,0 +1,13 @@
+.calc-block{   
+    &__inner{
+        padding: 5rem 0;
+        background-color: map-get($brand-colours, lightBlueShade);
+    }    
+    &__footer{
+        @include bg-img(shape-lightblue-curve,svg);
+        width: 100%;
+        height: 20rem;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+}

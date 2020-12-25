@@ -1,0 +1,7 @@
+.loan-calc{
+    &__cb-info{
+        background-color: map-get($brand-colours, brandBeige);
+        border-radius: 20px;
+        padding: 3rem;
+    }
+}
