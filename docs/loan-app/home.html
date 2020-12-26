@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/mobile-menu.css" />
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick.css">
+    <link rel="stylesheet" href="https://refreshless.com/nouislider/distribute/nouislider.css?v=1462">
     <link rel="stylesheet" href="../css/main.css">
     <title>Child Benefit Loans</title>
 </head>
@@ -119,6 +120,33 @@
                                     </div>
                                 </fieldset>
                             </section>
+
+                            <div class="loan-options-block row">
+                                <section class="col-md-8">
+                                    <div class="loan-options-block__slider-block">
+                                        <div class="row">
+                                            <div class="col-lg-3 d-flex flex-column">
+                                                <h4 class="txt-xlarge">Your loan options</h4>
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <div class="mt-1">
+                                                    <label for="loanAmountSlider">How much would you like to borrow?</label>
+                                                    <div class="loan-options-block__amount-slider" id="loanAmountSlider"></div>
+                                                </div>
+                                                <div class="m-t-8">
+                                                    <label for="loanAmountSlider">Over how many weeks?</label>
+                                                    <div class="loan-options-block__weeks-slider" id="loanWeekSlider"></div>
+                                                </div>                                                
+                                            </div> 
+                                        </div>     
+                                    </div>                               
+                                </section>
+                                <section class=" col-md-4">
+                                    <div class="loan-options-block__loan-details" aria-live="polite"> 
+
+                                    </div>
+                                </section>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -217,6 +245,8 @@
     <script src="../js/validation.js"></script>
     <script src="../js/jquery.formatCurrency-1.4.0.js"></script>
     <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+    <script src="https://refreshless.com/nouislider/distribute/nouislider.js?v=1462"></script>
+    <script src="https://refreshless.com/nouislider/documentation/assets/wNumb.js"></script>
     <script>
         $(document).ready(function(){
             $('.hero-slider').slick({
@@ -226,6 +256,37 @@
                 arrows: false
             });
         });
+
+        var loanAmountSlider = document.getElementById('loanAmountSlider');
+        noUiSlider.create(loanAmountSlider, {
+            start: 500,
+            connect: 'lower',
+            step: 10,
+            tooltips: wNumb({decimals: 0}),
+            range: {
+                'min': 300,
+                'max': 900
+            },
+            format: wNumb({
+                decimals: 0
+            }),
+            pips: {mode: 'count', values: 2, density: 100}
+        });
+        var loanWeekSlider = document.getElementById('loanWeekSlider');
+        noUiSlider.create(loanWeekSlider, {
+            start: 39,
+            connect: 'lower',
+            step: 1,
+            tooltips: wNumb({decimals: 0}),
+            range: {
+                'min': 4,
+                'max': 52
+            },
+            format: wNumb({
+                decimals: 0
+            })
+        });
+        
     </script>
     <script src="../js/main.js"></script>
 </body>

@@ -1,7 +1,7 @@
 
 .cb-info-block{
     background-color: map-get($brand-colours, brandBeige);
-    border-radius: 20px;
+    border-radius: $calc-border-radius;
     padding: 3rem;
 
     &__cb-frequency{
@@ -39,8 +39,6 @@
     }
 }
 
-
-
 .num-child-block{
     position: relative;
     max-width: 12rem;
@@ -74,5 +72,21 @@
         border-radius: 3rem;
         padding: 0.4rem 4rem;
         text-align: center;
+    }
+}
+
+.loan-options-block{
+    margin-top: 2rem;
+    &__slider-block{
+        background: map-get($brand-colours, white);
+        border-radius: $calc-border-radius;
+        padding: 3rem 5rem 7rem 3rem;
+        height: 100%;
+    }
+    &__loan-details{
+        background: map-get($brand-colours, brandPurple);
+        border-radius: $calc-border-radius;
+        padding: 3rem;
+        height: 100%;
     }
 }

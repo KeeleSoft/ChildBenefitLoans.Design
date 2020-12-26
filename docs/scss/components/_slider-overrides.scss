@@ -1,0 +1,61 @@
+.noUi-target{
+    border: none;
+    border-radius: 25px;
+    box-shadow: none;
+    background: map-get($brand-colours, brandBeige);
+    padding: 0 17px;
+}
+
+.noUi-connect{
+    background: map-get($brand-colours, darkPurpleShade);
+}
+.noUi-connects {
+    margin: 0 -17px;
+    width: calc(100% + 34px);
+}
+
+.noUi-horizontal{
+    height: 8px;
+
+    .noUi-tooltip{
+        bottom: -35px;
+        border: none;
+        background-color: transparent;
+    }
+    .noUi-handle{
+        width: 3.2rem;
+        height: 3.2rem;
+        top: -11px;
+        border: none;
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        @include bg-img(icon-slider-control,svg);
+        background-repeat: no-repeat;
+
+        &::before, &::after{
+            display: none;
+        }
+        &:focus{
+            box-shadow: $focus-box-shadow;
+        }
+    }
+}
+
+.loan-options-block__weeks-slider,
+.loan-options-block__amount-slider{
+    margin-top: 2rem;
+}
+
+.loan-options-block__weeks-slider .noUi-tooltip{
+    &::after{
+        content: ' Weeks';
+    }
+}
+
+.loan-options-block__amount-slider .noUi-tooltip{
+    &::before{
+        content: '£';
+    }
+}
+
