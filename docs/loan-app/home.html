@@ -143,7 +143,19 @@
                                 </section>
                                 <section class=" col-md-4">
                                     <div class="loan-options-block__loan-details" aria-live="polite"> 
-
+                                        <div class="loan-options-block__loan-item">
+                                            <span class="loan-options-block__item-val">42.6%</span>
+                                            <h4>Representative APR</h4>
+                                        </div>
+                                        <div class="loan-options-block__loan-item">
+                                            <span class="loan-options-block__item-val">£0.00</span>
+                                            <h4>Total interest and fees</h4>
+                                        </div>
+                                        <div class="loan-options-block__loan-item">
+                                            <span class="loan-options-block__item-val">£0.00</span>
+                                            <h4>Total amount to repay</h4>
+                                        </div>
+                                        <a href="#" role="button" class="btn btn-secondary btn-clear-white">Apply for this loan</a>
                                     </div>
                                 </section>
                             </div>
@@ -262,29 +274,50 @@
             start: 500,
             connect: 'lower',
             step: 10,
-            tooltips: wNumb({decimals: 0}),
+            tooltips: wNumb({
+                decimals: 0,
+                prefix: '£'
+            }),
             range: {
                 'min': 300,
-                'max': 900
+                'max': 600
             },
             format: wNumb({
-                decimals: 0
+                decimals: 0,
             }),
-            pips: {mode: 'count', values: 2, density: 100}
+            pips: {
+                mode: 'count', 
+                values: 2, 
+                density: 100,
+                format: wNumb({
+                    prefix: '£'
+                })
+            }
         });
         var loanWeekSlider = document.getElementById('loanWeekSlider');
         noUiSlider.create(loanWeekSlider, {
             start: 39,
             connect: 'lower',
             step: 1,
-            tooltips: wNumb({decimals: 0}),
+            tooltips: wNumb({
+                decimals: 0,
+                suffix: ' Weeks'
+            }),
             range: {
-                'min': 4,
+                'min': 26,
                 'max': 52
             },
             format: wNumb({
                 decimals: 0
-            })
+            }),
+            pips: {
+                mode: 'count', 
+                values: 2, 
+                density: 100,
+                format: wNumb({
+                    suffix: ' Weeks'
+                })
+            }
         });
         
     </script>
