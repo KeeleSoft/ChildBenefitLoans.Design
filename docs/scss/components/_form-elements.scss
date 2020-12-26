@@ -202,7 +202,10 @@ span.form-control--error{
        }
     }
     & + .btn{
-        margin-left: 15px;
+        margin-top: 15px;
+        @include media-sm{
+            margin-top: 0;
+        }
     }
 }
 
