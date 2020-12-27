@@ -42,6 +42,7 @@
     <div class="header-placeholder js-header-placeholder d-none"></div>
     <div class="content-wrapper">       
         <main>
+            <!-- Rotating image slider -->
             <div class="hero-slider">
                 <section class="hero-slider__slide">                    
                     <div class="hero-slider__text">
@@ -80,7 +81,7 @@
                     <div class="hero-slider__image hero-slider__image--3"></div>                                      
                 </section>
             </div>
-
+            <!-- Loan calculator block -->
             <div class="calc-block">
                 <div class="calc-block__inner">
                     <div class="container">
@@ -159,6 +160,46 @@
                                     </div>
                                 </section>
                             </div>
+
+                            <div class="breakdown-block">
+                                <section class="row">
+                                    <div class="col-lg-3">
+                                        <h4 class="txt-xlarge" aria-describedby="latePaymentWarning">Your weekly payment breakdown</h4>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <div class="row">
+                                            <div class="col col-md-3">
+                                                <div class="breakdown-block__item breakdown-block__item--benefit">
+                                                    <h5>Child benefit</h5>
+                                                    <span class="breakdown-block__val breakdown-block__val--benefit">£20 =</span>
+                                                </div>
+                                            </div>
+                                            <div class="col col-md-3">
+                                                <div class="breakdown-block__item breakdown-block__item--loan">
+                                                    <span class="breakdown-block__val">£0.00</span>
+                                                    <h5>Loan repayment</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col col-md-3">
+                                                <div class="breakdown-block__item breakdown-block__item--savings">
+                                                    <a href="#" class="breakdown-block__change-savings breakdown-block__change-savings--minus">Decrease locked in savings</a>
+                                                    <a href="#" class="breakdown-block__change-savings breakdown-block__change-savings--plus">Increase locked in savings</a>
+                                                    <span class="breakdown-block__val">£0.00</span>
+                                                    <h5 aria-describedby="lockedInSavingsHelp">Locked in savings</h5>
+                                                    <i id="lockedInSavingsHelp">More info</i>
+                                                </div>
+                                            </div>
+                                            <div class="col col-md-3">
+                                                <div class="breakdown-block__item breakdown-block__item--funds">
+                                                    <span class="breakdown-block__val">£0.00</span>
+                                                    <h5>Remaining funds</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                            <p id="latePaymentWarning" class="text-center m-t-2">Warning: Late repayment can cause you serious money problems. For help, go to <a href="https://www.moneyadviceservice.org.uk/" target="_blank">moneyadviceservice.org.uk</a></p>
                         </div>
                     </div>
                 </div>

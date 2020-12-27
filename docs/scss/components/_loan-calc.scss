@@ -113,7 +113,83 @@
     }
 }
 
+.breakdown-block{
+    background-color: map-get($brand-colours, white);
+    padding: 3rem;
+    margin-top: 2rem;
+    border-radius: $calc-border-radius;
+
+    &__item{
+        width: 14.5rem;
+        height: 14.5rem;
+        border-radius: 50%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        margin-top: 1rem;
+        @include media-lg{
+            margin-top: 0;
+        }
+        
+        &--benefit{
+            background-color: map-get($brand-colours, brandBeige);
+        }
+        &--loan{
+            background-color: map-get($brand-colours, brandPurple);
+            color: map-get($brand-colours, white);
+        }
+        &--savings{
+            background-color: map-get($brand-colours, brandPrimary);
+            color: map-get($brand-colours, white);
+            position: relative;
+        }
+        &--funds{
+            background-color: map-get($brand-colours, lightBlueShade);
+        }
+    }
+
+    &__change-savings{
+        width: 3.2rem;
+        height: 3.2rem;
+        display: block;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: 32px 32px;
+        position: absolute;
+        top: 0;
+
+        &--minus{
+            @include bg-img(icon-savings-minus,svg);
+            left: 5px;
+        }
+        
+        &--plus{
+            @include bg-img(icon-savings-plus,svg);
+            right: 5px;
+        }
+    }
+
+    &__val{
+        font-weight: 600;
+        font-size: $fs-medium;
+
+        &--benefit{
+            font-size: $fs-xlarge;
+        }
+    }
+}
+
 .btn-clear-white{
     color: map-get($brand-colours, white);
     border-color: map-get($brand-colours, white);
+    &:hover{
+        background-color: map-get($brand-colours, brandPrimary);
+        border-color: map-get($brand-colours, brandPrimary)
+    }
 }
