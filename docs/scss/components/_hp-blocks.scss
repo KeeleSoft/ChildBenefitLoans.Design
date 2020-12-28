@@ -1,13 +1,45 @@
 .calc-block{   
     &__inner{
-        padding: 5rem 0;
+        padding: 5rem 0 0;
         background-color: map-get($brand-colours, lightBlueShade);
     }    
     &__footer{
-        @include bg-img(shape-lightblue-curve,svg);
-        width: 100%;
-        height: 20rem;
-        background-repeat: no-repeat;
-        background-size: 100%;
+        background-color: map-get($brand-colours, brandPrimary);
+        //@include bg-img(shape-light-dark-blue-curve,svg);
+        //width: 100%;
+        //height: 20rem;
+        //background-repeat: no-repeat;
+        //background-size: 100%;
+        display: block;
+
     }
+}
+
+.why-choose-block{
+    background-color: map-get($brand-colours, brandPrimary);
+    color: map-get($brand-colours, white);
+}
+
+.blue-tick-list{
+    li{
+        position: relative;
+        font-size: $fs-large;
+        list-style-position: outside;
+        padding-left: 3.5rem;
+        margin-top: 1rem;
+
+        &::before{
+            content: '';
+            display: block;
+            width: 2.4rem;
+            height: 2.4rem;
+            @include bg-img(icon-blue-tick,svg);
+            background-size: 24px 24px;
+            margin-right: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+    }
+
 }
