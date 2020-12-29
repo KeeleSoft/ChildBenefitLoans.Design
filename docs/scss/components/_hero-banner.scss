@@ -4,29 +4,49 @@
         display: flex!important;
         align-items: flex-start;
     }
-    &__text{
-        background: linear-gradient(90deg, map-get($brand-colours, brandBeige) 50%, transparent 50%);
+    &__text{ 
         width: 100%;
-        padding: 7rem 3rem 8rem 0;
+        padding: 4rem 3rem 8rem 0;
+        background-color:rgba(map-get($brand-colours, brandBeige),0.7);
+
+        @include media-md{
+            padding: 7rem 3rem 8rem 0;
+        }
+
+        @include media-lg{
+            background: linear-gradient(90deg, map-get($brand-colours, brandBeige) 55%, transparent 45%);
+        }        
     }
     &__usp-text{
-        font-size:$fs-xxxlarge;
+        font-size:$fs-hero-xlarge;
+        line-height: 1.2;
         font-weight: 800;
         margin-bottom: 3rem;
-       
+
+       @include media-md{
+            font-size:$fs-xxxlarge;
+        }
     }
     &__loan-text{
         font-size: $fs-medium;
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
+
+        @include media-lg{
+            margin-bottom: 3rem;
+        }
     }
 
     &__image{
-        width: 70%;
+        width: 100%;
         height: 66.5rem;
         position: absolute;
         right: 0;
         display: block;
         z-index: -1;
+
+        @include media-lg{
+            width: 70%;
+        }
 
         &::after{
             content: ' ';
