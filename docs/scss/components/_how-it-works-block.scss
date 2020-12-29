@@ -1,0 +1,94 @@
+.how-it-works-block{
+    position: relative;
+    padding: 5rem 0;
+    overflow: hidden;
+
+    &::before{
+        content: '';
+        position: absolute;
+        //bottom: 0;
+        z-index: -1;
+        display: block;        
+        width: 100%;
+        height: 100%;
+        @include bg-img(shape-bg-how-it-works-dark,svg);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: 180%;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: -10%;
+        right: 0;
+        background-size: cover;
+        z-index: -1;
+        display: block;        
+        width: 100%;
+        height: 100%;
+        @include bg-img(shape-bg-how-it-works-light,svg);
+        background-repeat: no-repeat;
+
+        @include media-lg{
+            top: 15%;
+            right: -50%;
+        }
+    }
+    &__steps{
+        background-color: map-get($brand-colours, white);
+        border-radius: $calc-border-radius;
+        padding: 3rem 3rem 0.5rem;
+    }
+}
+
+.how-it-works-step{
+    margin-bottom: 1rem;
+    &__heading{
+        font-size: $fs-xlarge;
+        margin-bottom: 1rem;
+        padding-left: 3rem;
+
+        &::before{
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            top: 0.3rem;
+            width: 2.4rem;
+            height: 2.4rem;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        &--1{
+            &::before{
+                @include bg-img(icon-step-1,svg);
+            }
+        }
+        &--2{
+            &::before{
+                @include bg-img(icon-step-2,svg);
+            }
+        }
+        &--3{
+            &::before{
+                @include bg-img(icon-step-3,svg);
+            }
+        }
+        &--4{
+            &::before{
+                top: 0.5rem;
+                @include bg-img(icon-step-4,svg);
+            }
+        }
+    }
+}
+
+.btn-dark-blue{
+    background: map-get($brand-colours, brandPrimary);
+    color: map-get($brand-colours, white);
+
+    &:hover{
+        color: map-get($brand-colours, white);
+        background: rgba(map-get($brand-colours, brandPrimary),85%);
+    }
+}
