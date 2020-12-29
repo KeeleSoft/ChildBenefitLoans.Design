@@ -32,60 +32,6 @@
 }
 
 
-.compare-block{
-    margin-top: 8rem;
-    &__title{
-        font-size: $fs-xxlarge;
-        font-weight: 600;
-        color: map-get($brand-colours, brandPurple);
-    }
-    &__desc{
-        font-size: $fs-medium;
-        margin-top: 1rem;
-    }
-
-    &__table{
-        thead{
-            th{
-                vertical-align: middle;
-                border-top: none;
-                border-bottom: 1px solid map-get($brand-colours, lightPurpleShade);
-
-                &.th-heading{
-                    font-size: $fs-xlarge;
-                    width: 30%;
-                    padding-right: 3rem;
-                    font-weight: normal;
-                }
-            }
-        }
-        td{
-            border-bottom: 1px solid map-get($brand-colours, lightPurpleShade);
-            padding: 2rem 0.75rem;
-            font-size: $fs-large;
-            vertical-align: middle;
-
-            &.td-cbl-val{
-                font-size: $fs-xlarge;
-                color: map-get($brand-colours, brandPurple);
-            }
-            &.td-heading{
-                font-size: $fs-primary;
-            }
-        }
-    }
-
-    &__text{
-        @include media-lg{
-            padding-right: 3rem;
-        }
-    }
-    &__data{
-        @include media-lg{
-            padding-left: 5rem;
-        }
-    }
-}
 
 .blue-tick-list{
     li{
