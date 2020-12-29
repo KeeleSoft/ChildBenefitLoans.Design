@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/mobile-menu.css" />
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick.css">
     <link rel="stylesheet" href="https://refreshless.com/nouislider/distribute/nouislider.css?v=1462">
+    <link rel="stylesheet" href="https://sandywalker.github.io/webui-popover/dist/jquery.webui-popover.min.css">   
     <link rel="stylesheet" href="../css/main.css">
     <title>Child Benefit Loans</title>
 </head>
@@ -178,6 +179,9 @@
                                                 <div class="breakdown-block__item breakdown-block__item--loan">
                                                     <span class="breakdown-block__val">£0.00</span>
                                                     <h5>Loan repayment</h5>
+                                                    <a href="#" class="breakdown-block__popover-link js-popover" data-content="lorem ipsum dolor set amet blah blah lorem ipsum dolor set amet blah blah" data-placement="auto">
+                                                        <span class="breakdown-block__more-info">More info</span>
+                                                    </a>
                                                 </div>
                                             </div>
                                             <div class="col col-md-3">
@@ -186,13 +190,18 @@
                                                     <a href="#" class="breakdown-block__change-savings breakdown-block__change-savings--plus">Increase locked in savings</a>
                                                     <span class="breakdown-block__val">£0.00</span>
                                                     <h5 aria-describedby="lockedInSavingsHelp">Locked in savings</h5>
-                                                    <i id="lockedInSavingsHelp">More info</i>
+                                                    <a href="#" class="breakdown-block__popover-link js-popover" data-content="lorem ipsum dolor set amet blah blah lorem ipsum dolor set amet blah blah" data-placement="auto">
+                                                        <span class="breakdown-block__more-info">More info</span>
+                                                    </a>
                                                 </div>
                                             </div>
                                             <div class="col col-md-3">
                                                 <div class="breakdown-block__item breakdown-block__item--funds">
                                                     <span class="breakdown-block__val">£0.00</span>
                                                     <h5>Remaining funds</h5>
+                                                    <a href="#" class="breakdown-block__popover-link js-popover" data-content="lorem ipsum dolor set amet blah blah lorem ipsum dolor set amet blah blah" data-placement="auto">
+                                                        <span class="breakdown-block__more-info breakdown-block__more-info--light">More info</span>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -422,6 +431,7 @@
     <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
     <script src="https://refreshless.com/nouislider/distribute/nouislider.js?v=1462"></script>
     <script src="https://refreshless.com/nouislider/documentation/assets/wNumb.js"></script>
+    <script src="https://sandywalker.github.io/webui-popover/dist/jquery.webui-popover.min.js"></script>
     <script>
         $(document).ready(function(){
             $('.hero-slider').slick({
@@ -483,7 +493,13 @@
             }
         });
         
+        $('.js-popover').webuiPopover({
+            animation:'fade',
+            arrow:true,
+            width: 280
+        });
     </script>
+    
     <script src="../js/main.js"></script>
 </body>
 </html>

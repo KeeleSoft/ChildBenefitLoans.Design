@@ -151,6 +151,31 @@
         }
     }
 
+    &__more-info{
+        width: 100%;
+        height: 100%;
+        display: block;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: 16px 16px;
+        background-color: transparent;
+        
+        @include bg-img(icon-info,svg);
+
+        &--light{
+            @include bg-img(icon-info-light,svg);
+        }
+    }
+    &__popover-link{
+        width: 1.6rem;
+        height: 1.6rem;
+        display: block;
+        margin: 1rem auto 0;
+    }
+
     &__change-savings{
         width: 3.2rem;
         height: 3.2rem;
@@ -193,3 +218,6 @@
         border-color: map-get($brand-colours, brandPrimary)
     }
 }
+
+
+  
