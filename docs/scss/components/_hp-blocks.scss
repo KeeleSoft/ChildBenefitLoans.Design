@@ -7,6 +7,7 @@
         background-color: map-get($brand-colours, brandPrimary);
         display: block;
         overflow: hidden;
+        margin-top: -2px;
         svg{
             width: 101%;
             margin-left: -2px;
@@ -23,6 +24,7 @@
     &__footer{
         display: block;
         overflow: hidden;
+        margin-top: -2px;
         svg{
             width: 101%;
             margin-left: -2px;
