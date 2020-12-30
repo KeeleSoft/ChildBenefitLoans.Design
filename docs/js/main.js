@@ -10,6 +10,7 @@ var cblApp = {
         this.convertToUppercase();
         this.formatCurrencyConfig();
         this.incomeExpenseTrigger();
+        this.mainLoanCalculator();
     },
     //--------- scroll detection and header status change
     scrollDetection:function(){    
@@ -191,7 +192,43 @@ var cblApp = {
             $('.js-disp-total-expenses').text(totalExpenses.toLocaleString('en-GB', currencyFormat));
             $('.js-disp-total-disposable').text(disposableIncome.toLocaleString('en-GB', currencyFormat));
         }
+    },
+    mainLoanCalculator: function(){
+        var minNumOfChildren = 1;
+        var maxNumOfChildren = 5;
+        var firstChildBenefit = 20;
+        var additionalChildBenefit = 13.93;
+        var numOfChildren = 1;
+        var numOfChildrenInput = $('.js-num-of-children-input');
+        
+        numOfChildrenInput.val(minNumOfChildren);
+
+        $('.js-decrement-num-of-children, .js-increment-num-of-children').on('click', function(e){
+            e.preventDefault();
+            if($(this).hasClass('js-decrement-num-of-children') && numOfChildrenInput.val() > minNumOfChildren){
+                numOfChildren--;
+                numOfChildrenInput.val(numOfChildren);
+                calcBenefitIncome();
+            }
+            else if($(this).hasClass('js-increment-num-of-children') && numOfChildrenInput.val() < maxNumOfChildren){
+                numOfChildren++;
+                numOfChildrenInput.val(numOfChildren);
+                calcBenefitIncome();
+            }
+        });
+
+        function calcBenefitIncome(){
+            if(numOfChildrenInput.val() > minNumOfChildren){
+                var numOfAdditionalChildren = numOfChildrenInput.val() - 1;
+                var totalChildBenefit = firstChildBenefit + (numOfAdditionalChildren * additionalChildBenefit);
+                $('.js-child-benefit-amount').text(totalChildBenefit);
+            }
+            else{
+                $('.js-child-benefit-amount').text(firstChildBenefit);
+            }
+        }
     }
 };
 
 cblApp.init();
+

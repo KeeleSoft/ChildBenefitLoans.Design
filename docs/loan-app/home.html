@@ -96,15 +96,15 @@
                                     <div class="cb-info-block__num-child col-md-6 col-lg-3">
                                         <label for="numberOfChildrenU15">Number of children under 15 years old</label>
                                         <div class="num-child-block">
-                                            <a href="#" class="num-child-block__ctrl num-child-block__ctrl--minus">Minus</a>
-                                            <input type="text" name="numberOfChildrenU15" id="numberOfChildrenU15" class="num-child-block__input" readonly>
-                                            <a href="#" class="num-child-block__ctrl num-child-block__ctrl--plus">Plus</a>
+                                            <a href="#" class="num-child-block__ctrl num-child-block__ctrl--minus js-decrement-num-of-children">Minus</a>
+                                            <input type="text" name="numberOfChildrenU15" id="numberOfChildrenU15" class="num-child-block__input js-num-of-children-input" readonly>
+                                            <a href="#" class="num-child-block__ctrl num-child-block__ctrl--plus js-increment-num-of-children">Plus</a>
                                         </div>
                                     </div>
                                     <fieldset class="cb-info-block__cb-frequency col-md-6 col-lg-4">
                                         <legend class="m-b-1">How often are your child benefit payments?</legend>
                                         <div class="form-check form-check--radio">
-                                            <input class="form-check-input js-val-mandatory" type="radio" name="benefitFrequency" id="benefitFrequencyWeekly" value="option1" data-msg-required="">
+                                            <input class="form-check-input js-val-mandatory" type="radio" name="benefitFrequency" id="benefitFrequencyWeekly" value="option1" checked>
                                             <label class="form-check-label" for="benefitFrequencyWeekly">
                                                 Weekly
                                             </label>
@@ -117,7 +117,7 @@
                                         </div>                                        
                                     </fieldset>
                                     <div class="cb-info-block__cb-amount col-lg-3" aria-live="polite">
-                                        <h4 class="txt-large txt-bold mb-2">£20 Weekly</h4>
+                                        <h4 class="txt-large txt-bold mb-2">£<span class="js-child-benefit-amount">20</span> Weekly</h4>
                                         <h5>Child benefit payment</h5>
                                     </div>
                                 </fieldset>
@@ -435,7 +435,7 @@
     <script>
         $(document).ready(function(){
             $('.hero-slider').slick({
-                autoplay: true,
+                //autoplay: true,
                 fade: true,
                 autoplaySpeed: 4500,
                 arrows: false
