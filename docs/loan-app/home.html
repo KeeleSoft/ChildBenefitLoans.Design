@@ -104,20 +104,20 @@
                                     <fieldset class="cb-info-block__cb-frequency col-md-6 col-lg-4">
                                         <legend class="m-b-1">How often are your child benefit payments?</legend>
                                         <div class="form-check form-check--radio">
-                                            <input class="form-check-input js-val-mandatory" type="radio" name="benefitFrequency" id="benefitFrequencyWeekly" value="option1" checked>
-                                            <label class="form-check-label" for="benefitFrequencyWeekly">
+                                            <input class="form-check-input js-check-cb-frequency js-check-cb-frequency--weekly" type="radio" name="benefitPayFrequency" id="benefitPayFrequencyWeekly" value="option1" checked>
+                                            <label class="form-check-label" for="benefitPayFrequencyWeekly">
                                                 Weekly
                                             </label>
                                         </div>
                                         <div class="form-check form-check--radio">
-                                            <input class="form-check-input" type="radio" name="benefitFrequency" id="benefitFrequency4Weekly" value="option2">
-                                            <label class="form-check-label" for="benefitFrequency4Weekly">
+                                            <input class="form-check-input js-check-cb-frequency js-check-cb-frequency--4weekly" type="radio" name="benefitPayFrequency" id="benefitPayFrequency4Weekly" value="option2">
+                                            <label class="form-check-label" for="benefitPayFrequency4Weekly">
                                                 4 weekly
                                             </label>
                                         </div>                                        
                                     </fieldset>
                                     <div class="cb-info-block__cb-amount col-lg-3" aria-live="polite">
-                                        <h4 class="txt-large txt-bold mb-2">£<span class="js-child-benefit-amount">20</span> Weekly</h4>
+                                        <h4 class="txt-large txt-bold mb-2">£<span class="js-child-benefit-amount">20.00</span></h4>
                                         <h5>Child benefit payment</h5>
                                     </div>
                                 </fieldset>
@@ -446,7 +446,7 @@
         noUiSlider.create(loanAmountSlider, {
             start: 500,
             connect: 'lower',
-            step: 10,
+            step: 20,
             tooltips: wNumb({
                 decimals: 0,
                 prefix: '£'

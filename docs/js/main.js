@@ -194,16 +194,24 @@ var cblApp = {
         }
     },
     mainLoanCalculator: function(){
-        var minNumOfChildren = 1;
-        var maxNumOfChildren = 5;
-        var firstChildBenefit = 20;
-        var additionalChildBenefit = 13.93;
-        var numOfChildren = 1;
-        var numOfChildrenInput = $('.js-num-of-children-input');
-        
-        numOfChildrenInput.val(minNumOfChildren);
+        //loan calculator vars
+        var minNumOfChildren = 1,
+        maxNumOfChildren = 5,
+        firstChildBenefit = 20.00,
+        additionalChildBenefit = 13.70,
+        numOfChildren = 1,
+        benefitMultipleFrequency = 4,
 
-        $('.js-decrement-num-of-children, .js-increment-num-of-children').on('click', function(e){
+        checkCbFrequency = $('.js-check-cb-frequency'),
+        numOfChildrenInput = $('.js-num-of-children-input'),  
+        childBenefitAmountDisplay = $('.js-child-benefit-amount');
+
+        var cb ={};
+        cb.amount = firstChildBenefit;
+        numOfChildrenInput.val(minNumOfChildren); //assign min number of children needed on page load
+
+        //increment decremenet functionality
+        $('.js-decrement-num-of-children, .js-increment-num-of-children').on('click', function(e){ 
             e.preventDefault();
             if($(this).hasClass('js-decrement-num-of-children') && numOfChildrenInput.val() > minNumOfChildren){
                 numOfChildren--;
@@ -218,14 +226,43 @@ var cblApp = {
         });
 
         function calcBenefitIncome(){
+            var totalChildBenefitPerWeek = 0;
+            var totalChildBenefit = 0;
             if(numOfChildrenInput.val() > minNumOfChildren){
                 var numOfAdditionalChildren = numOfChildrenInput.val() - 1;
-                var totalChildBenefit = firstChildBenefit + (numOfAdditionalChildren * additionalChildBenefit);
-                $('.js-child-benefit-amount').text(totalChildBenefit);
+                totalChildBenefitPerWeek = firstChildBenefit + (numOfAdditionalChildren * additionalChildBenefit);
+                cb.amount = totalChildBenefitPerWeek;
+                totalChildBenefit = checkCbFrequencySelection(totalChildBenefitPerWeek);
+                displayCbAmount(totalChildBenefit);
             }
             else{
-                $('.js-child-benefit-amount').text(firstChildBenefit);
+                cb.amount = firstChildBenefit;
+                totalChildBenefit = checkCbFrequencySelection(firstChildBenefit);
+                displayCbAmount(totalChildBenefit);
             }
+        }
+        
+        //check for week/s selection and return the values accordingly
+        function checkCbFrequencySelection(cb){
+            if (checkCbFrequency.filter(':checked').hasClass('js-check-cb-frequency--4weekly')) {
+                var fourWeeklyVal = cb * benefitMultipleFrequency;
+                return fourWeeklyVal;
+            }
+            else{
+                return cb;
+            }
+        }
+        //recalculate when weeks radio is changed 
+        function benefitFrequencyBasedCalc(){
+            checkCbFrequency.on('change',function(){
+                var total = checkCbFrequencySelection(cb.amount);
+                displayCbAmount(total);
+            });
+        }
+        benefitFrequencyBasedCalc();
+
+        function displayCbAmount(amt){
+            childBenefitAmountDisplay.text(amt.toFixed(2));
         }
     }
 };

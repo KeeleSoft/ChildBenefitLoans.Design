@@ -29,6 +29,10 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        @media screen and (min-width: (map-get($breakpoints, large))) and(max-width: (map-get($breakpoints, x-large))) {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 
     &__num-child, &__cb-frequency, &__cb-amount{
