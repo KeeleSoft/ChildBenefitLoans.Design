@@ -201,6 +201,7 @@ var cblApp = {
         additionalChildBenefit = 13.70,
         numOfChildren = 1,
         benefitMultipleFrequency = 4,
+        interestRate = 0.36,
 
         checkCbFrequency = $('.js-check-cb-frequency'),
         numOfChildrenInput = $('.js-num-of-children-input'),  
@@ -209,7 +210,7 @@ var cblApp = {
         var cb ={};
         cb.amount = firstChildBenefit;
         numOfChildrenInput.val(minNumOfChildren); //assign min number of children needed on page load
-
+       
         //increment decremenet functionality
         $('.js-decrement-num-of-children, .js-increment-num-of-children').on('click', function(e){ 
             e.preventDefault();
@@ -233,12 +234,14 @@ var cblApp = {
                 totalChildBenefitPerWeek = firstChildBenefit + (numOfAdditionalChildren * additionalChildBenefit);
                 cb.amount = totalChildBenefitPerWeek;
                 totalChildBenefit = checkCbFrequencySelection(totalChildBenefitPerWeek);
-                displayCbAmount(totalChildBenefit);
+                displayCbAmount(childBenefitAmountDisplay,totalChildBenefit);
+                updateCbValue(totalChildBenefit);
             }
             else{
                 cb.amount = firstChildBenefit;
                 totalChildBenefit = checkCbFrequencySelection(firstChildBenefit);
-                displayCbAmount(totalChildBenefit);
+                displayCbAmount(childBenefitAmountDisplay,totalChildBenefit);
+                updateCbValue(totalChildBenefit);
             }
         }
         
@@ -256,14 +259,71 @@ var cblApp = {
         function benefitFrequencyBasedCalc(){
             checkCbFrequency.on('change',function(){
                 var total = checkCbFrequencySelection(cb.amount);
-                displayCbAmount(total);
+                displayCbAmount(childBenefitAmountDisplay,total);
+                updateCbValue(total); 
+                callPMT();              
             });
         }
         benefitFrequencyBasedCalc();
 
-        function displayCbAmount(amt){
-            childBenefitAmountDisplay.text(amt.toFixed(2));
+        function displayCbAmount(el,amt){
+            el.text(amt.toFixed(2));
         }
+
+        function pmt(rate, nper, pv, fv, type){
+            if (!fv) fv = 0;
+            if (!type) type = 0;
+    
+            if (rate == 0) return -(pv + fv)/nper;
+            
+            var pvif = Math.pow(1 + rate, nper);
+            var pmt = rate / (pvif - 1) * -(pv * pvif + fv);
+    
+            if (type == 1) {
+                pmt /= (1 + rate);
+            };    
+            return pmt;
+        }
+
+        loanAmountSlider.noUiSlider.on('update', function () { 
+            var currentSliderVal = loanAmountSlider.noUiSlider.get();
+            $('.js-loan-amount-cuurent-val').val(currentSliderVal);
+            cb.sliderLoanVal = currentSliderVal;
+            callPMT();
+        });
+
+        loanWeekSlider.noUiSlider.on('update', function () { 
+            var currentSliderVal = loanWeekSlider.noUiSlider.get();
+            $('.js-payment-term-cuurent-val').val(currentSliderVal);
+            cb.sliderWeekVal = currentSliderVal;
+            callPMT();
+        });
+
+        function callPMT(){
+            var loanRepaymentAmount = pmt(interestRate/52,cb.sliderWeekVal,-(cb.sliderLoanVal));
+            updateLoanRepaymentVal(checkCbFrequencySelection(loanRepaymentAmount));
+            calcTotalAmountToPay(loanRepaymentAmount,cb.sliderWeekVal);
+        }
+
+        function updateCbValue(val){
+            displayCbAmount($('.js-breakdown-block__val--benefit'),val);
+        }
+
+        function updateLoanRepaymentVal(val){
+            displayCbAmount($('.js-breakdown-block__val--repayment'),val);
+        }
+
+        function calcTotalAmountToPay(val,weeks){
+            var totalAmountToPay = val * weeks;
+            displayCbAmount($('.js-total-amount-to-pay'),totalAmountToPay);
+            calcTotalInterestFees(cb.sliderLoanVal,totalAmountToPay);
+        }
+
+        function calcTotalInterestFees(loan, totalAmt){
+            var totalInterestAndFees = totalAmt - loan;
+            displayCbAmount($('.js-total-interest-and-fees'),totalInterestAndFees);
+        }
+
     }
 };
 

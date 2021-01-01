@@ -134,10 +134,14 @@
                                                 <div class="mt-1">
                                                     <label for="loanAmountSlider">How much would you like to borrow?</label>
                                                     <div class="loan-options-block__amount-slider" id="loanAmountSlider"></div>
+                                                    <!-- Hidden input containing the slider val-->
+                                                    <input type="hidden" class="js-loan-amount-cuurent-val"> 
                                                 </div>
                                                 <div class="m-t-8">
                                                     <label for="loanAmountSlider">Over how many weeks?</label>
                                                     <div class="loan-options-block__weeks-slider" id="loanWeekSlider"></div>
+                                                    <!-- Hidden input containing the slider val-->
+                                                    <input type="hidden" class="js-payment-term-cuurent-val"> 
                                                 </div>                                                
                                             </div> 
                                         </div>     
@@ -150,11 +154,11 @@
                                             <h4>Representative APR</h4>
                                         </div>
                                         <div class="loan-options-block__loan-item">
-                                            <span class="loan-options-block__item-val">£0.00</span>
+                                            <span class="loan-options-block__item-val">£<span class="js-total-interest-and-fees">0.00</span></span>
                                             <h4>Total interest and fees</h4>
                                         </div>
                                         <div class="loan-options-block__loan-item">
-                                            <span class="loan-options-block__item-val">£0.00</span>
+                                            <span class="loan-options-block__item-val">£<span class="js-total-amount-to-pay">0.00</span></span>
                                             <h4>Total amount to repay</h4>
                                         </div>
                                         <a href="#" role="button" class="btn btn-secondary btn-clear-white">Apply for this loan</a>
@@ -172,12 +176,12 @@
                                             <div class="col col-md-3">
                                                 <div class="breakdown-block__item breakdown-block__item--benefit">
                                                     <h5>Child benefit</h5>
-                                                    <span class="breakdown-block__val breakdown-block__val--benefit">£20 =</span>
+                                                    <span class="breakdown-block__val breakdown-block__val--benefit">£<span class="js-breakdown-block__val--benefit">20.00</span> =</span>
                                                 </div>
                                             </div>
                                             <div class="col col-md-3">
                                                 <div class="breakdown-block__item breakdown-block__item--loan">
-                                                    <span class="breakdown-block__val">£0.00</span>
+                                                    <span class="breakdown-block__val">£<span class="js-breakdown-block__val--repayment"></span></span>
                                                     <h5>Loan repayment</h5>
                                                     <a href="#" class="breakdown-block__popover-link js-popover" data-content="lorem ipsum dolor set amet blah blah lorem ipsum dolor set amet blah blah" data-placement="auto">
                                                         <span class="breakdown-block__more-info">More info</span>
@@ -188,7 +192,7 @@
                                                 <div class="breakdown-block__item breakdown-block__item--savings">
                                                     <a href="#" class="breakdown-block__change-savings breakdown-block__change-savings--minus">Decrease locked in savings</a>
                                                     <a href="#" class="breakdown-block__change-savings breakdown-block__change-savings--plus">Increase locked in savings</a>
-                                                    <span class="breakdown-block__val">£0.00</span>
+                                                    <span class="breakdown-block__val js-breakdown-block__val--locked"></span>
                                                     <h5 aria-describedby="lockedInSavingsHelp">Locked in savings</h5>
                                                     <a href="#" class="breakdown-block__popover-link js-popover" data-content="lorem ipsum dolor set amet blah blah lorem ipsum dolor set amet blah blah" data-placement="auto">
                                                         <span class="breakdown-block__more-info">More info</span>
@@ -197,7 +201,7 @@
                                             </div>
                                             <div class="col col-md-3">
                                                 <div class="breakdown-block__item breakdown-block__item--funds">
-                                                    <span class="breakdown-block__val">£0.00</span>
+                                                    <span class="breakdown-block__val js-breakdown-block__val--remainder">£0.00</span>
                                                     <h5>Remaining funds</h5>
                                                     <a href="#" class="breakdown-block__popover-link js-popover" data-content="lorem ipsum dolor set amet blah blah lorem ipsum dolor set amet blah blah" data-placement="auto">
                                                         <span class="breakdown-block__more-info breakdown-block__more-info--light">More info</span>
@@ -435,7 +439,7 @@
     <script>
         $(document).ready(function(){
             $('.hero-slider').slick({
-                //autoplay: true,
+                autoplay: true,
                 fade: true,
                 autoplaySpeed: 4500,
                 arrows: false
