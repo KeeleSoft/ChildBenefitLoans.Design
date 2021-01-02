@@ -176,12 +176,12 @@
                                             <div class="col col-md-3">
                                                 <div class="breakdown-block__item breakdown-block__item--benefit">
                                                     <h5>Child benefit</h5>
-                                                    <span class="breakdown-block__val breakdown-block__val--benefit">£<span class="js-breakdown-block__val--benefit">20.00</span> =</span>
+                                                    <span class="breakdown-block__val breakdown-block__val--benefit">£<span class="js-breakdown-block__val--benefit">0.00</span> <span class="d-block">=</span></span>
                                                 </div>
                                             </div>
                                             <div class="col col-md-3">
                                                 <div class="breakdown-block__item breakdown-block__item--loan">
-                                                    <span class="breakdown-block__val">£<span class="js-breakdown-block__val--repayment"></span></span>
+                                                    <span class="breakdown-block__val">£<span class="js-breakdown-block__val--repayment">0.00</span></span>
                                                     <h5>Loan repayment</h5>
                                                     <a href="#" class="breakdown-block__popover-link js-popover" data-content="lorem ipsum dolor set amet blah blah lorem ipsum dolor set amet blah blah" data-placement="auto">
                                                         <span class="breakdown-block__more-info">More info</span>
@@ -192,7 +192,7 @@
                                                 <div class="breakdown-block__item breakdown-block__item--savings">
                                                     <a href="#" class="breakdown-block__change-savings breakdown-block__change-savings--minus">Decrease locked in savings</a>
                                                     <a href="#" class="breakdown-block__change-savings breakdown-block__change-savings--plus">Increase locked in savings</a>
-                                                    <span class="breakdown-block__val js-breakdown-block__val--locked"></span>
+                                                    <span class="breakdown-block__val js-breakdown-block__val--locked">£0.00</span>
                                                     <h5 aria-describedby="lockedInSavingsHelp">Locked in savings</h5>
                                                     <a href="#" class="breakdown-block__popover-link js-popover" data-content="lorem ipsum dolor set amet blah blah lorem ipsum dolor set amet blah blah" data-placement="auto">
                                                         <span class="breakdown-block__more-info">More info</span>
@@ -435,75 +435,13 @@
     <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
     <script src="https://refreshless.com/nouislider/distribute/nouislider.js?v=1462"></script>
     <script src="https://refreshless.com/nouislider/documentation/assets/wNumb.js"></script>
-    <script src="https://sandywalker.github.io/webui-popover/dist/jquery.webui-popover.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.hero-slider').slick({
-                autoplay: true,
-                fade: true,
-                autoplaySpeed: 4500,
-                arrows: false
-            });
-        });
-
-        var loanAmountSlider = document.getElementById('loanAmountSlider');
-        noUiSlider.create(loanAmountSlider, {
-            start: 500,
-            connect: 'lower',
-            step: 20,
-            tooltips: wNumb({
-                decimals: 0,
-                prefix: '£'
-            }),
-            range: {
-                'min': 300,
-                'max': 600
-            },
-            format: wNumb({
-                decimals: 0,
-            }),
-            pips: {
-                mode: 'count', 
-                values: 2, 
-                density: 100,
-                format: wNumb({
-                    prefix: '£'
-                })
-            }
-        });
-        var loanWeekSlider = document.getElementById('loanWeekSlider');
-        noUiSlider.create(loanWeekSlider, {
-            start: 39,
-            connect: 'lower',
-            step: 1,
-            tooltips: wNumb({
-                decimals: 0,
-                suffix: ' Weeks'
-            }),
-            range: {
-                'min': 26,
-                'max': 52
-            },
-            format: wNumb({
-                decimals: 0
-            }),
-            pips: {
-                mode: 'count', 
-                values: 2, 
-                density: 100,
-                format: wNumb({
-                    suffix: ' Weeks'
-                })
-            }
-        });
-        
-        $('.js-popover').webuiPopover({
-            animation:'fade',
-            arrow:true,
-            width: 280
-        });
-    </script>
-    
+    <script src="https://sandywalker.github.io/webui-popover/dist/jquery.webui-popover.min.js"></script>    
     <script src="../js/main.js"></script>
+    <script>
+        cblApp.heroSlider();
+        cblApp.popOver();
+        cblApp.loanSlider();
+        //cblApp.mainLoanCalculator();
+    </script>
 </body>
 </html>
