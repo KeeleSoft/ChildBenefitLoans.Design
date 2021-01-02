@@ -10,7 +10,6 @@ var cblApp = {
         this.convertToUppercase();
         this.formatCurrencyConfig();
         this.incomeExpenseTrigger();
-        this.mainLoanCalculator();
     },
     //--------- scroll detection and header status change
     scrollDetection:function(){    
@@ -193,6 +192,73 @@ var cblApp = {
             $('.js-disp-total-disposable').text(disposableIncome.toLocaleString('en-GB', currencyFormat));
         }
     },
+    heroSlider: function(){
+        $('.hero-slider').slick({
+            autoplay: true,
+            fade: true,
+            autoplaySpeed: 4500,
+            arrows: false
+        });
+    },
+    popOver: function(){
+        $('.js-popover').webuiPopover({
+            animation:'fade',
+            arrow:true,
+            width: 280
+        });
+    },
+    loanSlider: function(){
+        var loanAmountSlider = document.getElementById('loanAmountSlider');
+        noUiSlider.create(loanAmountSlider, {
+            start: 500,
+            connect: 'lower',
+            step: 20,
+            tooltips: wNumb({
+                decimals: 0,
+                prefix: '£'
+            }),
+            range: {
+                'min': 300,
+                'max': 600
+            },
+            format: wNumb({
+                decimals: 0,
+            }),
+            pips: {
+                mode: 'count', 
+                values: 2, 
+                density: 100,
+                format: wNumb({
+                    prefix: '£'
+                })
+            }
+        });
+        var loanWeekSlider = document.getElementById('loanWeekSlider');
+        noUiSlider.create(loanWeekSlider, {
+            start: 39,
+            connect: 'lower',
+            step: 1,
+            tooltips: wNumb({
+                decimals: 0,
+                suffix: ' Weeks'
+            }),
+            range: {
+                'min': 26,
+                'max': 52
+            },
+            format: wNumb({
+                decimals: 0
+            }),
+            pips: {
+                mode: 'count', 
+                values: 2, 
+                density: 100,
+                format: wNumb({
+                    suffix: ' Weeks'
+                })
+            }
+        });
+    },
     mainLoanCalculator: function(){
         //loan calculator vars
         var minNumOfChildren = 1,
@@ -209,6 +275,7 @@ var cblApp = {
 
         var cb ={};
         cb.amount = firstChildBenefit;
+        updateCbValue(firstChildBenefit);
         numOfChildrenInput.val(minNumOfChildren); //assign min number of children needed on page load
        
         //increment decremenet functionality
@@ -234,13 +301,13 @@ var cblApp = {
                 totalChildBenefitPerWeek = firstChildBenefit + (numOfAdditionalChildren * additionalChildBenefit);
                 cb.amount = totalChildBenefitPerWeek;
                 totalChildBenefit = checkCbFrequencySelection(totalChildBenefitPerWeek);
-                displayCbAmount(childBenefitAmountDisplay,totalChildBenefit);
+                displayCalcValue(childBenefitAmountDisplay,totalChildBenefit);
                 updateCbValue(totalChildBenefit);
             }
             else{
                 cb.amount = firstChildBenefit;
                 totalChildBenefit = checkCbFrequencySelection(firstChildBenefit);
-                displayCbAmount(childBenefitAmountDisplay,totalChildBenefit);
+                displayCalcValue(childBenefitAmountDisplay,totalChildBenefit);
                 updateCbValue(totalChildBenefit);
             }
         }
@@ -259,16 +326,14 @@ var cblApp = {
         function benefitFrequencyBasedCalc(){
             checkCbFrequency.on('change',function(){
                 var total = checkCbFrequencySelection(cb.amount);
-                displayCbAmount(childBenefitAmountDisplay,total);
+                displayCalcValue(childBenefitAmountDisplay,total);
                 updateCbValue(total); 
                 callPMT();              
             });
         }
         benefitFrequencyBasedCalc();
 
-        function displayCbAmount(el,amt){
-            el.text(amt.toFixed(2));
-        }
+
 
         function pmt(rate, nper, pv, fv, type){
             if (!fv) fv = 0;
@@ -284,7 +349,7 @@ var cblApp = {
             };    
             return pmt;
         }
-
+        
         loanAmountSlider.noUiSlider.on('update', function () { 
             var currentSliderVal = loanAmountSlider.noUiSlider.get();
             $('.js-loan-amount-cuurent-val').val(currentSliderVal);
@@ -306,24 +371,34 @@ var cblApp = {
         }
 
         function updateCbValue(val){
-            displayCbAmount($('.js-breakdown-block__val--benefit'),val);
+            displayCalcValue($('.js-breakdown-block__val--benefit'),val);
         }
 
         function updateLoanRepaymentVal(val){
-            displayCbAmount($('.js-breakdown-block__val--repayment'),val);
+            //cb.loanRepaymentAmt = val;
+            displayCalcValue($('.js-breakdown-block__val--repayment'),val);
         }
 
         function calcTotalAmountToPay(val,weeks){
             var totalAmountToPay = val * weeks;
-            displayCbAmount($('.js-total-amount-to-pay'),totalAmountToPay);
+            displayCalcValue($('.js-total-amount-to-pay'),totalAmountToPay);
             calcTotalInterestFees(cb.sliderLoanVal,totalAmountToPay);
         }
 
         function calcTotalInterestFees(loan, totalAmt){
             var totalInterestAndFees = totalAmt - loan;
-            displayCbAmount($('.js-total-interest-and-fees'),totalInterestAndFees);
+            displayCalcValue($('.js-total-interest-and-fees'),totalInterestAndFees);
         }
 
+        function calcRemainingFunds(){
+            //console.log(checkCbFrequencySelection(cb.amount));
+            //console.log(cb.loanRepaymentAmt);
+
+        }
+        //display function for all calculator values
+        function displayCalcValue(el,amt){
+            el.text(amt.toFixed(2));
+        }
     }
 };
 
