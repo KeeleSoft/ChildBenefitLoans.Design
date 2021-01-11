@@ -268,6 +268,7 @@ var cblApp = {
         numOfChildren = 1,
         benefitMultipleFrequency = 4,
         interestRate = 0.36,
+        minLockedInSavingsVal = 2.50,
 
         checkCbFrequency = $('.js-check-cb-frequency'),
         numOfChildrenInput = $('.js-num-of-children-input'),  
@@ -275,6 +276,7 @@ var cblApp = {
 
         var cb ={};
         cb.amount = firstChildBenefit;
+        cb.lockedInFunds = 0.00;
         updateCbValue(firstChildBenefit);
         numOfChildrenInput.val(minNumOfChildren); //assign min number of children needed on page load
        
@@ -316,9 +318,11 @@ var cblApp = {
         function checkCbFrequencySelection(cb){
             if (checkCbFrequency.filter(':checked').hasClass('js-check-cb-frequency--4weekly')) {
                 var fourWeeklyVal = cb * benefitMultipleFrequency;
+                $('.js-4-week-digit').removeClass('d-none');
                 return fourWeeklyVal;
             }
             else{
+                $('.js-4-week-digit').addClass('d-none');
                 return cb;
             }
         }
@@ -332,8 +336,6 @@ var cblApp = {
             });
         }
         benefitFrequencyBasedCalc();
-
-
 
         function pmt(rate, nper, pv, fv, type){
             if (!fv) fv = 0;
@@ -371,12 +373,15 @@ var cblApp = {
         }
 
         function updateCbValue(val){
+            cb.updatedChildBenefitVal = val;
             displayCalcValue($('.js-breakdown-block__val--benefit'),val);
+            calcRemainingFunds();
         }
 
         function updateLoanRepaymentVal(val){
-            //cb.loanRepaymentAmt = val;
+            cb.updatedLoanRepaymentVal = val;
             displayCalcValue($('.js-breakdown-block__val--repayment'),val);
+            calcRemainingFunds();
         }
 
         function calcTotalAmountToPay(val,weeks){
@@ -391,10 +396,61 @@ var cblApp = {
         }
 
         function calcRemainingFunds(){
-            //console.log(checkCbFrequencySelection(cb.amount));
-            //console.log(cb.loanRepaymentAmt);
-
+            cb.remainingFunds = cb.updatedChildBenefitVal - cb.updatedLoanRepaymentVal;
+            displayCalcValue($('.js-breakdown-block__val--remainder'),cb.remainingFunds);
+            calcLockedInSavings();
+            checkRemainingFundsStatus();
         }
+
+        function calcLockedInSavings(){
+            /*if(cb.remainingFunds >= minLockedInSavingsVal){
+                cb.remainingFunds = cb.remainingFunds - minLockedInSavingsVal;
+                cb.lockedInFunds = minLockedInSavingsVal;
+                displayCalcValue($('.js-breakdown-block__val--locked'),minLockedInSavingsVal);
+                displayCalcValue($('.js-breakdown-block__val--remainder'),cb.remainingFunds);
+            }
+            else{
+                cb.lockedInFunds = 0.00;
+                displayCalcValue($('.js-breakdown-block__val--locked'),0.00);
+            }*/
+            cb.remainingFunds = cb.remainingFunds - cb.lockedInFunds;
+            displayCalcValue($('.js-breakdown-block__val--locked'),cb.lockedInFunds);
+            displayCalcValue($('.js-breakdown-block__val--remainder'),cb.remainingFunds);
+        }
+
+        $('.js-minus-lis,.js-plus-lis').on('click', function(e){
+            e.preventDefault();
+            if(cb.remainingFunds >= minLockedInSavingsVal && $(this).hasClass('js-plus-lis')){
+                cb.remainingFunds = cb.remainingFunds - minLockedInSavingsVal;
+                cb.lockedInFunds = cb.lockedInFunds + minLockedInSavingsVal;         
+                displayCalcValue($('.js-breakdown-block__val--locked'),cb.lockedInFunds);
+                displayCalcValue($('.js-breakdown-block__val--remainder'),cb.remainingFunds);
+                checkRemainingFundsStatus();
+            }
+            else if(cb.lockedInFunds >= minLockedInSavingsVal && $(this).hasClass('js-minus-lis')){
+                cb.remainingFunds = cb.remainingFunds + minLockedInSavingsVal;
+                cb.lockedInFunds = cb.lockedInFunds - minLockedInSavingsVal; 
+                displayCalcValue($('.js-breakdown-block__val--locked'),cb.lockedInFunds);
+                displayCalcValue($('.js-breakdown-block__val--remainder'),cb.remainingFunds); 
+                checkRemainingFundsStatus();
+            }
+            else if($(this).hasClass('js-plus-lis')){
+                alert('You need minimum £2.50 to add to Locked in Savings');
+                checkRemainingFundsStatus();
+            }
+        });
+
+        function checkRemainingFundsStatus(){
+            if(cb.remainingFunds < 0){
+                $('.js-remainder-wrap').addClass('red-text');
+                $('.js-calc-block-alert').removeClass('d-none');
+            }
+            else{
+                $('.js-remainder-wrap').removeClass('red-text');
+                $('.js-calc-block-alert').addClass('d-none');
+            }
+        }
+
         //display function for all calculator values
         function displayCalcValue(el,amt){
             el.text(amt.toFixed(2));

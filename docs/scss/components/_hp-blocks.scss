@@ -1,22 +1,3 @@
-.calc-block{   
-    &__inner{
-        padding: 5rem 0 0;
-        background-color: map-get($brand-colours, lightBlueShade);
-    }    
-    &__footer{
-        background-color: map-get($brand-colours, brandPrimary);
-        display: block;
-        overflow: hidden;
-        margin-top: -1px;
-        svg{
-            width: 101%;
-            margin-left: -2px;
-            margin-top: -3px;
-        }
-
-    }
-}
-
 .why-choose-block{
     background-color: map-get($brand-colours, brandPrimary);
     color: map-get($brand-colours, white);

@@ -1,4 +1,29 @@
+.calc-block{  
+    &__inner{
+        padding: 5rem 0 0;
+        background-color: map-get($brand-colours, lightBlueShade);
+    }    
+    &__footer{
+        background-color: map-get($brand-colours, brandPrimary);
+        display: block;
+        overflow: hidden;
+        margin-top: -1px;
+        svg{
+            width: 101%;
+            margin-left: -2px;
+            margin-top: -3px;
+        }
 
+    }
+    &__alert{
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        //transform: translate(-50%, -50%);
+        z-index: 1;
+        border-radius: $calc-border-radius;
+    }
+}
 .cb-info-block{
     background-color: map-get($brand-colours, brandBeige);
     border-radius: $calc-border-radius;
@@ -82,6 +107,7 @@
 .loan-options-block{
     margin-top: 2rem;
     align-items: flex-start;
+
     @include media-md{
         align-items: stretch;
     }
@@ -93,6 +119,7 @@
         height: 100%;
     }
     &__loan-details{
+        position: relative;
         background: map-get($brand-colours, brandPurple);
         border-radius: $calc-border-radius;
         padding: 2rem 3rem 3rem;
@@ -224,6 +251,7 @@
         border-color: map-get($brand-colours, brandPrimary)
     }
 }
+
 
 
   
