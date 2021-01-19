@@ -22,6 +22,7 @@
         //transform: translate(-50%, -50%);
         z-index: 1;
         border-radius: $calc-border-radius;
+        padding: 1.6rem;
     }
 }
 .cb-info-block{
@@ -236,17 +237,29 @@
         font-size: $fs-medium;
 
         &--benefit{
-            font-size: $fs-xlarge;
+            font-size: 2.2rem;
             line-height: 0.9;
             margin-top: 0.6rem;
         }
     }
 }
 
-.btn-clear-white{
-    color: map-get($brand-colours, white);
+.loan-calc{
+    &__caveat{
+        margin: 2rem 0 0;
+        padding: 2rem;
+        color: #383d41;
+        background-color: #f2f3f5;
+        font-size: $fs-small!important;
+    }
+}
+
+.btn-white{
+    color: map-get($brand-colours, brandPrimary);
     border-color: map-get($brand-colours, white);
+    background-color: map-get($brand-colours, white);
     &:hover{
+
         background-color: map-get($brand-colours, brandPrimary);
         border-color: map-get($brand-colours, brandPrimary)
     }

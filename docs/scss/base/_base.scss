@@ -33,15 +33,13 @@ html {
 a {
   color: map-get($brand-colours, brandPrimary);
   text-decoration: none;
+  transition: color 0.15s ease-in, background-color 0.15s ease-in;
   @include on-event {
     color: map-get($brand-colours, brandPurple);
     text-decoration: none;
   }
   &:focus{
     @include focus-links;
-  }
-  &:hover{
-      transition: color 0.2s ease-in, background-color 0.2s ease-in;
   }
 }
 

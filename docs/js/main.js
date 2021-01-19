@@ -262,9 +262,9 @@ var cblApp = {
     mainLoanCalculator: function(){
         //loan calculator vars
         var minNumOfChildren = 1,
-        maxNumOfChildren = 5,
-        firstChildBenefit = 20.00,
-        additionalChildBenefit = 13.70,
+        maxNumOfChildren = 9,
+        firstChildBenefit = 21.05,
+        additionalChildBenefit = 13.95,
         numOfChildren = 1,
         benefitMultipleFrequency = 4,
         interestRate = 0.36,
@@ -276,7 +276,7 @@ var cblApp = {
 
         var cb ={};
         cb.amount = firstChildBenefit;
-        cb.lockedInFunds = 0.00;
+        cb.lockedInFunds = minLockedInSavingsVal;
         updateCbValue(firstChildBenefit);
         numOfChildrenInput.val(minNumOfChildren); //assign min number of children needed on page load
        
@@ -403,17 +403,8 @@ var cblApp = {
         }
 
         function calcLockedInSavings(){
-            /*if(cb.remainingFunds >= minLockedInSavingsVal){
-                cb.remainingFunds = cb.remainingFunds - minLockedInSavingsVal;
-                cb.lockedInFunds = minLockedInSavingsVal;
-                displayCalcValue($('.js-breakdown-block__val--locked'),minLockedInSavingsVal);
-                displayCalcValue($('.js-breakdown-block__val--remainder'),cb.remainingFunds);
-            }
-            else{
-                cb.lockedInFunds = 0.00;
-                displayCalcValue($('.js-breakdown-block__val--locked'),0.00);
-            }*/
-            cb.remainingFunds = cb.remainingFunds - cb.lockedInFunds;
+            cb.remainingFunds = cb.remainingFunds - checkCbFrequencySelection(minLockedInSavingsVal);
+            cb.lockedInFunds = checkCbFrequencySelection(minLockedInSavingsVal);
             displayCalcValue($('.js-breakdown-block__val--locked'),cb.lockedInFunds);
             displayCalcValue($('.js-breakdown-block__val--remainder'),cb.remainingFunds);
         }
@@ -427,15 +418,20 @@ var cblApp = {
                 displayCalcValue($('.js-breakdown-block__val--remainder'),cb.remainingFunds);
                 checkRemainingFundsStatus();
             }
-            else if(cb.lockedInFunds >= minLockedInSavingsVal && $(this).hasClass('js-minus-lis')){
+            else if(cb.lockedInFunds > checkCbFrequencySelection(minLockedInSavingsVal) && $(this).hasClass('js-minus-lis')){
                 cb.remainingFunds = cb.remainingFunds + minLockedInSavingsVal;
                 cb.lockedInFunds = cb.lockedInFunds - minLockedInSavingsVal; 
                 displayCalcValue($('.js-breakdown-block__val--locked'),cb.lockedInFunds);
                 displayCalcValue($('.js-breakdown-block__val--remainder'),cb.remainingFunds); 
                 checkRemainingFundsStatus();
             }
-            else if($(this).hasClass('js-plus-lis')){
-                alert('You need minimum £2.50 to add to Locked in Savings');
+            else {
+                if($(this).hasClass('js-plus-lis')){
+                    alert('You do not have enough funds');
+                }
+                else if($(this).hasClass('js-minus-lis')){
+                    alert('You have reached the minimum Locked in Savings required for this loan');
+                }               
                 checkRemainingFundsStatus();
             }
         });
