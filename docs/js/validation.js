@@ -49,14 +49,15 @@ $('.js-dob').datetextentry({
     show_tooltips : false,
     //is_required: true,
     //E_REQUIRED_FIELD : 'Please enter a date',
-    
+    //field_order : 'DMY',
+    //separator   : '-',
     on_error : function(msg) {
         var dobInput = this.$element;
         dobInput.siblings('.jq-dte-errorbox')
             .insertBefore(dobInput.closest('.form-group').find('.jq-dte'))
             .addClass('form-control--error')
             .text(msg);
-    }
+    }  
 });
 
 //DOB Validation on submit
@@ -70,6 +71,16 @@ $('.js-cbl-form').submit(function(e) {
     });
     if(!allValidDob){
         e.preventDefault();
+    }
+});
+
+//display dob values on page load
+$('.js-dob').each(function(){
+    var dobVal = $(this).attr('value');
+    if(dobVal){
+        var arr = dobVal.split('/');
+        var formattedDate = arr[2] + '-' + arr[1] + '-' + arr[0];
+        $(this).datetextentry('set_date', formattedDate);
     }
 });
 
