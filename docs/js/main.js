@@ -190,6 +190,12 @@ var cblApp = {
             $('.js-disp-total-income').text(totalIncome.toLocaleString('en-GB', currencyFormat));
             $('.js-disp-total-expenses').text(totalExpenses.toLocaleString('en-GB', currencyFormat));
             $('.js-disp-total-disposable').text(disposableIncome.toLocaleString('en-GB', currencyFormat));
+            updateHiddenInputs(totalIncome,totalExpenses,disposableIncome);
+        }
+        function updateHiddenInputs(inc,exp,disInc){
+            $('.js-hidden-total-disposable').val(disInc);
+            $('.js-hidden-total-expenses').val(exp);
+            $('.js-hidden-total-income').val(inc);
         }
     },
     heroSlider: function(){
