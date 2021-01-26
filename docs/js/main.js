@@ -153,6 +153,7 @@ var cblApp = {
     },
     incomeExpenseTrigger: function(){
         $('.js-income-inp, .js-expense-inp').on('blur',this.incomeExpenseCalc);
+        this.incomeExpenseCalc();
     },
     incomeExpenseCalc: function(){
         var totalIncome = 0,
