@@ -193,9 +193,9 @@ var cblApp = {
             updateHiddenInputs(totalIncome,totalExpenses,disposableIncome);
         }
         function updateHiddenInputs(inc,exp,disInc){
-            $('.js-hidden-total-disposable').val(disInc);
-            $('.js-hidden-total-expenses').val(exp);
-            $('.js-hidden-total-income').val(inc);
+            $('#jsHiddenTotalDisposable').val(disInc);
+            $('#jsHiddenTotalExpenses').val(exp);
+            $('#jsHiddenTotalIncome').val(inc);
         }
     },
     heroSlider: function(){
@@ -360,14 +360,14 @@ var cblApp = {
         
         loanAmountSlider.noUiSlider.on('update', function () { 
             var currentSliderVal = loanAmountSlider.noUiSlider.get();
-            $('.js-loan-amount-cuurent-val').val(currentSliderVal);
+            $('#jsLoanAmountCurrentVal').val(currentSliderVal);
             cb.sliderLoanVal = currentSliderVal;
             callPMT();
         });
 
         loanWeekSlider.noUiSlider.on('update', function () { 
             var currentSliderVal = loanWeekSlider.noUiSlider.get();
-            $('.js-payment-term-cuurent-val').val(currentSliderVal);
+            $('#jsPaymentTermCurrentVal').val(currentSliderVal);
             cb.sliderWeekVal = currentSliderVal;
             callPMT();
         });
@@ -456,6 +456,28 @@ var cblApp = {
         //display function for all calculator values
         function displayCalcValue(el,amt){
             el.text(amt.toFixed(2));
+            updateHiddenFieldsInCalc(el,amt.toFixed(2));
+        }
+ 
+        function updateHiddenFieldsInCalc(el,amt){
+            if(el.hasClass('js-total-interest-and-fees')){
+                $('#jsHiddenTotalIntFeesVal').val(amt);                
+            }
+            if(el.hasClass('js-breakdown-block__val--repayment')){               
+                $('#jsHiddenLoanRepaymentAmount').val(amt);                
+            }
+            if(el.hasClass('js-breakdown-block__val--remainder')){               
+                $('#jsHiddenRemainingAmount').val(amt);                               
+            }
+            if(el.hasClass('js-breakdown-block__val--locked')){
+                $('#jsHiddenLockedSavingsAmount').val(amt);                
+            }
+            if(el.hasClass('js-total-amount-to-pay')){
+                $('#jsHiddenTotalAmount').val(amt);                
+            }
+            if(el.hasClass('js-breakdown-block__val--benefit')){
+                $('#jsHiddenCbAmount').val(amt);
+            }           
         }
     }
 };

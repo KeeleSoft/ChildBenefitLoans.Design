@@ -134,13 +134,13 @@
                                                     <label for="loanAmountSlider">How much would you like to borrow?</label>
                                                     <div class="loan-options-block__amount-slider" id="loanAmountSlider"></div>
                                                     <!-- Hidden input containing the slider val-->
-                                                    <input type="hidden" class="js-loan-amount-cuurent-val"> 
+                                                    <input type="hidden" id="jsLoanAmountCurrentVal"> 
                                                 </div>
                                                 <div class="m-t-8">
                                                     <label for="loanAmountSlider">Over how many weeks?</label>
                                                     <div class="loan-options-block__weeks-slider" id="loanWeekSlider"></div>
                                                     <!-- Hidden input containing the slider val-->
-                                                    <input type="hidden" class="js-payment-term-cuurent-val"> 
+                                                    <input type="hidden" id="jsPaymentTermCurrentVal"> 
                                                 </div>                                                
                                             </div> 
                                         </div>     
@@ -155,12 +155,16 @@
                                         <div class="loan-options-block__loan-item">
                                             <span class="loan-options-block__item-val">£<span class="js-total-interest-and-fees">0.00</span></span>
                                             <h4>Total interest and fees</h4>
+                                            <!-- Hidden input containing total interest and fees -->
+                                            <input type="hidden" id="jsHiddenTotalIntFeesVal">
                                         </div>
                                         <div class="loan-options-block__loan-item">
                                             <span class="loan-options-block__item-val">£<span class="js-total-amount-to-pay">0.00</span></span>
                                             <h4>Total amount to repay</h4>
+                                            <!-- Hidden input containing total amount -->
+                                            <input type="hidden" id="jsHiddenTotalAmount">
                                         </div>
-                                        <a href="#" role="button" class="btn btn-secondary btn-white w-100">Apply for this loan</a>
+                                        <a href="#" role="button" class="btn btn-secondary btn-white w-100 js-calc-apply">Apply for this loan</a>
                                         <!-- error block loan calc -->
                                         <div class="calc-block__alert js-calc-block-alert alert alert-danger d-none" role="alert">
                                             <p class="m-b-0">Please reduce the loan amount or increase the payment term.</p>
@@ -180,6 +184,8 @@
                                                     <h5>Child benefit</h5>
                                                     <span class="breakdown-block__val breakdown-block__val--benefit">£<span class="js-breakdown-block__val--benefit">0.00</span> =</span>
                                                 </div>
+                                                <!-- Hidden input containing cb amount -->
+                                                <input type="hidden" id="jsHiddenCbAmount">
                                             </div>
                                             <div class="col col-md-9">
                                                 <div class="row">
@@ -191,6 +197,8 @@
                                                                 <span class="breakdown-block__more-info">More info</span>
                                                             </a>
                                                         </div>
+                                                        <!-- Hidden input containing loan repayment amount -->
+                                                        <input type="hidden" id="jsHiddenLoanRepaymentAmount">
                                                     </div>
                                                     <div class="col col-md-4">
                                                         <div class="breakdown-block__item breakdown-block__item--savings">
@@ -202,6 +210,8 @@
                                                                 <span class="breakdown-block__more-info">More info</span>
                                                             </a>
                                                         </div>
+                                                        <!-- Hidden input containing locked savings amount -->
+                                                        <input type="hidden" id="jsHiddenLockedSavingsAmount">
                                                     </div>
                                                     <div class="col col-md-4">
                                                         <div class="breakdown-block__item breakdown-block__item--funds">
@@ -211,6 +221,8 @@
                                                                 <span class="breakdown-block__more-info breakdown-block__more-info--light">More info</span>
                                                             </a>
                                                         </div>
+                                                        <!-- Hidden input containing remaining amount -->
+                                                        <input type="hidden" id="jsHiddenRemainingAmount">
                                                     </div>
                                                 </div>
                                             </div>
