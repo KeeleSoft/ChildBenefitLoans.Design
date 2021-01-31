@@ -23,8 +23,7 @@
     width: 10%;
     text-align: center;
 }
-.del-icon-link{
-    @include bg-img(icon-delete,svg);
+.icon-link{
     width: 2.4rem;
     display: block;
     text-indent: 100%;
@@ -34,7 +33,16 @@
     background-position: 50%;
     background-size: 24px 24px;
     margin: 0 auto;
+
+    &--del{
+        @include bg-img(icon-delete,svg);
+    }
+
+    &--view{
+        @include bg-img(icon-view,svg);
+    }
 }
+
 
 .img-link{
     display: inline-block;

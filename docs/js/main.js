@@ -286,10 +286,12 @@ var cblApp = {
         cb.lockedInFunds = minLockedInSavingsVal;
         updateCbValue(firstChildBenefit);
         numOfChildrenInput.val(minNumOfChildren); //assign min number of children needed on page load
-       
+        $('#jsHiddenNoOfChildrenU15').val(minNumOfChildren);
+
         //increment decremenet functionality
         $('.js-decrement-num-of-children, .js-increment-num-of-children').on('click', function(e){ 
             e.preventDefault();
+            
             if($(this).hasClass('js-decrement-num-of-children') && numOfChildrenInput.val() > minNumOfChildren){
                 numOfChildren--;
                 numOfChildrenInput.val(numOfChildren);
@@ -300,6 +302,7 @@ var cblApp = {
                 numOfChildrenInput.val(numOfChildren);
                 calcBenefitIncome();
             }
+            $('#jsHiddenNoOfChildrenU15').val(numOfChildren);
         });
 
         function calcBenefitIncome(){
