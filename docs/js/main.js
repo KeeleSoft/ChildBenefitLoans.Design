@@ -10,6 +10,7 @@ var cblApp = {
         this.convertToUppercase();
         this.formatCurrencyConfig();
         this.incomeExpenseTrigger();
+        this.autoTab();
     },
     //--------- scroll detection and header status change
     scrollDetection:function(){    
@@ -154,6 +155,11 @@ var cblApp = {
     incomeExpenseTrigger: function(){
         $('.js-income-inp, .js-expense-inp').on('blur',this.incomeExpenseCalc);
         this.incomeExpenseCalc();
+    },
+    autoTab: function(){
+        $('.js-autotab').autotab({
+            maxlength: 2
+        });
     },
     incomeExpenseCalc: function(){
         var totalIncome = 0,

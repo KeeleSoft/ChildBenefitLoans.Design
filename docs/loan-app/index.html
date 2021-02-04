@@ -47,7 +47,7 @@
                         <p class="inset-txt txt-bold txt-medium m-b-2 m-t-3">
                             You are applying for a Child Benefit loan of £600 at 42.68% APR over 12 months.  Your total monthly repayment will be £71
                         </p>
-                        <form action="about-you.html">
+                        <form action="about-you.html" class="js-cbl-form">
                             <div class="row m-t-3">
                                <div class="col-12 col-md-10">
                                     <div class="form-group">
@@ -120,7 +120,7 @@
                                         <div class="form-group">
                                             <label for="workPostcode">Please enter your work postcode</label>
                                             <div class="input-group">
-                                                <input type="text" class="form-control js-to-uppercase" id="workPostcode" name="workPostcode" autocomplete="postal-code" data-msg-required="Enter a UK postcode">
+                                                <input type="text" class="form-control js-to-uppercase js-val-postcode" id="workPostcode" name="workPostcode" autocomplete="postal-code" data-msg-required="Enter a UK postcode">
                                                 <div class="input-group-button">
                                                     <button type="button" class="btn btn-secondary js-loader-activate">Check</button>
                                                 </div>
@@ -132,6 +132,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <button type="button" class="btn btn-link">No work postcode?</button>
                                     </div>
                                 </div>
                             </div>

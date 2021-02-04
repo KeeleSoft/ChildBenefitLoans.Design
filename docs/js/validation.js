@@ -41,6 +41,9 @@ $.validator.addClassRules({
     },
     "js-disp-currency":{
         currency: ['£', false]
+    },
+    "js-val-postcode": {
+        postcodeUK: true
     }    
 });
 
@@ -96,4 +99,8 @@ $.validator.addMethod("currency", function (value, element, param) {
     regex = new RegExp(regex);
     return this.optional(element) || regex.test(value);
 }, "Enter a valid amount");
+
+$.validator.addMethod("postcodeUK", function (value, element) {
+    return this.optional(element) || /^((([A-PR-UWYZ][0-9])|([A-PR-UWYZ][0-9][0-9])|([A-PR-UWYZ][A-HK-Y][0-9])|([A-PR-UWYZ][A-HK-Y][0-9][0-9])|([A-PR-UWYZ][0-9][A-HJKSTUW])|([A-PR-UWYZ][A-HK-Y][0-9][ABEHMNPRVWXY]))\s?([0-9][ABD-HJLNP-UW-Z]{2})|(GIR)\s?(0AA))$/i.test(value);
+}, "Enter a valid UK postcode");
 

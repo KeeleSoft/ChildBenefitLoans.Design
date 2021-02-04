@@ -205,6 +205,14 @@ span.form-control--error{
             outline-offset: 0;
        }
     }
+
+    &-link{
+        padding: 0;
+        &:focus, &.focus{
+            @include focus-links;
+            border-radius: 0;
+       }        
+    }
 }
 
 a.btn{
