@@ -27,7 +27,7 @@ var cblApp = {
     },
     //--------- check user eligibiliy for a loan based on meeting all criteria
     loanEligibilityCheck:function(){
-        $('.js-eligibility-check').change(function(){
+        $('.js-eligibility-check').on('change',function(){
             if ($('.js-eligibility-check:checked').length === $('.js-eligibility-check').length) {
                 $('.js-postcode-display').removeClass('js-hidden');
             }
