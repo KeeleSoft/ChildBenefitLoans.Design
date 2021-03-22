@@ -93,7 +93,7 @@ var cblApp = {
         }
     },
     convertToUppercase: function(){
-        $('.js-to-uppercase').on('blur', function (e) {
+        $('.js-to-uppercase').on('blur', function (e) {            
             var input = $(this);
             var start = input[0].selectionStart;
             $(this).val(function (_, val) {

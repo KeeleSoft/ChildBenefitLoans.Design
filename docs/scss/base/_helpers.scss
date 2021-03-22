@@ -9,6 +9,10 @@
 .txt-bold{
     font-weight: 600;
 }
+.txt-uppercase{
+    text-transform: uppercase; 
+}
+
 .link-on-white{
     color: map-get($brand-colours,brandPurple);
     text-decoration: underline;
@@ -23,6 +27,7 @@
     width: 10%;
     text-align: center;
 }
+
 .icon-link{
     width: 2.4rem;
     display: block;
