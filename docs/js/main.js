@@ -487,6 +487,7 @@ var cblApp = {
             }
             if(el.hasClass('js-breakdown-block__val--benefit')){
                 $('#jsHiddenCbAmount').val(amt);
+                $('#jsHiddenChildBenefitAmount').val(amt);
             }           
         }
     }
