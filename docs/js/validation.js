@@ -44,7 +44,10 @@ $.validator.addClassRules({
     },
     "js-val-postcode": {
         postcodeUK: true
-    }    
+    },
+    "js-val-niuk": {
+        niUK: true
+    }  
 });
 
 //DOB validation rules using Date Text Entry Library
@@ -60,8 +63,24 @@ $('.js-dob').datetextentry({
             .insertBefore(dobInput.closest('.form-group').find('.jq-dte'))
             .addClass('form-control--error')
             .text(msg);
+    },
+    custom_validation:function(valid){
+        var errMsg = 'You should be at least 18 years old to apply'
+        if(this.$element.hasClass('js-val-min-age')){
+            var minage = 18;
+            var mydate = new Date();
+            mydate.setFullYear(valid.year, valid.month-1, valid.day);
+        
+            var currdate = new Date();
+            currdate.setFullYear(currdate.getFullYear() - minage);
+            if ((currdate - mydate) < 0){
+                throw errMsg;
+            }
+            return true;
+        }
     }  
 });
+
 
 //DOB Validation on submit
 $('.js-cbl-form').submit(function(e) {        
@@ -103,4 +122,10 @@ $.validator.addMethod("currency", function (value, element, param) {
 $.validator.addMethod("postcodeUK", function (value, element) {
     return this.optional(element) || /^((([A-PR-UWYZ][0-9])|([A-PR-UWYZ][0-9][0-9])|([A-PR-UWYZ][A-HK-Y][0-9])|([A-PR-UWYZ][A-HK-Y][0-9][0-9])|([A-PR-UWYZ][0-9][A-HJKSTUW])|([A-PR-UWYZ][A-HK-Y][0-9][ABEHMNPRVWXY]))\s?([0-9][ABD-HJLNP-UW-Z]{2})|(GIR)\s?(0AA))$/i.test(value);
 }, "Enter a valid UK postcode");
+
+jQuery.validator.addMethod('niUK', function(nino, element) {
+    return this.optional(element) || nino.length >= 9 &&
+        nino.replace(/ /g,'').match(/^[A-CEGHJ-PR-TW-Z]{1}[A-CEGHJ-NPR-TW-Z]{1}[0-9]{6}[A-D]{1}$/i);
+}, 'Please specify a valid national insurance number');
+
 
